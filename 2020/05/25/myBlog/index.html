@@ -4,8 +4,9 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, LindaBlog">
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex">
+    <meta name="keywords" content="myBlog, LindaBlog">
+    <meta name="description" content="什么是虚拟dom虚拟dom就是由snabbdom这个库中的h函数进行创建的，它本质就是一个js对象，由sel，data，children，text
+elm,key进行组成的js对象，它是通过diff算法中最重要的一个patch函数，进行上树">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +20,7 @@
 
     
 
-    <title>Hello World | LindaBlog</title>
+    <title>myBlog | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">myBlog</h1>
                 </div>
             </div>
         </div>
@@ -442,7 +443,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2022-05-25
+                    2020-05-25
                 </div>
                 
 
@@ -463,19 +464,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+                <h5 id="什么是虚拟dom"><a href="#什么是虚拟dom" class="headerlink" title="什么是虚拟dom"></a>什么是虚拟dom</h5><p>虚拟dom就是由snabbdom这个库中的h函数进行创建的，它本质就是一个js对象，由sel，data，children，text</p>
+<p>elm,key进行组成的js对象，它是通过diff算法中最重要的一个patch函数，进行上树，进行渲染成真实dom，渲染到页面的。</p>
+<h5 id="聊聊diff算法"><a href="#聊聊diff算法" class="headerlink" title="聊聊diff算法"></a>聊聊diff算法</h5><p>首先diff算法是发生再虚拟dom中的，下面我总结了三点来说明下diff算法</p>
+<p>第一点，它是把新虚拟节点和旧的虚拟节点进行对比，来进行计算比较最小量的更新</p>
+<p>第二点，就是他只能再同一节点进行最小量更新，否则会暴力删除旧的节点，插入新的节点</p>
+<p>第三点，它只能再同层比较发生最小量更新，不可跨曾比较，否则也是会暴力删除旧的，插入新的</p>
+<p>这里来说说最小量更新是什么意思，下面举个列子说明</p>
+<p>首先页面上有一个ui，ui里面有4个li，ABCD，那么需求是要把现有的ABCD，更新成ABCDE,那么比较俩次的节点，会发现只是新增了个E节点，所以diff算法之后去更新这个E节点，而不会把前面所有的ABCD进行更新，所以这就是ABCD，当然这里key很重要，有了key才会体现出diff算法的最大效率。</p>
+<h5 id="虚拟dom和h函数"><a href="#虚拟dom和h函数" class="headerlink" title="虚拟dom和h函数"></a>虚拟dom和h函数</h5><h6 id="引入snabbdom内部的包"><a href="#引入snabbdom内部的包" class="headerlink" title="引入snabbdom内部的包"></a>引入snabbdom内部的包</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  init,</span><br><span class="line">  classModule,</span><br><span class="line">  propsModule,</span><br><span class="line">  styleModule,</span><br><span class="line">  eventListenersModule,</span><br><span class="line">  h,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;snabbdom&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h6 id="创建patch函数"><a href="#创建patch函数" class="headerlink" title="创建patch函数"></a>创建patch函数</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> patch=<span class="title function_">init</span>([classModule,propsModule,styleModule,eventListenersModule])</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h6 id="使用h函数创建虚拟节点"><a href="#使用h函数创建虚拟节点" class="headerlink" title="使用h函数创建虚拟节点"></a>使用h函数创建虚拟节点</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vnode1=<span class="title function_">h</span>(<span class="string">&quot;div&quot;</span>,&#123;&#125;,<span class="string">&quot;我是一个盒子&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h6 id="获取组件内的选择器"><a href="#获取组件内的选择器" class="headerlink" title="获取组件内的选择器"></a>获取组件内的选择器</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;container&quot;</span>)</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+<h6 id="使用patch函数进行上树"><a href="#使用patch函数进行上树" class="headerlink" title="使用patch函数进行上树"></a>使用patch函数进行上树</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">patch</span>(container,vnode1)</span><br></pre></td></tr></table></figure>
+
+<h5 id="h函数的底层实现"><a href="#h函数的底层实现" class="headerlink" title="h函数的底层实现"></a>h函数的底层实现</h5><p>首先需要写一个vnode.js文件，来返回一个对象，对象里面包含sel，data，children，text，elm</p>
+<p>之后封装一个h.js文件供外部使用，首先需要判断三种形态，第一种，第三个参数是否是string或者number，然后判断第三个参数是否是数组，然后判断第三个参数是否是h函数进行递归操作，之后返回对应的vnode。</p>
+<h5 id="patch底层逻辑"><a href="#patch底层逻辑" class="headerlink" title="patch底层逻辑"></a>patch底层逻辑</h5><p>首先会判断旧的的节点是否是虚拟节点，是的话去判断新的节点和旧的节点是否是同一个节点，判断同一个节点的逻辑是，判断新的节点的选择器和旧的节点选择器使得相同，还判断新的节点的key和旧的的节点的key是否相同，如果是同一个节点就进行精细化比较，不是的话就暴力删除旧的，插入新的。如果不是一个虚拟节点就包装成虚拟节点。</p>
 
                 
             </div>
@@ -502,7 +511,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2022/05/25/hello-world/">http://example.com/2022/05/25/hello-world/</a>
+                    <a href="http://example.com/2020/05/25/myBlog/">http://example.com/2020/05/25/myBlog/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -711,10 +720,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2022/05/25/hello-world/">
                     <div class="card-image">
@@ -732,9 +740,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-05-25
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-05-25
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -743,7 +751,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
@@ -751,7 +758,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                Next&nbsp;<i class="fas fa-chevron-right"></i>
+                Current&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2020/05/25/myBlog/">
@@ -781,6 +788,7 @@
                         </span>
                     </div>
                 </div>
+
                 
             </div>
         </div>
