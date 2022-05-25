@@ -71,55 +71,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-diff" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2022/05/25/diff/" class="article-date">
-  <time class="dt-published" datetime="2022-05-25T13:26:09.745Z" itemprop="datePublished">2022-05-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h5 id="什么是虚拟dom"><a href="#什么是虚拟dom" class="headerlink" title="什么是虚拟dom"></a>什么是虚拟dom</h5><p>虚拟dom就是由snabbdom这个库中的h函数进行创建的，它本质就是一个js对象，由sel，data，children，text</p>
-<p>elm,key进行组成的js对象，它是通过diff算法中最重要的一个patch函数，进行上树，进行渲染成真实dom，渲染到页面的。</p>
-<h5 id="聊聊diff算法"><a href="#聊聊diff算法" class="headerlink" title="聊聊diff算法"></a>聊聊diff算法</h5><p>首先diff算法是发生再虚拟dom中的，下面我总结了三点来说明下diff算法</p>
-<p>第一点，它是把新虚拟节点和旧的虚拟节点进行对比，来进行计算比较最小量的更新</p>
-<p>第二点，就是他只能再同一节点进行最小量更新，否则会暴力删除旧的节点，插入新的节点</p>
-<p>第三点，它只能再同层比较发生最小量更新，不可跨曾比较，否则也是会暴力删除旧的，插入新的</p>
-<p>这里来说说最小量更新是什么意思，下面举个列子说明</p>
-<p>首先页面上有一个ui，ui里面有4个li，ABCD，那么需求是要把现有的ABCD，更新成ABCDE,那么比较俩次的节点，会发现只是新增了个E节点，所以diff算法之后去更新这个E节点，而不会把前面所有的ABCD进行更新，所以这就是ABCD，当然这里key很重要，有了key才会体现出diff算法的最大效率。</p>
-<h5 id="虚拟dom和h函数"><a href="#虚拟dom和h函数" class="headerlink" title="虚拟dom和h函数"></a>虚拟dom和h函数</h5><h6 id="引入snabbdom内部的包"><a href="#引入snabbdom内部的包" class="headerlink" title="引入snabbdom内部的包"></a>引入snabbdom内部的包</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  init,</span><br><span class="line">  classModule,</span><br><span class="line">  propsModule,</span><br><span class="line">  styleModule,</span><br><span class="line">  eventListenersModule,</span><br><span class="line">  h,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;snabbdom&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h6 id="创建patch函数"><a href="#创建patch函数" class="headerlink" title="创建patch函数"></a>创建patch函数</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> patch=<span class="title function_">init</span>([classModule,propsModule,styleModule,eventListenersModule])</span><br></pre></td></tr></table></figure>
-
-<h6 id="使用h函数创建虚拟节点"><a href="#使用h函数创建虚拟节点" class="headerlink" title="使用h函数创建虚拟节点"></a>使用h函数创建虚拟节点</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vnode1=<span class="title function_">h</span>(<span class="string">&quot;div&quot;</span>,&#123;&#125;,<span class="string">&quot;我是一个盒子&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h6 id="获取组件内的选择器"><a href="#获取组件内的选择器" class="headerlink" title="获取组件内的选择器"></a>获取组件内的选择器</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;container&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h6 id="使用patch函数进行上树"><a href="#使用patch函数进行上树" class="headerlink" title="使用patch函数进行上树"></a>使用patch函数进行上树</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">patch</span>(container,vnode1)</span><br></pre></td></tr></table></figure>
-
-<h5 id="h函数的底层实现"><a href="#h函数的底层实现" class="headerlink" title="h函数的底层实现"></a>h函数的底层实现</h5><p>首先需要写一个vnode.js文件，来返回一个对象，对象里面包含sel，data，children，text，elm</p>
-<p>之后封装一个h.js文件供外部使用，首先需要判断三种形态，第一种，第三个参数是否是string或者number，然后判断第三个参数是否是数组，然后判断第三个参数是否是h函数进行递归操作，之后返回对应的vnode。</p>
-<h5 id="patch底层逻辑"><a href="#patch底层逻辑" class="headerlink" title="patch底层逻辑"></a>patch底层逻辑</h5><p>首先会判断旧的的节点是否是虚拟节点，是的话去判断新的节点和旧的节点是否是同一个节点，判断同一个节点的逻辑是，判断新的节点的选择器和旧的节点选择器使得相同，还判断新的节点的key和旧的的节点的key是否相同，如果是同一个节点就进行精细化比较，不是的话就暴力删除旧的，插入新的。如果不是一个虚拟节点就包装成虚拟节点。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/25/diff/" data-id="cl3lmmrq2000194vn6ht2c4wr" data-title="" class="article-share-link">分享</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
     <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/05/25/hello-world/" class="article-date">
@@ -159,10 +110,75 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/05/25/hello-world/" data-id="cl3lmmrpn000094vngh2pec1h" data-title="Hello World" class="article-share-link">分享</a>
+      <a data-url="http://example.com/2022/05/25/hello-world/" data-id="cl3lmug8l0005csvn4tgdhvhv" data-title="Hello World" class="article-share-link">分享</a>
       
       
       
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
+    <article id="post-diff" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2020/04/22/diff/" class="article-date">
+  <time class="dt-published" datetime="2020-04-22T13:17:39.000Z" itemprop="datePublished">2020-04-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2020/04/22/diff/">test</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h5 id="什么是虚拟dom"><a href="#什么是虚拟dom" class="headerlink" title="什么是虚拟dom"></a>什么是虚拟dom</h5><p>虚拟dom就是由snabbdom这个库中的h函数进行创建的，它本质就是一个js对象，由sel，data，children，text</p>
+<p>elm,key进行组成的js对象，它是通过diff算法中最重要的一个patch函数，进行上树，进行渲染成真实dom，渲染到页面的。</p>
+<h5 id="聊聊diff算法"><a href="#聊聊diff算法" class="headerlink" title="聊聊diff算法"></a>聊聊diff算法</h5><p>首先diff算法是发生再虚拟dom中的，下面我总结了三点来说明下diff算法</p>
+<p>第一点，它是把新虚拟节点和旧的虚拟节点进行对比，来进行计算比较最小量的更新</p>
+<p>第二点，就是他只能再同一节点进行最小量更新，否则会暴力删除旧的节点，插入新的节点</p>
+<p>第三点，它只能再同层比较发生最小量更新，不可跨曾比较，否则也是会暴力删除旧的，插入新的</p>
+<p>这里来说说最小量更新是什么意思，下面举个列子说明</p>
+<p>首先页面上有一个ui，ui里面有4个li，ABCD，那么需求是要把现有的ABCD，更新成ABCDE,那么比较俩次的节点，会发现只是新增了个E节点，所以diff算法之后去更新这个E节点，而不会把前面所有的ABCD进行更新，所以这就是ABCD，当然这里key很重要，有了key才会体现出diff算法的最大效率。</p>
+<h5 id="虚拟dom和h函数"><a href="#虚拟dom和h函数" class="headerlink" title="虚拟dom和h函数"></a>虚拟dom和h函数</h5><h6 id="引入snabbdom内部的包"><a href="#引入snabbdom内部的包" class="headerlink" title="引入snabbdom内部的包"></a>引入snabbdom内部的包</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123;</span><br><span class="line">  init,</span><br><span class="line">  classModule,</span><br><span class="line">  propsModule,</span><br><span class="line">  styleModule,</span><br><span class="line">  eventListenersModule,</span><br><span class="line">  h,</span><br><span class="line">&#125; <span class="keyword">from</span> <span class="string">&quot;snabbdom&quot;</span>;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h6 id="创建patch函数"><a href="#创建patch函数" class="headerlink" title="创建patch函数"></a>创建patch函数</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> patch=<span class="title function_">init</span>([classModule,propsModule,styleModule,eventListenersModule])</span><br></pre></td></tr></table></figure>
+
+<h6 id="使用h函数创建虚拟节点"><a href="#使用h函数创建虚拟节点" class="headerlink" title="使用h函数创建虚拟节点"></a>使用h函数创建虚拟节点</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> vnode1=<span class="title function_">h</span>(<span class="string">&quot;div&quot;</span>,&#123;&#125;,<span class="string">&quot;我是一个盒子&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="获取组件内的选择器"><a href="#获取组件内的选择器" class="headerlink" title="获取组件内的选择器"></a>获取组件内的选择器</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container=<span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;container&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<h6 id="使用patch函数进行上树"><a href="#使用patch函数进行上树" class="headerlink" title="使用patch函数进行上树"></a>使用patch函数进行上树</h6><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">patch</span>(container,vnode1)</span><br></pre></td></tr></table></figure>
+
+<h5 id="h函数的底层实现"><a href="#h函数的底层实现" class="headerlink" title="h函数的底层实现"></a>h函数的底层实现</h5><p>首先需要写一个vnode.js文件，来返回一个对象，对象里面包含sel，data，children，text，elm</p>
+<p>之后封装一个h.js文件供外部使用，首先需要判断三种形态，第一种，第三个参数是否是string或者number，然后判断第三个参数是否是数组，然后判断第三个参数是否是h函数进行递归操作，之后返回对应的vnode。</p>
+<h5 id="patch底层逻辑"><a href="#patch底层逻辑" class="headerlink" title="patch底层逻辑"></a>patch底层逻辑</h5><p>首先会判断旧的的节点是否是虚拟节点，是的话去判断新的节点和旧的节点是否是同一个节点，判断同一个节点的逻辑是，判断新的节点的选择器和旧的节点选择器使得相同，还判断新的节点的key和旧的的节点的key是否相同，如果是同一个节点就进行精细化比较，不是的话就暴力删除旧的，插入新的。如果不是一个虚拟节点就包装成虚拟节点。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/04/22/diff/" data-id="cl3lmug840000csvn32nl0qvb" data-title="test" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/diff%E7%AE%97%E6%B3%95/" rel="tag">diff算法</a></li></ul>
+
     </footer>
   </div>
   
@@ -178,18 +194,39 @@
           <aside id="sidebar">
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diff%E7%AE%97%E6%B3%95/" rel="tag">diff算法</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/diff%E7%AE%97%E6%B3%95/" style="font-size: 10px;">diff算法</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">五月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/04/">四月 2020</a></li></ul>
     </div>
   </div>
 
@@ -202,11 +239,11 @@
       <ul>
         
           <li>
-            <a href="/2022/05/25/diff/">(no title)</a>
+            <a href="/2022/05/25/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/2022/05/25/hello-world/">Hello World</a>
+            <a href="/2020/04/22/diff/">test</a>
           </li>
         
       </ul>
