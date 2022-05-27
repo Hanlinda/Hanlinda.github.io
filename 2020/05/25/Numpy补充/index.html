@@ -1,0 +1,1334 @@
+<!DOCTYPE HTML>
+<html lang="en 网站语言">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Numpy补充, LindaBlog">
+    <meta name="description" content="Numpy补充一.数组补充1.np.alltrue()判断数组的元素是否都为True，是否都是非0
+2.复数数组的建立i^2&amp;#x3D;-1
+f1&amp;#x3D;np.array([10+2j,8j,2.1+3j])
+f1.dtype
+注意事项">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>Numpy补充 | LindaBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LindaBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LindaBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Numpy补充</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                <span class="chip bg-color">数据分析</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2020-05-25
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="Numpy补充"><a href="#Numpy补充" class="headerlink" title="Numpy补充"></a>Numpy补充</h1><h1 id="一-数组补充"><a href="#一-数组补充" class="headerlink" title="一.数组补充"></a>一.数组补充</h1><h2 id="1-np-alltrue"><a href="#1-np-alltrue" class="headerlink" title="1.np.alltrue()"></a>1.np.alltrue()</h2><p>判断数组的元素是否都为True，是否都是非0</p>
+<h2 id="2-复数数组的建立"><a href="#2-复数数组的建立" class="headerlink" title="2.复数数组的建立"></a>2.复数数组的建立</h2><p>i^2&#x3D;-1</p>
+<p>f1&#x3D;np.array([10+2j,8j,2.1+3j])</p>
+<p>f1.dtype</p>
+<p>注意事项：Numpy的数组元素要求统一类型，不能出现既是整型又是字符型的现象，如果不小心输入了不同类型的元素，array会把其他类型的元素自动转换成字符串型。</p>
+<h2 id="3-np-eye-N-M-k-x3D-0-dtype-x3D-lt-class’float’-gt-order-x3D-’C’"><a href="#3-np-eye-N-M-k-x3D-0-dtype-x3D-lt-class’float’-gt-order-x3D-’C’" class="headerlink" title="3.np.eye(N,M,k&#x3D;0,dtype&#x3D;&lt;class’float’&gt;,order&#x3D;’C’)"></a>3.np.eye(N,M,k&#x3D;0,dtype&#x3D;&lt;class’float’&gt;,order&#x3D;’C’)</h2><p>k&#x3D;0表示主对角线，k&#x3D;正整数表示上对角线，k&#x3D;负整数表示下对角线</p>
+<p>返回对角线为1，其他位置均为0的二维数组</p>
+<h2 id="4-repeat（a-repeats-axis-x3D-None）"><a href="#4-repeat（a-repeats-axis-x3D-None）" class="headerlink" title="4.repeat（a,repeats,axis&#x3D;None）"></a>4.repeat（a,repeats,axis&#x3D;None）</h2><p>建立每个元素重复N次的数组。</p>
+<p>a为集合对象</p>
+<p>repeats为指定元素重复次数，在多维数组的情况下，axis可以指定重复维度</p>
+<h2 id="5-数组属性"><a href="#5-数组属性" class="headerlink" title="5.数组属性"></a>5.数组属性</h2><p>(1) ndim属性，返回数组的维度</p>
+<p>arr1&#x3D;[[1,2,3],[3,4,5],[5,6,7]]</p>
+<p>arr1.ndim</p>
+<p>（2）shape返回数组的形状大小</p>
+<p>（3）size返回数组的元素个数</p>
+<p>（4）dtype返回数组的元素类型</p>
+<p>（5）itemsize 返回数组元素字节大小</p>
+<p>属性不加小括号</p>
+<h2 id="6-数组的使用"><a href="#6-数组的使用" class="headerlink" title="6.数组的使用"></a>6.数组的使用</h2><p>方法加小括号</p>
+<h3 id="（1）reshape-方法"><a href="#（1）reshape-方法" class="headerlink" title="（1）reshape 方法"></a>（1）reshape 方法</h3><p>改变数组的形状</p>
+<p>arr1&#x3D;[[1,2,3,4],[3,4,5,6],[5,6,7,8]]</p>
+<p>arr2&#x3D;arr1.reshape(4,3)</p>
+<p>print(arr2)</p>
+<p>注意：reshape方法的参数元组（x,y）,x*y必须等于数组元素的个数，否则执行该方法会报错</p>
+<h3 id="（2）all方法"><a href="#（2）all方法" class="headerlink" title="（2）all方法"></a>（2）all方法</h3><p>判断指定的数组元素是否都是非0，是返回True，否则返回False</p>
+<p>m1&#x3D;np.ones(9).all()</p>
+<p>print(m1)</p>
+<p>np.array([1,0,2]).all()</p>
+<p>np.array([1,0,2],[1,2,3]).all(axis&#x3D;1)从行方向上判断每行的值是否均为0</p>
+<p>axis指向维度的方向，其值为0表示第二维的方向列方向，值为1表示第一维的方向</p>
+<h3 id="（3）any方法"><a href="#（3）any方法" class="headerlink" title="（3）any方法"></a>（3）any方法</h3><p>判断数组的元素有非0值，有则返回True，否则返回False</p>
+<p>t1&#x3D;np.array([[1,0,3],[0,0,2]])</p>
+<p>t1.any(axis&#x3D;0)</p>
+<h3 id="（4）copy方法"><a href="#（4）copy方法" class="headerlink" title="（4）copy方法"></a>（4）copy方法</h3><p>复制数组副本</p>
+<p>arr2&#x3D;arr1</p>
+<p>id(arr1)</p>
+<p>id(arr2)</p>
+<p>arr0&#x3D;arr1.copy()</p>
+<p>id(arr0)</p>
+<p>使用copy的方法在计算机的内存生成一个新的数组副本，修改一个数组的元素不会影响另一个数组的元素。</p>
+<h3 id="（5）astype方法"><a href="#（5）astype方法" class="headerlink" title="（5）astype方法"></a>（5）astype方法</h3><p>改变元素类型</p>
+<p>arr1&#x3D;np.ones(9,dtype&#x3D;int)</p>
+<p>print(arr1.astype(float))</p>
+<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><p>1.简单去最接近的整数</p>
+<p>rint(x)</p>
+<p>np.rint([0.49,1.4,1.5,0.6])</p>
+<p>2.向0方向舍入取最接近的整数</p>
+<p>fix(x)</p>
+<p>np.fix([0.0001,0.7,0,3],[10.1,10.3,10.7])</p>
+<h2 id="8-乱序和随机抽取"><a href="#8-乱序和随机抽取" class="headerlink" title="8 .乱序和随机抽取"></a>8 .乱序和随机抽取</h2><p>1.radom.permutation(x)</p>
+<p>当x为标量时，生成一个[0,n)的乱序数组，当X为可变集合时，对集合里面的值进行乱序排列</p>
+<p>2.random.shuffle(x)</p>
+<p>对x乱序处理</p>
+<p>3.random.choice(a,size&#x3D;None,replace&#x3D;True,p&#x3D;None)</p>
+<p>从a抽取size个，replace&#x3D;False不重复p权重</p>
+<h2 id="9-数组的对接、分割"><a href="#9-数组的对接、分割" class="headerlink" title="9.数组的对接、分割"></a>9.数组的对接、分割</h2><p>（1）数组对接</p>
+<p>hstack（），vstack（）</p>
+<p>（2）数组分割</p>
+<p>hsplit(arr,N)实现水平分割，N为分割数</p>
+<p>vsplit(arr,N)实现垂直分割，N为分割数</p>
+<h2 id="10-索引以及索引省略"><a href="#10-索引以及索引省略" class="headerlink" title="10.索引以及索引省略"></a>10.索引以及索引省略</h2><h3 id="10-1-索引"><a href="#10-1-索引" class="headerlink" title="10.1 索引"></a>10.1 索引</h3><p>arr[1][2]</p>
+<p>arr[1,2]</p>
+<h4 id="1-数组索引"><a href="#1-数组索引" class="headerlink" title="1.数组索引"></a>1.数组索引</h4><p>(1)一维</p>
+<p>arr1&#x3D;np.array([‘a’，‘b’，‘c’，‘d’，‘e’])</p>
+<p>idx&#x3D;np.array([1,2,3])</p>
+<p>arr1[idx]</p>
+<p>（2）二维</p>
+<p>arr1&#x3D;np.array([[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’]])</p>
+<p>x&#x3D;np.array([0,1,2])</p>
+<p>y&#x3D;np.array([0,1,2])</p>
+<p>arr1[x,y]</p>
+<p>(3)布尔下标</p>
+<p>arr1&#x3D;np.arange(9).reshape(3,3)</p>
+<p>b1&#x3D;np.array([[‘True’,’False’,’False’],[‘False’,’True’,’True’],[‘False’,’False’,’True’]])</p>
+<p>arr1[b1]</p>
+<p>结果：过滤，得到指定true位置的值，返回结果一维</p>
+<p>b2&#x3D;np.array([‘True’,’False’,’True’])#形状一致</p>
+<p>arr1[b2]</p>
+<p>结果：保留行，二维</p>
+<h3 id="10-2-索引省略"><a href="#10-2-索引省略" class="headerlink" title="10.2 索引省略"></a>10.2 索引省略</h3><p>当确定不了维度时，可以通过下标右边…（省略号）或者直接省略下边的方法来读取数组</p>
+<p>n3[1,…]等价于n3[1,]或者n3[1]</p>
+<p>从下标左侧开始省略，只能用“…”的形式，不能用n3[,2]的形式</p>
+<p>n3[…,2]</p>
+<p>当下标从中间维度省略</p>
+<p>n3[1,…,2]不能使用n3[1,,2]</p>
+<h2 id="11-数组运算"><a href="#11-数组运算" class="headerlink" title="11.数组运算"></a>11.数组运算</h2><h3 id="1-基本运算"><a href="#1-基本运算" class="headerlink" title="1.基本运算"></a>1.基本运算</h3><p>+，-，*，&#x2F;</p>
+<p>&#x2F;&#x2F;取整  arr1&#x2F;&#x2F;arr2</p>
+<h3 id="2-位运算"><a href="#2-位运算" class="headerlink" title="2.位运算"></a>2.位运算</h3><p>&amp;按位与</p>
+<p>|按位或</p>
+<p>~非运算</p>
+<p>&lt;&lt;左移</p>
+<p>右移&gt;&gt;</p>
+<h2 id="12-数组增删改查"><a href="#12-数组增删改查" class="headerlink" title="12.数组增删改查"></a>12.数组增删改查</h2><p>1.删除</p>
+<p>delete（）</p>
+<p>2.增加</p>
+<p>insert(arr,obj,values,axis&#x3D;None)</p>
+<p>指定列</p>
+<p>b1&#x3D;np.ones(9).reshape(3,3)</p>
+<p>np.insert(b1,3,[2,2,2],axis&#x3D;1)</p>
+<p>指定行</p>
+<p>b1&#x3D;np.ones(9).reshape(3,3)</p>
+<p>np.insert(b1,3,[2,2,2],axis&#x3D;0)</p>
+<p>3.将指定值附加到数组末尾</p>
+<p>append(aee,values,axis&#x3D;None),axis&#x3D;1在行反向上增加</p>
+<p>z1&#x3D;np.zeros(9).reshape(3,3)</p>
+<p>np.append(z1,b1,axis&#x3D;1)在行上增加</p>
+<h1 id="二、矩阵和线性代数补充"><a href="#二、矩阵和线性代数补充" class="headerlink" title="二、矩阵和线性代数补充"></a>二、矩阵和线性代数补充</h1><h2 id="1-行列式求值"><a href="#1-行列式求值" class="headerlink" title="1.行列式求值"></a>1.行列式求值</h2><p>det(a)函数</p>
+<p>v1&#x3D;np.linalg.det(a)</p>
+<p>‘%.2f%’%(v1)</p>
+<h2 id="2-特殊值行列式"><a href="#2-特殊值行列式" class="headerlink" title="2.特殊值行列式"></a>2.特殊值行列式</h2><h3 id="（1）-范德蒙行列式"><a href="#（1）-范德蒙行列式" class="headerlink" title="（1）.范德蒙行列式"></a>（1）.范德蒙行列式</h3><p>vander(x,N&#x3D;None,increasing&#x3D;False)x为一维集合，N为默认要产生的列数，N不指定时，N&#x3D;len(x),increasing为False，从右往左计算</p>
+<p>vm&#x3D;np.vander([1,2,3])</p>
+<p>vm</p>
+<p>array([[1,1,1],[4,2,1],[9,3,1]])</p>
+<h3 id="（2）-下三角行列式"><a href="#（2）-下三角行列式" class="headerlink" title="（2）.下三角行列式"></a>（2）.下三角行列式</h3><p>tril(m,k&#x3D;0)主对角线上方的元素都为0,k指定主对角线以及上方0元素的位置，默认k&#x3D;0,当k&#x3D;-1时，主对角线也为0，当k&#x3D;1时，从主对角线往右斜上方扩展一行处开始为0</p>
+<p>t1&#x3D;np.array([[1,2,3],[4,5,6],[7,8,9]])</p>
+<p>np.tril(t1)</p>
+<p>该函数还可以提供主对角线元素</p>
+<p>np.tril([1,2,3])</p>
+<p>返回值：</p>
+<p>array([1,0,0],</p>
+<p>​           [1,2,0],</p>
+<p>​           [1,2,3])</p>
+<h3 id="（3）-上三角行列式"><a href="#（3）-上三角行列式" class="headerlink" title="（3）.上三角行列式"></a>（3）.上三角行列式</h3><p>triu(arr,k&#x3D;0)</p>
+<p>使用方法同tril</p>
+<h3 id="（4）-获取主对角线的值"><a href="#（4）-获取主对角线的值" class="headerlink" title="（4）.获取主对角线的值"></a>（4）.获取主对角线的值</h3><p>diag(arr,k&#x3D;0)k往左下方移动使用负数，右上方使用正数</p>
+<p>arr&#x3D;np.arange(9).reshape(3,3)</p>
+<p>d&#x3D;np.diag(arr)</p>
+<h2 id="3-线性代数求解"><a href="#3-线性代数求解" class="headerlink" title="3.线性代数求解"></a>3.线性代数求解</h2><p>1.线性方程求解</p>
+<p>solve(a,b)   a为系数矩阵，b为常数项矩阵，返回求解x未知数矩阵对应的公式ax&#x3D;b</p>
+<p>x1-x2-x3&#x3D;2</p>
+<p>2x1-x2-3x3&#x3D;1</p>
+<p>3x1- 2x2-5x3&#x3D;0</p>
+<p>系数矩阵A&#x3D;[[1,-1,1],[2,-1,-3],[3,2,-5]],常数项矩阵b&#x3D;[2,1,0],求x&#x3D;[x1,x2,x3]</p>
+<p>代码：</p>
+<p>A&#x3D;np.matrix([[1,-1,1],[2,-1,-3],[3,2,-5]])</p>
+<p>b&#x3D;[2,1,0]</p>
+<p>x&#x3D;np.linalg.solve(A,b)</p>
+<p>要求系数矩阵行列式的值不为0</p>
+<h1 id="三、文件处理"><a href="#三、文件处理" class="headerlink" title="三、文件处理"></a>三、文件处理</h1><p>计算机文件可以存储文字、数字、图片、视频、声音等信息，也可以永久形式记录计算机的数据处理及算计结果。计算机文件以一定格式主要存放于硬盘介质上，供用户使用时调用。计算机文件主要分文本文件和二进制文件。</p>
+<p>文本文件主要指以ASCII码方式存储的文件，具体内容包括了英文、数字、特殊符号，也包括了Unicode码（主要是UTF-8、UTF-16L）方式下的中文、日文等双字节多字节语言内容。常见的文本文件格式（及扩展名）包括了txt、doc、docx、wps、pdf、 chm、rtf、xml、csv等。</p>
+<h2 id="1-文本文件"><a href="#1-文本文件" class="headerlink" title="1.文本文件"></a>1.文本文件</h2><h3 id="（1）、将数组保存到文本文件"><a href="#（1）、将数组保存到文本文件" class="headerlink" title="（1）、将数组保存到文本文件."></a>（1）、将数组保存到文本文件.</h3><p>函数savetxt(fname, X, fmt&#x3D;’%.18e’, delimiter&#x3D;’ ‘, newline&#x3D;’\n’, header&#x3D;’’,footer&#x3D;’’, comments&#x3D;’# ‘, encoding&#x3D;None)</p>
+<p>*参数：</p>
+<p>*（1）fname：指定文件名或文件句柄，如果文件名以<code>.gz</code>结尾，则文件会自动保存为压缩gzip格式。</p>
+<p>*（2）X：集合对象，为需要保存的数据。</p>
+<p>*（3）fmt：为指定存储格式，字符串型，可选。如’%.2f’要求保留的浮点数为两位小数，这种情况下忽略分隔符。’%.4e’为复数格式。</p>
+<p>*（4）delimite：可选，分隔列的字符串或字符。如’,’。</p>
+<p>*（5）newline：数据行之间的分隔符，字符串或字符分隔线，可选，默认值为’\n’。</p>
+<p>*（6）header：可选，在文件开头写入的字符串。</p>
+<p>*（7）footer：可选，在文件末尾写入的字符串。</p>
+<p>*（8）comments：可选，将被添加到文件头或尾的标记信息，默认值为’#’。</p>
+<p>*（9）encoding：可选，用于编码输出文件的编码，默认编码为’ latin1’。</p>
+<p>例1、将数组保存到文本文件</p>
+<p>import numpy as np</p>
+<p>data&#x3D;np.arange(12).reshape(3,4)</p>
+<p>np.savetext(r’&#x2F;A1.txt’,data,delimiter&#x3D;’,’)</p>
+<p>加 r 会把字符串转变为非转义的原始字符串。</p>
+<h3 id="（2）从文本文件加载数据"><a href="#（2）从文本文件加载数据" class="headerlink" title="（2）从文本文件加载数据"></a>（2）从文本文件加载数据</h3><p><em><strong>函数</strong></em>*loadtxt(fname, dtype&#x3D;&lt;class ‘float’&gt;, comments&#x3D;’#’, delimiter&#x3D;None,converters&#x3D;None,skiprows&#x3D;0, usecols&#x3D;None, unpack&#x3D;False, ndmin&#x3D;0,encoding&#x3D;’bytes’,max_rows&#x3D;None)</p>
+<p>*参数：</p>
+<p>*（1）fname：指定要读取的文件，文件名或生成器。如果文件扩展名为.gz或.bz2，则首先解压缩该文件。请注意，生成器支持返回Python 3版本的字节字符串。</p>
+<p>*（2）dtype（数据类型），可选，结果数组的数据类型;默认值浮点数。</p>
+<p>*（3）comments（注释），str或str的序列，可选。</p>
+<p>*（4）delimiter（分隔符）：str，可选，指定要读取文件里用于分隔值的字符串，默认值为空格。</p>
+<p>*（5）converters（转换器）：dict，可选，将列号映射到将列字符串解析为所需值的函数的字典。例如，如果第0列是日期字符串：converters &#x3D; {0：datestr2num}。默认值：无。</p>
+<p>*（6）skiprows（跳行）：跳过前几行读取，必须是整型，可选，默认值为0。</p>
+<p>*（7）usecols：指定需要读取的列（必须是整数），0为第一列，例如，usecols &#x3D;（1,2,4）将提取第2列、第3列和第5列。默认值None为读取所有列。</p>
+<p>*（8）unpack（解包）：bool，可选，如果为True，则返回的数组被转置，因此可以使用x，y，z &#x3D; loadtxt（…）解压缩参数。与结构化数据类型一起使用时，将为每个字段返回数组。默认值为False。</p>
+<p>*（9）ndmin（指定返回数组的维度）：整型，可选，返回的数组至少具有ndmin维度。否则将以一维数组形式返回。合法值：0（默认值），1或2。</p>
+<p>*（10）encoding：str，可选，用于解码输入文件的编码。不适用于输入流。特殊值’bytes’启用向后兼容性解决方法，尽可能接收字节数组作为结果，并将’latin1’编码字符串传递给转换器。重写此值以接收unicode数组并将字符串作为输入传递给转换器。如果设置为“无”，则使用系统默认值。默认值为’bytes’。</p>
+<p>*（11）max_rows读取指定范围的行内容：整型，可选，在跳过指定行后，读取max_rows行内容。默认是读取所有行。</p>
+<p><img src="/Numpy%E8%A1%A5%E5%85%85.assets/image-20211101050632607.png" alt="image-20211101050632607"></p>
+<h3 id="（3）使用正则表达式解析从文本文件构造数组"><a href="#（3）使用正则表达式解析从文本文件构造数组" class="headerlink" title="（3）使用正则表达式解析从文本文件构造数组"></a>（3）使用正则表达式解析从文本文件构造数组</h3><p>函数fromregex(file,regexp,dtype, encoding&#x3D;None)，</p>
+<p>*（1）file，要读取的文件名或文件对象。</p>
+<p>*（2）regexp，用于解析文件的正则表达式，正则表达式中的组对应于dtype中的字段。</p>
+<p>*（3）dtype，指定生成数组的数据类型，可以指定类型值，也可以时集合类型。</p>
+<p>*（4）encoding，字符串，可选。用于解码输入文本文件的编码。</p>
+<p>with open(‘test.dat’, ‘w’) as f:</p>
+<p>​    f.write(“2000 Tom\n3000 Go\n3333  John”)</p>
+<p>regexp &#x3D; r”(\d+)\s+(…)” #匹配数字(\d+)，空白\s+，任何东西(…)</p>
+<p>output &#x3D; np.fromregex(‘test.dat’, regexp,[(‘Number’, np.int64), (‘key’, ‘S3’)])</p>
+<p>output</p>
+<p><img src="/Numpy%E8%A1%A5%E5%85%85.assets/image-20211101051157264.png" alt="image-20211101051157264"></p>
+<h2 id="2-二进制文件"><a href="#2-二进制文件" class="headerlink" title="2.二进制文件"></a>2.二进制文件</h2><h3 id="（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件"><a href="#（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件" class="headerlink" title="（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件"></a>（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件</h3><p>*以二进制数据形式存储数据的文件，用专业工具（如Debug、WinHex、U_Edit）打开时往往显示的是十六进制（相比二进制十六进制更方便读写）。图形文件、可执行程序、后缀名为bin的驱动程序都属于二进制文件。</p>
+<p>*将数组保存为NumPy（扩展名为.npy）格式的二进制文件。</p>
+<p>函数save(file, arr,allow_pickle&#x3D;True, fix_imports&#x3D;True)</p>
+<p>*（1）file，指定需要保存的Numpy格式的二进制格式的文件名。</p>
+<p>*（2）arr，类似数组的需要存储的数据对象。</p>
+<p>*（3）allow_pickle，在默认值True情况下允许使用Python pickles保存对象数组；若为False则禁止使用pickle方式。</p>
+<p>*（4）fix_imports，默认值为True，则pickle将尝试将新的Python 3名称映射到Python 2中使用的旧模块名称，以便使用Python 2可读取pickle数据流。</p>
+<p>A1&#x3D;np.arange(9).reshape(3,3)</p>
+<p>np.save(‘testB’,A1)         </p>
+<h3 id="（2）从-npy，-npz或pickled文件加载数组或pickle对象"><a href="#（2）从-npy，-npz或pickled文件加载数组或pickle对象" class="headerlink" title="（2）从.npy，.npz或pickled文件加载数组或pickle对象"></a>（2）从.npy，.npz或pickled文件加载数组或pickle对象</h3><p>函数load(file,mmap_mode&#x3D;None,allow_pickle&#x3D;True,fix_imports&#x3D;True,encoding&#x3D;’ASCII’)</p>
+<p>* （1）file，指定需要读取的二进制文件名，字符串、pathlib.Path。</p>
+<p>* （2）mmap_mode，读写模式，可选参数值包括了None、’r+’、’w+’、’c’。  如果不是None，则使用给定模式对文件进行内存映射。它可以像任何ndarray一样访问和切片。 内存映射对于访问大型文件的小片段而不将整个文件读入内存特别有用。</p>
+<p>* （3）allow_pickle，布尔，允许加载存储在npy文件中的pickled对象数组。 禁止pickle的原因包括安全性，因为加载pickle数据可以执行任意代码。 如果不允许使用pickle，则加载对象数组将失败。默认值True。pickle模块用来实现python对象的序列化和反序列化。通常地pickle将python对象序列化为二进制流或文件。</p>
+<p>* （4）fix_imports，布尔，仅在Python 3上加载Python 2生成的pickle文件时才有用，其中包括包含对象数组的npy &#x2F; npz文件。</p>
+<p>* （5）encoding，读取Python 2字符串时要使用的编码。 仅在Python 3中加载Python 2生成的pickle文件时才有用，其中包括包含对象数组的npy &#x2F; npz文件。 不允许使用“latin1”，“ASCII”和“bytes”以外的值，因为它们可能会破坏数值数据。 默认值’ASCII’。</p>
+<p>B1&#x3D;np.load(‘testB.npy’)               #读取上列生成的二进制文件</p>
+<p>B1</p>
+<h3 id="3-多个数组以未压缩-npz格式保存到单个文件中"><a href="#3-多个数组以未压缩-npz格式保存到单个文件中" class="headerlink" title="(3)多个数组以未压缩.npz格式保存到单个文件中"></a>(3)多个数组以未压缩.npz格式保存到单个文件中</h3><p>函数savez（file,*args,**kwds)</p>
+<p>x1&#x3D;np.linspace(1,10,10)</p>
+<p>y1&#x3D;np.sin(x1)</p>
+<p>np.savez(‘Z1’,x1,y1)</p>
+<p>z1&#x3D;np.load(‘Z1.npz’)</p>
+<p>for get in Z1.items():</p>
+<p>​	print(get)</p>
+<p>​	print(type(get))</p>
+<h3 id="4-根据文本或二进制文件中的数据构造数组"><a href="#4-根据文本或二进制文件中的数据构造数组" class="headerlink" title="(4)根据文本或二进制文件中的数据构造数组"></a>(4)根据文本或二进制文件中的数据构造数组</h3><p>函数fromfile(file,dtype&#x3D;float,count&#x3D;-1,sep&#x3D;’’)</p>
+<p>file文件名字</p>
+<p>dtype要生成的数组类型</p>
+<p>count要读取的文件的项目数，-1表示所有项目</p>
+<p>sep为项目之间的分隔符</p>
+<p>z1&#x3D;np.fromfile(‘a.jpg’)</p>
+<p>z1</p>
+<h2 id="3-其他文件"><a href="#3-其他文件" class="headerlink" title="3.其他文件"></a>3.其他文件</h2><p>通用数据源文件（文件，http，ftp，…）</p>
+<p>DataSource(destpath&#x3D;’.’)对象，DataSource对象的方法支持可以是本地文件或远程文件&#x2F; URL的操作。 文件也可以是压缩的或未压缩的。 DataSource对象隐藏了下载文件的一些低级细节，允许简单地设置有效的文件路径（或URL）并获取文件对象。参数destpath，指定下载源文件的目录的路径；当destpath值为None，将创建一个临时目录，默认路径是当前目录。</p>
+<p>ds&#x3D;np.DataSource(path.abspath(path.curdir))</p>
+<p>if ds.exists(r’<a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;">https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;</a>):</p>
+<p>​		ds.open(r’<a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;">https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;</a>)</p>
+<p>else:</p>
+<pre><code>     print(&#39;没有文件下载&#39;)
+</code></pre>
+<p>​     </p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Linda</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2020/05/25/Numpy%E8%A1%A5%E5%85%85/">http://example.com/2020/05/25/Numpy%E8%A1%A5%E5%85%85/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Linda</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                                    <span class="chip bg-color">数据分析</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2020/05/25/myBlog/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="myBlog">
+                        
+                        <span class="card-title">myBlog</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Linda
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%88%91%E7%9A%84%E5%8D%9A%E5%AE%A2/">
+                        <span class="chip bg-color">我的博客</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/25/%E6%AD%A3%E5%88%99/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="正则">
+                        
+                        <span class="card-title">正则</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Linda
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%AD%A3%E5%88%99/">
+                        <span class="chip bg-color">正则</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">Linda</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2393637887@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2393637887" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2393637887" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>

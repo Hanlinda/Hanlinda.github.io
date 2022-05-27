@@ -1,0 +1,1385 @@
+<!DOCTYPE HTML>
+<html lang="en 网站语言">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="python笔记, LindaBlog">
+    <meta name="description" content="python 笔记
+
+  Xshll:     用户: pyvip    密码:pythonvip        
+
+
+
+  MySQL:                                             *
+
+
+  ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    
+
+    <title>python笔记 | LindaBlog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-3.6.0.min.js"></script>
+
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">LindaBlog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">LindaBlog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/blinkfox/hexo-theme-matery" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/blinkfox/hexo-theme-matery" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">python笔记</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/python/">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-07-27
+                </div>
+                
+
+                
+
+                
+
+                
+
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>python 笔记</p>
+<ul>
+<li><pre><code>  Xshll:     用户: pyvip    密码:pythonvip        
+</code></pre>
+</li>
+<li></li>
+<li><pre><code>  MySQL:                                             *
+</code></pre>
+</li>
+<li><pre><code>  用户         密码                              *
+</code></pre>
+</li>
+<li><pre><code>  root        qwe123                             *
+</code></pre>
+</li>
+<li><pre><code>  admin      Root110qwe                          *
+</code></pre>
+</li>
+<li><pre><code>  develop    QWEqwe123           
+</code></pre>
+<a target="_blank" rel="noopener" href="https://www.cnblogs.com/jpwz/p/12449391.html">https://www.cnblogs.com/jpwz/p/12449391.html</a></li>
+</ul>
+<p>python帮助文档 <a target="_blank" rel="noopener" href="https://www.w3school.com.cn/python/python_arrays.asp">https://www.w3school.com.cn/python/python_arrays.asp</a> <a target="_blank" rel="noopener" href="https://www.runoob.com/python/python-built-in-functions.html">https://www.runoob.com/python/python-built-in-functions.html</a><br>css:<a target="_blank" rel="noopener" href="https://www.w3school.com.cn/css/css_text_spacing.asp">https://www.w3school.com.cn/css/css_text_spacing.asp</a></p>
+<p>学习网站：w3cschool - 编程狮，随时随地学编程</p>
+<p>python的关键字：<br>False               def                 if                  raise<br>None                del                 import              return<br>True                elif                in                  try<br>and                 else                is                  while<br>as                  except              lambda              with<br>assert              finally             nonlocal            yield<br>break               for                 not<br>class               from                or<br>continue            global              pass       </p>
+<p>元素，列表，字符串—切片取值格式：[索引：索引：步长和方向]</p>
+<p>python字符串的方法：<br>[‘<strong>add</strong>‘, ‘<strong>class</strong>‘, ‘<strong>contains</strong>‘, ‘<strong>delattr</strong>‘, ‘<strong>dir</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>eq</strong>‘, ‘<strong>format</strong>‘, ‘<strong>ge</strong>‘, ‘<strong>getattribute</strong>‘, ‘<strong>getitem</strong>‘, ‘<strong>getnewargs</strong>‘, ‘<strong>gt</strong>‘, ‘<strong>hash</strong>‘, ‘<strong>init</strong>‘, ‘<strong>init_subclass</strong>‘,<br> ‘<strong>iter</strong>‘, ‘<strong>le</strong>‘, ‘<strong>len</strong>‘, ‘<strong>lt</strong>‘, ‘<strong>mod</strong>‘, ‘<strong>mul</strong>‘, ‘<strong>ne</strong>‘, ‘<strong>new</strong>‘, ‘<strong>reduce</strong>‘, ‘<strong>reduce_ex</strong>‘, ‘<strong>repr</strong>‘, ‘<strong>rmod</strong>‘, ‘<strong>rmul</strong>‘, ‘<strong>setattr</strong>‘, ‘<strong>sizeof</strong>‘, ‘<strong>str</strong>‘, ‘<strong>subclasshook</strong>‘,<br> ‘capitalize’, ‘casefold’, ‘center’, ‘count’, ‘encode’, ‘endswith’, ‘expandtabs’, ‘find’, ‘format’, ‘format_map’, ‘index’, ‘isalnum’, ‘isalpha’, ‘isdecimal’, ‘isdigit’, ‘isidentifier’,<br> ‘islower’, ‘isnumeric’, ‘isprintable’, ‘isspace’, ‘istitle’, ‘isupper’, ‘join’, ‘ljust’, ‘lower’, ‘lstrip’, ‘maketrans’, ‘partition’, ‘replace’, ‘rfind’, ‘rindex’, ‘rjust’, ‘rpartition’,<br> ‘rsplit’, ‘rstrip’, ‘split’, ‘splitlines’, ‘startswith’, ‘strip’, ‘swapcase’, ‘title’, ‘translate’, ‘upper’, ‘zfill’]<br>python 集合俩种定义的方法<br>{a,b,c}<br>set()<br>python 集合的三种运算<br>s1 &amp; s2 交集<br>s1 | s2 并集<br>s1 - s2 差集<br>python 集合的方法<br>a.isdisjoint(b) 判断是否有交集 有的话返回True 没有交集的话返回False<br>​<br>b.issubset(a) 判断b是不是a的子集，是的话返回True，不是的话返回False,通俗来说b里面的值是否在a里面存在，存在的话返回True,不存在的话返回False<br>​<br>a.issuperset(b) 判断是否是b的父集，通俗来说就是判断a里面的值是否包好b里面的值，包含的话，返回True 不包含的话，返回False<br>python 集合的增删改查<br>add 增加<br>pop 踢出一个元素<br>remove 删除一个元素<br>update 更新元素（可迭代）相当于序列，可更新任何序列类型，不可重复元素<br>python 键值对的创建方式<br>a&#x3D;{‘name’:’linda’,’age’:18}<br>dict&#x3D;([{‘a’,1}])</p>
+<p>python 字典的方法<br>a.fromkeys([1,2]) 返回一个新的字典<br>a.setdefault(‘a’) 查询一个键，有的话，查询出来，没有的话自动创建默认值，可以手动创建 a.setdefault(‘a’,’haha’)<br>a.pop(‘a’) 必须指定一个键才可以踢走<br>a.popitem()随机踢走一个键值对<br>a.update()更新键值对<br>a.get() 通过键获取值<br>a.keys() 取字典里面的所有键<br>a.values() 取字典里的所有值<br>a.items() 取字典里的所有的键值对<br>列表的方法<br>list.append() 往列表后追加一个元素<br>​<br>list.clear()清楚列表中的元素<br>​<br>list.copy() 复制元素<br>​<br>list.count(1) 计数<br>​<br>list.except([123]) 添加一个元素<br>​<br>list.reverse():   反向从大到小的排序列表中的元素<br>​<br>list.sort():     对原列表进行从小到大排序<br>​<br>list.insert(1，obj) 添加一个元素<br>​<br>list.index() 查看某个下标的元素<br>​<br>list.pop()随机踢出一个元素<br>​<br>list.remove() 删除一个元素<br>字符串格式化<br>%c	格式化字符及其ASCII码<br>%s	格式化字符串<br>%d	格式化整数<br>%u	格式化无符号整型<br>%o	格式化无符号八进制数<br>%x	格式化无符号十六进制数<br>%X	格式化无符号十六进制数（大写）<br>%f	格式化浮点数字，可指定小数点后的精度<br>%e	用科学计数法格式化浮点数<br>%E	作用同%e，用科学计数法格式化浮点数<br>%g	%f和%e的简写<br>%G	%F 和 %E 的简写<br>%p	用十六进制数格式化变量的地址<br>format<br>print(‘{:.2f}’.format(13.133333333)) 保留俩位效数<br>print(“{:.2%}”.format(0.3333))   百分比格式化<br>print(“{:x}”.format(666))    转换成十六进制<br>print(“{:o}”.format(666))  转换成八进制<br>print(‘{a:&gt;10}’.format(a&#x3D;12.3,b&#x3D;13.44)) 右对齐 长度为10<br>print(‘{a:&gt;10}’.format(a&#x3D;12.3,b&#x3D;13.44)) 左对齐 长度为10<br>print(‘{a:1&lt;10},{b:1&lt;10}’.format(a&#x3D;12.3,b&#x3D;13.44)) 数字补x (填充右边, 宽度为10)<br>print(‘{a:9^10}’.format(a&#x3D;11)) 俩边对齐<br>​<br>​<br>控制流程<br>if else 判断 案列：<br>a&#x3D; int(input(“请输入您的体重：（g）”))<br>b&#x3D; int(input(“请输入您的身高：（cm）”))<br>​<br>if a&gt;&#x3D;60 and b&lt;&#x3D;180:<br>    print(“您的身高体重合格！”)<br>elif a&lt;&#x3D;60 and b&gt;&#x3D;180:<br>    print(“您的身高体重不合格！”)<br>else:<br>    print(“请输入正确的参数！”)<br>while 循环<br>a&#x3D;[1,23,23,24,2]<br>i&#x3D;0<br>while i &lt;len(a):<br>    print(a[i])<br>    i+&#x3D;1<br>else:<br>    print(“判断结束”)<br>for循环<br>a&#x3D;[1,23,23,2,42,4]<br>for i in range(7):<br>    print(i)<br>函数基础<br>函数作用：对代码的可维护性高，函数就是一个储存代码容器<br>函数名：可进行调用函数名<br>必备参数，必须要在参数括号存在而且放在前面，之后才能放默认参数，默认参数可传可不传<br>不定长参数，*args一个星号的代表元组不定长参数，**kwargs俩个参数代表字典类型的参数<br>参数没有类型的可传任何类型，比如字符串，列表，什么的，还有对象<br>关键字参数就是 比如：func(a&#x3D;1,b&#x3D;2)<br>内置函数<br>常用的：<br>len(a)  长度<br>​<br>min(a)  小<br>max(a)  大<br>sorted(a) 排序<br>reversed(a)<br>list(reversed(a)) (逆序)<br>sum(a)  求和<br>​<br>bin(12)   2进制<br>oct(8)    8进制<br>hex(11)   16进制<br>ord(‘a’)  # 97         # ascii<br>ord(‘A’)  # 65<br>chr(97)   # ‘a’<br>chr(65)   # ‘A’<br>li &#x3D; [‘a’,’b’,’c’,’d’]<br>enumerate(li)<br>list(enumerate(li))    枚举    把索引返回出来<br>dict(enumerate(li))           元素跟索引对应起来<br>enumerate() 函数用于将一个可遍历的数据对象(如列表、元组或字符串)组合为一个索引序列，同时列出数据和数据下标<br>start – 下标起始位置。<br>li &#x3D; [‘a’,’b’,’c’]</p>
+<h1 id="enumerate-li"><a href="#enumerate-li" class="headerlink" title="enumerate(li)"></a>enumerate(li)</h1><p>a &#x3D; list(enumerate(li,100))<br>print(a)<br>for i ,j  in enumerate(li):<br>    print(i,j)</p>
+<p>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>a&#x3D;’1+2+3’<br>eval(a)转换成表达式执行<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>ccc&#x3D;’’’<br>a&#x3D;1<br>b&#x3D;2<br>print(a+b)<br>‘’’<br>print(exec(ccc))执行以string类型存储的Python代码<br>​<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>filter()<br>def func(x):<br>    return x &gt; 10<br>li &#x3D; [2,5,8,10,22,44]<br>list（filter(func,li)）   过滤函数，过滤条件<br>​<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>map()<br>def func2(num):<br>    return num * 10<br>​<br>l2 &#x3D; [1,2,3,4,5]<br>map(func2,l2) 函数对象 ， 可迭代对象<br>list(map(func2,l2))<br>&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;<br>zip()<br>t1 &#x3D; [1,2,3,4]<br>t2 &#x3D; [‘a’,’b’,’c’,’d’]<br>list(zip(t1,t2)) 配对<br>​<br>​<br>高级的：<br>any()	eval()	isinstance()	pow()	sum()<br>basestring()	execfile()	issubclass()	print()	super()<br>abs()	divmod()	input()	open()	staticmethod()<br>all()	enumerate()	int()	ord()	str()<br>bin()	file()	iter()	property()	tuple()<br>bool()	filter()	len()	range()	type()<br>bytearray()	float()	list()	raw_input()	unichr()<br>callable()	format()	locals()	reduce()	unicode()<br>chr()	frozenset()	long()	reload()	vars()<br>classmethod()	getattr()	map()	repr()	xrange()<br>cmp()	globals()	max()	reverse()	zip()<br>compile()	hasattr()	memoryview()	round()	import()<br>complex()	hash()	min()	set()	<br>delattr()	help()	next()	setattr()	<br>dict()	hex()	object()	slice()	<br>dir()	id()	oct()	sorted()	exec 内置表达式<br>匿名函数 也称语法糖把简单的函数写成一行的形式<br>x&#x3D;[1,2,3,4,5]print(list(filter(lambda x: x &gt; 1, x)))<br>函数的作用域</p>
+<h6 id="修改全局变量：global"><a href="#修改全局变量：global" class="headerlink" title="修改全局变量：global"></a>修改全局变量：global</h6><p>​</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">aa=1</span><br><span class="line">def func():</span><br><span class="line">    global aa # </span><br><span class="line">    aa+=1</span><br><span class="line">    print(aa)</span><br><span class="line">func()</span><br></pre></td></tr></table></figure>
+<p>​</p>
+<h6 id="修改局部变量：nonlocal"><a href="#修改局部变量：nonlocal" class="headerlink" title="修改局部变量：nonlocal"></a>修改局部变量：nonlocal</h6><p>def func():<br>    aa&#x3D;1<br>    def func1():<br>        nonlocal aa<br>        aa&#x3D;aa+1<br>        print(aa)<br>    return func1()<br>func()<br>​<br>函数的嵌套<br>def f1():<br>    print(“f1”)<br>    def f2():<br>        print(“f2”)<br>    return f2()<br>f1()<br>闭包<br>函数里面嵌套函数，外层返回内层函数的函数体<br>递归<br>函数自己调用自己，递归是有深度的，递归一定要有终止条件<br>函数的回调<br>把一个函数传到另一个地方<br>查找内置函数：<br>dir(builtins)</p>
+<p>内置函数：<br>[‘ArithmeticError’, ‘AssertionError’, ‘AttributeError’, ‘BaseException’, ‘BlockingIOError’, ‘BrokenPipeError’, ‘BufferError’, ‘BytesWarning’, ‘ChildProcessError’, ‘ConnectionAbortedError’, ‘ConnectionError’, ‘ConnectionRefusedError’, ‘ConnectionResetError’, ‘DeprecationWarning’, ‘EOFError’, ‘Ellipsis’, ‘EnvironmentError’, ‘Exception’, ‘False’, ‘FileExistsError’, ‘FileNotFoundError’, ‘FloatingPointError’, ‘FutureWarning’, ‘GeneratorExit’, ‘IOError’, ‘ImportError’, ‘ImportWarning’, ‘IndentationError’, ‘IndexError’, ‘InterruptedError’, ‘IsADirectoryError’, ‘KeyError’, ‘KeyboardInterrupt’, ‘LookupError’, ‘MemoryError’, ‘ModuleNotFoundError’, ‘NameError’, ‘None’, ‘NotADirectoryError’, ‘NotImplemented’, ‘NotImplementedError’, ‘OSError’, ‘OverflowError’, ‘PendingDeprecationWarning’, ‘PermissionError’, ‘ProcessLookupError’, ‘RecursionError’, ‘ReferenceError’, ‘ResourceWarning’, ‘RuntimeError’, ‘RuntimeWarning’, ‘StopAsyncIteration’, ‘StopIteration’, ‘SyntaxError’, ‘SyntaxWarning’, ‘SystemError’, ‘SystemExit’, ‘TabError’, ‘TimeoutError’, ‘True’, ‘TypeError’, ‘UnboundLocalError’, ‘UnicodeDecodeError’, ‘UnicodeEncodeError’, ‘UnicodeError’, ‘UnicodeTranslateError’, ‘UnicodeWarning’, ‘UserWarning’, ‘ValueError’, ‘Warning’, ‘WindowsError’, ‘ZeroDivisionError’, ‘<strong>build_class</strong>‘, ‘<strong>debug</strong>‘, ‘<strong>doc</strong>‘, ‘<strong>import</strong>‘, ‘<strong>loader</strong>‘, ‘<strong>name</strong>‘, ‘<strong>package</strong>‘, ‘<strong>spec</strong>‘, ‘abs’, ‘all’, ‘any’, ‘ascii’, ‘bin’, ‘bool’, ‘breakpoint’, ‘bytearray’, ‘bytes’, ‘callable’, ‘chr’, ‘classmethod’, ‘compile’, ‘complex’, ‘copyright’, ‘credits’, ‘delattr’, ‘dict’, ‘dir’, ‘divmod’, ‘enumerate’, ‘eval’, ‘exec’, ‘exit’, ‘filter’, ‘float’, ‘format’, ‘frozenset’, ‘getattr’, ‘globals’, ‘hasattr’, ‘hash’, ‘help’, ‘hex’, ‘id’, ‘input’, ‘int’, ‘isinstance’, ‘issubclass’, ‘iter’, ‘len’, ‘license’, ‘list’, ‘locals’, ‘map’, ‘max’, ‘memoryview’, ‘min’, ‘next’, ‘object’, ‘oct’, ‘open’, ‘ord’, ‘pow’, ‘print’, ‘property’, ‘quit’, ‘range’, ‘repr’, ‘reversed’, ‘round’, ‘set’, ‘setattr’, ‘slice’, ‘sorted’, ‘staticmethod’, ‘str’, ‘sum’, ‘super’, ‘tuple’, ‘type’, ‘vars’, ‘zip’]<br><img src="F:\desktop\图片接收\微信截图_20201017205818.png"></p>
+<p><img src="F:\desktop\图片接收\微信截图_20201017204024.png"></p>
+<p><img src="F:\desktop\图片接收\微信截图_20201017214812.png"></p>
+<p><img src="F:\desktop\图片接收\微信截图_20201017215650.png"></p>
+<p>正则表达式<br>用途：是一个工具，提取字符串，匹配字符串。<br>​<br>re.findall 匹配字符串<br>​<br>re.match 尝试从字符串的起始位置匹配一个模式，匹配成功，返回的是一个匹配对象（这个对象包含了我们匹配的信息），如果不是起始位置匹配成功的话，match()返回的是空<br>​<br>group：获取内容<br>​<br>span()：取索引的值<br>​<br>re.srarch：扫描整个字符串，匹配成功 返回的是一个匹配对象（这个对象包含了我们匹配的信息）<br>元字符：是一些符号，可以拥有一些特殊含义</p>
+<p>.  :匹配任意一个字符</p>
+<p>[] : 匹配[]范围里面的内容</p>
+<p>\d ：匹配所有的数字</p>
+<p>r:转义反斜杠</p>
+<p>\D:匹配所有的非数字</p>
+<p>\s：匹配空白</p>
+<p>\S: 匹配非空白的内容</p>
+<p>\w:匹配非特殊符号的字符</p>
+<p>\W:匹配特殊符号的字符</p>
+<p>*:匹配前一个字符出现0次或者无限次，即可有可无</p>
+<p>+：匹配前一个字符出现1次或者无限次，即至少一次</p>
+<p>？：匹配前一个字符出现1次或者0次，即要么有1次，要么没有</p>
+<p>{m}:匹配前一个字符出现m次</p>
+<p>{m,}:匹配前一个字符至少出现m次</p>
+<p>{m,n}:匹配前一个字符出现从m到n次</p>
+<p>^ ：匹配字符串开头</p>
+<p>$：匹配字符串结尾</p>
+<p>\b:匹配一个单词的边界</p>
+<p>\B：匹配非单词边界</p>
+<p>|：分组匹配，选择元字符</p>
+<p>.*: 贪婪模式，后面的都匹配</p>
+<p>.?: 非贪婪模式，后面的不匹配</p>
+<p>Mysql 创建用户：<br>1.create user ‘hanlinda‘@’%’  identified by ‘qwe123’;</p>
+<p>2.grant all on * . * to ‘hanlinda‘@’%’;</p>
+<p>3.flush privileges;</p>
+<p>Mysql 修改表结构<br>修改表名：</p>
+<p>alter table stu rename stu2;</p>
+<p>修改字段名：</p>
+<p>alter table stu change name age int;</p>
+<p>添加字段：</p>
+<p>alter table stu add name char(4);</p>
+<p>alter table stu add name char(4) first ;</p>
+<p>alter table stu add name char(4) after id;</p>
+<p>删除字段：</p>
+<p>alter table stu drop id</p>
+<p>查询表结构:</p>
+<p>desc stu;</p>
+<p>show create table stu;</p>
+<p>表约束<br>约束是一种限制，通过对表中的数据做出限制</p>
+<p>默认约束：age int default 18</p>
+<p>非空约束：id int not null</p>
+<p>唯一约束：id int unique key</p>
+<p>自增长约束：id int auto_increment</p>
+<p>主键：primary key 非空且唯一</p>
+<p>外键：foreign key (id_b) references stu(id_a)</p>
+<p>redis 概念<br>redis的端口是 6379</p>
+<p>进入 ：redis-cli</p>
+<p>退出 :exit</p>
+<p>切换数据库：select n</p>
+<p>String 类型<br>添加</p>
+<p>set key value</p>
+<p>查看</p>
+<p>get key</p>
+<p>追加</p>
+<p>append key newvalue</p>
+<p>删除</p>
+<p>del key</p>
+<p>查看所有的key</p>
+<p>keys *</p>
+<p>修改key</p>
+<p>rename key newkey</p>
+<p>过期时间<br>设置</p>
+<p>expire key 20</p>
+<p>查看</p>
+<p>ttl key</p>
+<p>设置多个key</p>
+<p>mset key1 value1 key2 value2</p>
+<p>获取多个key</p>
+<p>mget key1 value1 key2 value2</p>
+<p>运算</p>
+<p>incr num  加一</p>
+<p>decr num 减一</p>
+<p>incrby num 100 加100</p>
+<p>decrby num 100 减100</p>
+<p>列表操作<br>添加数据</p>
+<p>lpush li 12345</p>
+<p>rpush </p>
+<p>查看数据</p>
+<p>lrange li 0 -1</p>
+<p>lindex li 0</p>
+<p>修改数据</p>
+<p>lset li 0 444</p>
+<p>删除数据</p>
+<p>rpop li</p>
+<p>lpop li</p>
+<p>指定删除</p>
+<p>lrem key count value</p>
+<p>哈希类型<br> 添加数据</p>
+<p>hset user name xiaohua age 15</p>
+<p>获取数据</p>
+<p>hget user name</p>
+<p>获取所有的value</p>
+<p>hvals user</p>
+<p>删除 </p>
+<p>hdel user fileld</p>
+<p>设置多个</p>
+<p>hmset user name age 18 addr shanghai</p>
+<p>获取多个</p>
+<p>hmget user age addr name </p>
+<p>获取全部</p>
+<p>hgetall user</p>
+<p>查看对数</p>
+<p>hlen</p>
+<p>查看类型</p>
+<p>type</p>
+<p>Set类型<br>添加数据</p>
+<p>sadd set1 1 2 3 4</p>
+<p>查看数据</p>
+<p>smembers set1</p>
+<p>随机删除</p>
+<p>spop set1</p>
+<p>指定删除</p>
+<p>srem set1 1</p>
+<p>移动</p>
+<p>smove set1 set2 1</p>
+<p>判断是否存在某个值</p>
+<p>sismember set 1</p>
+<p>交集</p>
+<p>sinter set1 set2</p>
+<p>sinterstore newset set1 set2</p>
+<p>并集</p>
+<p>sunion set1 set2</p>
+<p>sunionstore new set set1 set2</p>
+<p>差集</p>
+<p>sdiff set1 set2</p>
+<p>sdiffstore newset set1 set2</p>
+<p>获取集合的个数</p>
+<p>scard key</p>
+<p>随机选取</p>
+<p>srandmember key</p>
+<p>有序集合<br>添加数据</p>
+<p>zadd key score value</p>
+<p>查看数据</p>
+<p>zrange key 0 -1</p>
+<p>删除数据</p>
+<p>zrem key value</p>
+<p>索引删除</p>
+<p>zrmrangebyscore zset1 1 3</p>
+<p>MongoDB实操<br>进入：mongo</p>
+<p>退出：exit</p>
+<p>查看所有数据库：show dbs</p>
+<p>创建&#x2F;切换数据库：use db</p>
+<p>删除数据库：db.dropDatabase()</p>
+<p>查看当前所在的数据库：db</p>
+<p>查看所有集合：show collections</p>
+<p>创建集合：db.createCollection(‘stu’)</p>
+<p>删除集合：db.stu.drop()</p>
+<p>文档操作<br>添加文档：</p>
+<p>db.stu.insert({name:’小红’})</p>
+<p>添加文档多条：</p>
+<p>db.stu.insert([{name:’小明’}])</p>
+<p>查询文档：</p>
+<p>db.stu.find()</p>
+<p>db,stu.find().prrtty() 美观查询</p>
+<p>db.stu.find({name:’小明’})</p>
+<p>db.stu.find({name:’小明’,age:0})</p>
+<p>噩梦查询：</p>
+<p>db.stu.find(</p>
+<pre><code>&#123;$or:
+
+[
+
+&#123;$and:[&#123;sex:&#39;女&#39;&#125;,&#123;age:18&#125;]&#125;,
+
+&#123;$and:[&#123;sex:男&quot;&#125;,&#123;age:&#123;$gt:18&#125;&#125;]&#125;
+
+]
+</code></pre>
+<p>}</p>
+<p>)</p>
+<p>更新：</p>
+<p>db.stu.update({name:’小明’}，name:’小红’) 修改第一条</p>
+<p>db.stu.update({name:‘小明’}，{$set:{age:18}}) 指定</p>
+<p>db.stu.update({name:‘小明’}，{$set:{age:18}},{multi:true}) 全部修改</p>
+<p>删除：</p>
+<p>db.table.remove({}) 删除所有</p>
+<p>db.table.remove({sex:’男’}) 删除满足的</p>
+<p>db.table.remove({sex:’男’},{justOne:true}) 删除一条  </p>
+<p>关于端口转发问题：</p>
+<p>用我们的python去连接MongoDB</p>
+<p>api</p>
+<p>client&#x3D;pymongo.MongoClient(‘127.0.0.1’,27017)</p>
+<p>db&#x3D;client[‘mydb’]</p>
+<p>aa&#x3D;db[‘stu’]</p>
+<p>进入vim<br>workon py3env</p>
+<p>vim aaa.py</p>
+<p>事务操作<br>开启事务：</p>
+<p>start transaction;</p>
+<p>事务提交：</p>
+<p>commit;</p>
+<p>回滚：</p>
+<p>rollback;</p>
+<p>python操作Mysql数据库<br>import pymysql<br>​<br>#建立连接<br>conn &#x3D; pymysql.connect(<br>    host&#x3D;’127.0.0.1’,<br>    port&#x3D;3306,<br>    user&#x3D;’root’,<br>    password&#x3D;’qwe123’,<br>    db&#x3D;’data_num_1’,<br>    charset&#x3D;’utf8’<br>)</p>
+<h1 id="print-conn"><a href="#print-conn" class="headerlink" title="print(conn)"></a>print(conn)</h1><p>cur&#x3D;conn.cursor();#定义游标<br>cur.execute(‘insert into aaa VALUE (2,2000)’)<br>a&#x3D;cur.execute(‘select * from aaa’)<br>b&#x3D;cur.fetchone();#查询一条<br>c&#x3D;cur.fetchall()#查询多条<br>conn.commit() #提交事务<br>conn.close() #关闭连接<br>cur.close() #关闭游标<br>python操作Redis数据库<br>import redis<br>red&#x3D;redis.StrictRedis(<br>    host&#x3D;’127.0.0.1’,<br>    port&#x3D;’6379’,<br>    decode_responses&#x3D;True<br>)<br>print(red)<br>red.set(‘abc’,’张三’)<br>b&#x3D;red.get(‘abc’)<br>print(b)<br>python操作mongodb<br>import pymongo<br>​<br>client&#x3D;pymongo.MongoClient(‘127.0.0.1’,27017)<br>db&#x3D;client[‘mydb’]<br>c&#x3D;db[‘stu’]<br>data&#x3D;c.find_one()<br>for i in data:<br>    print(i)<br>json模块<br>json.dumps(obj) 序列化过程，把字典转换成json数据</p>
+<p>json.loads(s) 反序列化过程，把json数据转换成字典</p>
+<p>json.dump(obj,fp) 转换为josn并保存到文件中</p>
+<p>josn.load(fp) 从文件中读取josn，并转化为python数据</p>
+<p>import json<br>di&#x3D;{<br>    ‘name’:’xiaoming’,<br>    ‘age’:18,<br>    ‘bool’:True,<br>    ‘l1’:[1,2,3],<br>    ‘tu’:(1,2,3)<br>}<br>​<br>j&#x3D;json.dumps(di,indent&#x3D;4,skipkeys&#x3D;True)<br>print(j)<br>p&#x3D;json.loads(j)<br>print(p)<br>​<br>with open(‘test.json’,’w+’) as f:<br>    json.dump(di,f,indent&#x3D;4)<br>​<br>with open(‘test.json’,’r’) as f:<br>    a&#x3D;json.load(f)<br>    print(a)<br>hashlib模块<br>pwd&#x3D;’123456’</p>
+<p>hash&#x3D;hashlib.md5(pwd.encode()) 参数一定要是bytes类型的</p>
+<p>hash.hexdigest()</p>
+<p>hash.digest()</p>
+<p>import base64<br>pwd&#x3D;’123’<br>hash&#x3D;hashlib.md5(pwd.encode())<br>print(hash.hexdigest())<br>print(hash.digest())<br>base64模块<br>import base64<br>url&#x3D;’<a target="_blank" rel="noopener" href="https://www.shiguangkey.com/&#39;.encode()">https://www.shiguangkey.com/&#39;.encode()</a><br>a&#x3D;base64.urlsafe_b64encode(url)<br>print(a)<br>url1&#x3D;b’aHR0cHM6Ly93d3cuc2hpZ3VhbmdrZXkuY29tLw&#x3D;&#x3D;’<br>b&#x3D;base64.urlsafe_b64decode(url1)<br>print(b)<br>模块<br>import datetime<br>a&#x3D;datetime.datetime.now()<br>b&#x3D;datetime.datetime(2020,1,2,10,12)<br>c&#x3D;datetime.date(2020,2,1)<br>d&#x3D;datetime.time(20,17,56)<br>​<br>print(a)<br>print(b)<br>print(c)<br>print(d)<br>​<br>import logging<br>​<br>LOG_FORMAT&#x3D;’%(asctime)s-%(levelname)s-%(message)s’<br>logging.basicConfig(level&#x3D;logging.WARNING,format&#x3D;LOG_FORMAT)<br>​<br>logging.debug(“this is debug”)<br>logging.info(“this is info”)<br>logging.warning(“this is warning”)<br>logging.error(“this is error”)<br>logging.critical(“this is critical”)<br>线程的使用<br>import threading<br>import time<br>​<br>​<br>​<br>def func(name):<br>​<br>        time.sleep(2)<br>        print(“this is %s”% name)<br>​<br>​<br>t1&#x3D;threading.Thread(target&#x3D;func,args&#x3D;(‘小红’,))<br>t2&#x3D;threading.Thread(target&#x3D;func,args&#x3D;(‘小明’,))<br>​<br>t1.start()<br>t2.start()<br>print(t1.getName())<br>print(t2.getName())<br>​<br>​<br>class MyThread(threading.Thread):<br>​<br>    def <strong>init</strong>(self,name):<br>        super().<strong>init</strong>()<br>        self.name&#x3D;name<br>​<br>    def run(self):<br>        while True:<br>            time.sleep(2)<br>            print(“this is %s”%self.name)<br>​<br>t1&#x3D;MyThread(‘小明’)<br>t2&#x3D;MyThread(‘小红’)<br>t1.start()<br>t2.start()<br>​<br>def func():<br>    print(“子线程开始”)<br>    time.sleep(2)<br>    print(“子线程结束”)<br>​<br>#在子线程开启并执行的过程中，主线程是依然会执行自己的任务的，他们互不干扰<br>t1&#x3D;threading.Thread(target&#x3D;func)<br>t1.start()<br>t1.join()   #线程阻塞<br>print(“主线程结束”)<br>​<br>​<br>def func():<br>    print(“子线程开始”)<br>    time.sleep(2)<br>    print(“子线程结束”)<br>​<br>​<br>t1&#x3D;threading.Thread(target&#x3D;func)<br>#守护模式<br>t1.setDaemon(True)<br>#当主线程执行完这一行，主线程后面没有任务了，那么主线程就没有再去等待子线程的执行，主线程关闭了，子线程也关闭<br>t1.start()<br>​<br>print(“主线程结束”)<br>​<br>​<br>#线程间的通信<br>#线程间的竞争问题<br>lock&#x3D;threading.Lock()<br>a&#x3D;0<br>def func1(n):<br>    global a<br>    for i in range(n):<br>        lock.acquire() #加锁<br>        a+&#x3D;1<br>        lock.release() #解锁<br>​<br>def func2(n):<br>    global a<br>    for i in range(n):<br>        lock.acquire()<br>        a-&#x3D;1<br>        lock.release()<br>​<br>t1&#x3D;threading.Thread(target&#x3D;func1,args&#x3D;(1000000,))<br>t2&#x3D;threading.Thread(target&#x3D;func2,args&#x3D;(1000000,))<br>t1.start()<br>t2.start()<br>t1.join()<br>t2.join()<br>print(“线程结束”)<br>print(a)<br>​<br>#线程池<br>from multiprocessing.pool import ThreadPool<br>​<br>pool&#x3D;ThreadPool(4) #自动生成数量为4的线程池<br>​<br>def func():<br>    print(“任务1开始”)<br>    time.sleep(5)<br>    print(“任务1结束”)<br>def func2():<br>    print(“任务2开始”)<br>    time.sleep(5)<br>    print(“任务2结束”)<br>pool.apply_async(func)<br>pool.apply_async(func2)<br>print(“任务已经提交”)<br>pool.close() #关闭提交任务的通道<br>pool.join() #等待结果<br>print(“任务已完成”)<br>​<br>数字进制表示法<br>#默认十进制<br>a&#x3D;103<br>​<br>b&#x3D;0b11010101<br>​<br>c&#x3D;0o1234567<br>​<br>#0123456789 A B C D E F<br>d &#x3D; 0x1A<br>​<br>#string2&#x3D;’123a’<br>#int(string2)#当使用int函数进行转化成数值类型时 参数一定是一个数值字符串字符串中不能包含任何非数值的字符<br>dec &#x3D; input(‘10进制数为：’)<br>print(“转换为二进制为：”, bin(dec))<br>print(“转换为八进制为：”, oct(dec))<br>print(“转换为十六进制为：”, hex(dec))<br>#<br>string1 &#x3D; ‘101010’<br>print(‘二进制字符串转换成十进制数为：’,int(string1, 2))<br>string1 &#x3D; ‘367’<br>print(‘八进制字符串转换成十进制数为：’,int(string1, 8))<br>string3 &#x3D; ‘FFF’<br>print(‘十六进制字符串转换成十进制数为：’,int(string1, 16))<br>​<br>函数参数的类型：POSITINNAL_ONLY(位置参数)，POSITIONAL_OR_KEYWORD(关键字参数)，<br>mysql:关系型数据库<br>​<br>mysql:本质就是一个软件 —数据库软件<br>装有mysql软件的这台服务器（电脑）称之为 mysql服务器<br>​<br>mysql应用中 可以创建多个数据库  一个数据库可以创建多张数据表 每张数据表分为行&#x2F;列<br>​<br>​<br>#查看数据库列表的命令<br>show databases;<br>​<br>#创建数据库的命令：<br>create database 数据库名;<br>​<br>#删除数据库的命令：<br>drop database 数据库名;<br>​<br>#使用数据库的命令：<br>use 数据库名;<br>​<br>#查看数据库中 有哪些数据表：<br>show tables;<br>​<br>#删除数据表：<br>drop table 表名;<br>​<br>#查看数据表结构：<br>desc 数据表;<br>​<br>#查看数据表中所有的数据<br>select <em>（</em>代表查看所有的字段 查看指定的字段：*替换为 字段名1,字段名2…） from 表名 where 限制条件<br>​<br>#添加数据的方式：<br>insert into 表名 (字段名1,字段名2…) values (值1,值2….)<br>#添加一条完整的数据：<br>insert into 表名 values (值1,值2….注意：值的顺序要跟数据表字段的顺序保持一致)<br>​<br>#删除数据<br>delete from 表名 where 限制条件<br>​<br>#修改数据<br>update 表名 set 字段名&#x3D;新值,字段名1&#x3D;新值1… where 限制条件<br>​<br>python 镜像 <a target="_blank" rel="noopener" href="https://pypi.tuna.tsinghua.edu.cn/simple">https://pypi.tuna.tsinghua.edu.cn/simple</a><br>正则表达式：<a target="_blank" rel="noopener" href="https://www.runoob.com/regexp/regexp-syntax">https://www.runoob.com/regexp/regexp-syntax</a>.<br><a target="_blank" rel="noopener" href="https://c.runoob.com/front-end/854">https://c.runoob.com/front-end/854</a><br>正则表达式<br>re.match():尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()会返回None<br>​<br>re.search()：匹配整个字符串，直到找到第一个匹配<br>​<br>re.findall()：在字符串中找到正则表达式所匹配的所以子串，并返回一个列表，如果没有找到匹配的，则返回空列表<br>​<br>re.finditer():和findall类似，在字符串中找到正则表达式所匹配的所以子串，并把它们作为一个迭代器返回<br>​<br>字符  描述<br>[ABC]<br>匹配 […] 中的所有字符，例如 [aeiou] 匹配字符串 “google runoob taobao” 中所有的 e o u a 字母。<br>​<br>​<br>[^ABC]<br>匹配除了 […] 中字符的所有字符，例如 [^aeiou] 匹配字符串 “google runoob taobao” 中除了 e o u a 字母的所有字母。<br>​<br>​<br>[A-Z]<br>[A-Z] 表示一个区间，匹配所有大写字母，[a-z] 表示所有小写字母。<br>​<br>​<br>.<br>匹配除换行符（\n、\r）之外的任何单个字符，相等于 [^\n\r]。<br>​<br>​<br>[\s\S]<br>匹配所有。\s 是匹配所有空白符，包括换行，\S 非空白符，不包括换行。<br>​<br>​<br>\w<br>匹配字母、数字、下划线。等价于 [A-Za-z0-9_]<br>​<br>\cx 匹配由x指明的控制字符。例如， \cM 匹配一个 Control-M 或回车符。x 的值必须为 A-Z 或 a-z 之一。否则，将 c 视为一个原义的 ‘c’ 字符。<br>\f  匹配一个换页符。等价于 \x0c 和 \cL。<br>\n  匹配一个换行符。等价于 \x0a 和 \cJ。<br>\r  匹配一个回车符。等价于 \x0d 和 \cM。<br>\s  匹配任何空白字符，包括空格、制表符、换页符等等。等价于 [ \f\n\r\t\v]。注意 Unicode 正则表达式会匹配全角空格符。<br>\S  匹配任何非空白字符。等价于 [^ \f\n\r\t\v]。<br>\t  匹配一个制表符。等价于 \x09 和 \cI。<br>\v  匹配一个垂直制表符。等价于 \x0b 和 \cK。<br>$   匹配输入字符串的结尾位置。如果设置了 RegExp 对象的 Multiline 属性，则 $ 也匹配 ‘\n’ 或 ‘\r’。要匹配 $ 字符本身，请使用 $。<br>( ) 标记一个子表达式的开始和结束位置。子表达式可以获取供以后使用。要匹配这些字符，请使用 ( 和 )。</p>
+<ul>
+<li>匹配前面的子表达式零次或多次。要匹配 * 字符，请使用 *。</li>
+</ul>
+<ul>
+<li>匹配前面的子表达式一次或多次。要匹配 + 字符，请使用 +。<br>.   匹配除换行符 \n 之外的任何单字符。要匹配 . ，请使用 . 。<br>[   标记一个中括号表达式的开始。要匹配 [，请使用 [。<br>?   匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。要匹配 ? 字符，请使用 ?。<br>\   将下一个字符标记为或特殊字符、或原义字符、或向后引用、或八进制转义符。例如， ‘n’ 匹配字符 ‘n’。’\n’ 匹配换行符。序列 ‘\‘ 匹配 “&quot;，而 ‘(‘ 则匹配 “(“。<br>^   匹配输入字符串的开始位置，除非在方括号表达式中使用，当该符号在方括号表达式中使用时，表示不接受该方括号表达式中的字符集合。要匹配 ^ 字符本身，请使用 ^。<br>{   标记限定符表达式的开始。要匹配 {，请使用 {。<br>|   指明两项之间的一个选择。要匹配 |，请使用 |。</li>
+</ul>
+<ul>
+<li>匹配前面的子表达式零次或多次。例如，zo* 能匹配 “z” 以及 “zoo”。* 等价于{0,}。</li>
+</ul>
+<ul>
+<li>匹配前面的子表达式一次或多次。例如，’zo+’ 能匹配 “zo” 以及 “zoo”，但不能匹配 “z”。+ 等价于 {1,}。<br>?   匹配前面的子表达式零次或一次。例如，”do(es)?” 可以匹配 “do” 、 “does” 中的 “does” 、 “doxy” 中的 “do” 。? 等价于 {0,1}。<br>{n} n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o。<br>{n,}    n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’。<br>{n,m}   m 和 n 均为非负整数，其中n &lt;&#x3D; m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格。<br>面向对象：<br>类方法 静态方法 实例方法有什么区别？<br>类方法顾名思义就是类的方法，我们只需要在方法上标注classmethod装饰器就可以了，类方法是可以被类和实例对象所调用，静态方法就是一个普通的函数，只需要在方法上标注staticmethod装饰器就可以了，而实列方法是一个单例的方法，我们只能用实例去调用，不能用类去调用<br>linux 命令：<br>pwd：   代表当前根目录<br>~：     代表家目录<br>cd:     切换目录<br>&#x2F;：      根目录<br>ls:     查看当前目录下所有的文件<br>ls -l：  以列表的形式查看当前文件夹下的所有文件信息<br>whoami:  查看用户<br>l:       相当于windows系统的快捷方式<br>d:       文件夹<br>-：文件<br>ll:ls-l的缩写<br>clear:清除<br>cd ..&#x2F;:上一级目录<br>ls -a:查看所有的文件包含系统的隐藏文件<br>-：代表上一次工作的目录<br>.&#x2F;:代表当前路径<br>bin目录里的可执行文件可以在系统的任意文件夹中执行<br>&#x2F;usr:非常重要的的目录，用来存放用户安装的应用程序和用户文件、<br>-r 代表删除的目录<br>-f:代表是强制删除没有提示s<br> ll&#x2F;:代表查看根目录<br>删除目录和复制目录，都得加上-r参数；<br>新建用户时，会伴随着用户重名的用户组<br>rwxr-xr-x:前三个代表所属者，第二组代表所属组，第三组代表其他用户的权限<br>虚拟环境<br>​<br>创建虚拟环境：mkvirtualenv 名字<br>​<br>退出虚拟环境：deactivate<br>​<br>查看虚拟环境：lsvirtualenv<br>​<br>删除虚拟环境: rmvirtualenv<br>​<br>运行虚拟环境：workon 名字<br>​<br>​<br>正则<br>用户名匹配:由数字、大小写字母、下划线_和中横线-组成，长度为4到14位，并且不能以数字开头。</li>
+</ul>
+<p>r’^\D[a-z0-9A-Z_-]{3,13}’, ‘sH_8’</p>
+<p>匹配邮箱</p>
+<p>r’^([A-Za-z0-9_-.])+@([A-Za-z0-9_-.])+.([A-Za-z]{2,4})$</p>
+<p>匹配手机号</p>
+<p>r’^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$’</p>
+<p>匹配身份证号。</p>
+<p>r’^[1-9]\d{5}(18|19|20|)\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$’</p>
+<p>匹配URL地址</p>
+<p>r’((ht|f)tps?)://([\w-]+(.[\w-]+)<em>/)</em>[\w-]+(.[\w-]+)<em>/?(?([\w-.,@?^&#x3D;%&amp;:/~+#]</em>)+)?’</p>
+<p>匹配URL地址</p>
+<p>r’((ht|f)tps?)://([\w-]+(.[\w-]+)<em>/)</em>[\w-]+(.[\w-]+)<em>/?(?([\w-.,@?^&#x3D;%&amp;:/~+#]</em>)+)?’</p>
+<p>匹配微信号</p>
+<p>r’^<a href="%5B-_a-zA-Z0-9%5D%7B5,19%7D">a-zA-Z</a>+$’</p>
+<p>匹配车牌号</p>
+<p>r’^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警<br>用户名匹配:由数字、大小写字母、下划线_和中横线-组成，长度为4到14位，并且不能以数字开头。<br>​<br>r’^\D[a-z0-9A-Z_-]{3,13}’, ‘sH_8’<br>​<br>匹配邮箱<br>​<br>r’^([A-Za-z0-9_-.])+@([A-Za-z0-9_-.])+.([A-Za-z]{2,4})$<br>​<br>匹配手机号<br>​<br>r’^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$’<br>​<br>匹配身份证号。<br>​<br>r’^[1-9]\d{5}(18|19|20|)\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$’<br>​<br>匹配URL地址<br>​<br>r’((ht|f)tps?)://([\w-]+(.[\w-]+)<em>/)</em>[\w-]+(.[\w-]+)<em>/?(?([\w-.,@?^&#x3D;%&amp;:/~+#]</em>)+)?’<br>​<br>匹配URL地址<br>​<br>r’((ht|f)tps?)://([\w-]+(.[\w-]+)<em>/)</em>[\w-]+(.[\w-]+)<em>/?(?([\w-.,@?^&#x3D;%&amp;:/~+#]</em>)+)?’<br>​<br>匹配微信号<br>​<br>r’^<a href="%5B-_a-zA-Z0-9%5D%7B5,19%7D">a-zA-Z</a>+$’<br>​<br>匹配车牌号<br>​<br>r’^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警<br><a target="_blank" rel="noopener" href="http://www.electronjs.org/">http://www.electronjs.org/</a> 使用 JavaScript，HTML 和 CSS 构建跨平台的桌面应用程序</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Linda</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="http://example.com/2021/07/27/python%E7%AC%94%E8%AE%B0/">http://example.com/2021/07/27/python%E7%AC%94%E8%AE%B0/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint policy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Linda</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/python/">
+                                    <span class="chip bg-color">python</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+            <div class="card">
+                <a href="/2021/10/27/vip%E7%94%B5%E5%BD%B1%E7%A0%B4%E8%A7%A3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="vip电影破解">
+                        
+                        <span class="card-title">vip电影破解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-10-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Linda
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/08/27/git%E5%91%BD%E4%BB%A4/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git命令">
+                        
+                        <span class="card-title">git命令</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Linda
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='true'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="/libs/aplayer/Meting.min.js"></script>
+
+    
+
+    <div class="container row center-align"
+         style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2019-2022</span>
+            
+            <a href="/about" target="_blank">Linda</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            
+            
+                
+            
+            
+                <span id="busuanzi_container_site_pv">
+                &nbsp;|&nbsp;<i class="far fa-eye"></i>&nbsp;Total visits:&nbsp;
+                    <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+                <span id="busuanzi_container_site_uv">
+                &nbsp;|&nbsp;<i class="fas fa-users"></i>&nbsp;Total visitors:&nbsp;
+                    <span id="busuanzi_value_site_uv" class="white-color"></span>
+            </span>
+            
+            <br>
+
+            <!-- 运行天数提醒. -->
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:2393637887@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=2393637887" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 2393637887" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    
+
+    
+
+    <!-- 雪花特效 -->
+    
+
+    <!-- 鼠标星星特效 -->
+    
+
+     
+        <script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+        <script src="/libs/others/TencentCaptcha.js"></script>
+        <button id="TencentCaptcha" data-appid="xxxxxxxxxx" data-cbfn="callback" type="button" hidden></button>
+    
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
