@@ -530,7 +530,7 @@ f1.dtype
 <p>*（9）ndmin（指定返回数组的维度）：整型，可选，返回的数组至少具有ndmin维度。否则将以一维数组形式返回。合法值：0（默认值），1或2。</p>
 <p>*（10）encoding：str，可选，用于解码输入文件的编码。不适用于输入流。特殊值’bytes’启用向后兼容性解决方法，尽可能接收字节数组作为结果，并将’latin1’编码字符串传递给转换器。重写此值以接收unicode数组并将字符串作为输入传递给转换器。如果设置为“无”，则使用系统默认值。默认值为’bytes’。</p>
 <p>*（11）max_rows读取指定范围的行内容：整型，可选，在跳过指定行后，读取max_rows行内容。默认是读取所有行。</p>
-<p><img src="/Numpy%E8%A1%A5%E5%85%85.assets/image-20211101050632607.png" alt="image-20211101050632607"></p>
+<p><img src="/2020/05/25/Numpy%E8%A1%A5%E5%85%85/image-20211101050632607.png" alt="image-20211101050632607"></p>
 <h3 id="（3）使用正则表达式解析从文本文件构造数组"><a href="#（3）使用正则表达式解析从文本文件构造数组" class="headerlink" title="（3）使用正则表达式解析从文本文件构造数组"></a>（3）使用正则表达式解析从文本文件构造数组</h3><p>函数fromregex(file,regexp,dtype, encoding&#x3D;None)，</p>
 <p>*（1）file，要读取的文件名或文件对象。</p>
 <p>*（2）regexp，用于解析文件的正则表达式，正则表达式中的组对应于dtype中的字段。</p>
@@ -541,7 +541,7 @@ f1.dtype
 <p>regexp &#x3D; r”(\d+)\s+(…)” #匹配数字(\d+)，空白\s+，任何东西(…)</p>
 <p>output &#x3D; np.fromregex(‘test.dat’, regexp,[(‘Number’, np.int64), (‘key’, ‘S3’)])</p>
 <p>output</p>
-<p><img src="/Numpy%E8%A1%A5%E5%85%85.assets/image-20211101051157264.png" alt="image-20211101051157264"></p>
+<p><img src="/2020/05/25/Numpy%E8%A1%A5%E5%85%85/image-20211101051157264.png" alt="image-20211101051157264"></p>
 <h2 id="2-二进制文件"><a href="#2-二进制文件" class="headerlink" title="2.二进制文件"></a>2.二进制文件</h2><h3 id="（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件"><a href="#（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件" class="headerlink" title="（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件"></a>（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件</h3><p>*以二进制数据形式存储数据的文件，用专业工具（如Debug、WinHex、U_Edit）打开时往往显示的是十六进制（相比二进制十六进制更方便读写）。图形文件、可执行程序、后缀名为bin的驱动程序都属于二进制文件。</p>
 <p>*将数组保存为NumPy（扩展名为.npy）格式的二进制文件。</p>
 <p>函数save(file, arr,allow_pickle&#x3D;True, fix_imports&#x3D;True)</p>
