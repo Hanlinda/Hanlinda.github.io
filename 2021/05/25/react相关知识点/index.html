@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Numpy补充, LindaBlog">
-    <meta name="description" content="Numpy补充一.数组补充1.np.alltrue()判断数组的元素是否都为True，是否都是非0
-2.复数数组的建立i^2&amp;#x3D;-1
-f1&amp;#x3D;np.array([10+2j,8j,2.1+3j])
-f1.dtype
-注意事项">
+    <meta name="keywords" content="react相关知识点, LindaBlog">
+    <meta name="description" content="1. 什么是React？
+React 是 Facebook 在 2011 年开发的前端 JavaScript 库。
+它遵循基于组件的方法，有助于构建可重用的UI组件。
+它用于开发复杂和交互式的 Web 和移动 UI。
+尽管它仅在 2015 ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -23,7 +23,7 @@ f1.dtype
 
     
 
-    <title>Numpy补充 | LindaBlog</title>
+    <title>react相关知识点 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -313,12 +313,12 @@ f1.dtype
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Numpy补充</h1>
+                    <h1 class="description center-align post-title">react相关知识点</h1>
                 </div>
             </div>
         </div>
@@ -434,8 +434,8 @@ f1.dtype
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                <span class="chip bg-color">数据分析</span>
+                            <a href="/tags/react/">
+                                <span class="chip bg-color">react</span>
                             </a>
                         
                     </div>
@@ -471,228 +471,82 @@ f1.dtype
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Numpy补充"><a href="#Numpy补充" class="headerlink" title="Numpy补充"></a>Numpy补充</h1><h1 id="一-数组补充"><a href="#一-数组补充" class="headerlink" title="一.数组补充"></a>一.数组补充</h1><h2 id="1-np-alltrue"><a href="#1-np-alltrue" class="headerlink" title="1.np.alltrue()"></a>1.np.alltrue()</h2><p>判断数组的元素是否都为True，是否都是非0</p>
-<h2 id="2-复数数组的建立"><a href="#2-复数数组的建立" class="headerlink" title="2.复数数组的建立"></a>2.复数数组的建立</h2><p>i^2&#x3D;-1</p>
-<p>f1&#x3D;np.array([10+2j,8j,2.1+3j])</p>
-<p>f1.dtype</p>
-<p>注意事项：Numpy的数组元素要求统一类型，不能出现既是整型又是字符型的现象，如果不小心输入了不同类型的元素，array会把其他类型的元素自动转换成字符串型。</p>
-<h2 id="3-np-eye-N-M-k-x3D-0-dtype-x3D-lt-class’float’-gt-order-x3D-’C’"><a href="#3-np-eye-N-M-k-x3D-0-dtype-x3D-lt-class’float’-gt-order-x3D-’C’" class="headerlink" title="3.np.eye(N,M,k&#x3D;0,dtype&#x3D;&lt;class’float’&gt;,order&#x3D;’C’)"></a>3.np.eye(N,M,k&#x3D;0,dtype&#x3D;&lt;class’float’&gt;,order&#x3D;’C’)</h2><p>k&#x3D;0表示主对角线，k&#x3D;正整数表示上对角线，k&#x3D;负整数表示下对角线</p>
-<p>返回对角线为1，其他位置均为0的二维数组</p>
-<h2 id="4-repeat（a-repeats-axis-x3D-None）"><a href="#4-repeat（a-repeats-axis-x3D-None）" class="headerlink" title="4.repeat（a,repeats,axis&#x3D;None）"></a>4.repeat（a,repeats,axis&#x3D;None）</h2><p>建立每个元素重复N次的数组。</p>
-<p>a为集合对象</p>
-<p>repeats为指定元素重复次数，在多维数组的情况下，axis可以指定重复维度</p>
-<h2 id="5-数组属性"><a href="#5-数组属性" class="headerlink" title="5.数组属性"></a>5.数组属性</h2><p>(1) ndim属性，返回数组的维度</p>
-<p>arr1&#x3D;[[1,2,3],[3,4,5],[5,6,7]]</p>
-<p>arr1.ndim</p>
-<p>（2）shape返回数组的形状大小</p>
-<p>（3）size返回数组的元素个数</p>
-<p>（4）dtype返回数组的元素类型</p>
-<p>（5）itemsize 返回数组元素字节大小</p>
-<p>属性不加小括号</p>
-<h2 id="6-数组的使用"><a href="#6-数组的使用" class="headerlink" title="6.数组的使用"></a>6.数组的使用</h2><p>方法加小括号</p>
-<h3 id="（1）reshape-方法"><a href="#（1）reshape-方法" class="headerlink" title="（1）reshape 方法"></a>（1）reshape 方法</h3><p>改变数组的形状</p>
-<p>arr1&#x3D;[[1,2,3,4],[3,4,5,6],[5,6,7,8]]</p>
-<p>arr2&#x3D;arr1.reshape(4,3)</p>
-<p>print(arr2)</p>
-<p>注意：reshape方法的参数元组（x,y）,x*y必须等于数组元素的个数，否则执行该方法会报错</p>
-<h3 id="（2）all方法"><a href="#（2）all方法" class="headerlink" title="（2）all方法"></a>（2）all方法</h3><p>判断指定的数组元素是否都是非0，是返回True，否则返回False</p>
-<p>m1&#x3D;np.ones(9).all()</p>
-<p>print(m1)</p>
-<p>np.array([1,0,2]).all()</p>
-<p>np.array([1,0,2],[1,2,3]).all(axis&#x3D;1)从行方向上判断每行的值是否均为0</p>
-<p>axis指向维度的方向，其值为0表示第二维的方向列方向，值为1表示第一维的方向</p>
-<h3 id="（3）any方法"><a href="#（3）any方法" class="headerlink" title="（3）any方法"></a>（3）any方法</h3><p>判断数组的元素有非0值，有则返回True，否则返回False</p>
-<p>t1&#x3D;np.array([[1,0,3],[0,0,2]])</p>
-<p>t1.any(axis&#x3D;0)</p>
-<h3 id="（4）copy方法"><a href="#（4）copy方法" class="headerlink" title="（4）copy方法"></a>（4）copy方法</h3><p>复制数组副本</p>
-<p>arr2&#x3D;arr1</p>
-<p>id(arr1)</p>
-<p>id(arr2)</p>
-<p>arr0&#x3D;arr1.copy()</p>
-<p>id(arr0)</p>
-<p>使用copy的方法在计算机的内存生成一个新的数组副本，修改一个数组的元素不会影响另一个数组的元素。</p>
-<h3 id="（5）astype方法"><a href="#（5）astype方法" class="headerlink" title="（5）astype方法"></a>（5）astype方法</h3><p>改变元素类型</p>
-<p>arr1&#x3D;np.ones(9,dtype&#x3D;int)</p>
-<p>print(arr1.astype(float))</p>
-<h2 id="7-函数"><a href="#7-函数" class="headerlink" title="7.函数"></a>7.函数</h2><p>1.简单去最接近的整数</p>
-<p>rint(x)</p>
-<p>np.rint([0.49,1.4,1.5,0.6])</p>
-<p>2.向0方向舍入取最接近的整数</p>
-<p>fix(x)</p>
-<p>np.fix([0.0001,0.7,0,3],[10.1,10.3,10.7])</p>
-<h2 id="8-乱序和随机抽取"><a href="#8-乱序和随机抽取" class="headerlink" title="8 .乱序和随机抽取"></a>8 .乱序和随机抽取</h2><p>1.radom.permutation(x)</p>
-<p>当x为标量时，生成一个[0,n)的乱序数组，当X为可变集合时，对集合里面的值进行乱序排列</p>
-<p>2.random.shuffle(x)</p>
-<p>对x乱序处理</p>
-<p>3.random.choice(a,size&#x3D;None,replace&#x3D;True,p&#x3D;None)</p>
-<p>从a抽取size个，replace&#x3D;False不重复p权重</p>
-<h2 id="9-数组的对接、分割"><a href="#9-数组的对接、分割" class="headerlink" title="9.数组的对接、分割"></a>9.数组的对接、分割</h2><p>（1）数组对接</p>
-<p>hstack（），vstack（）</p>
-<p>（2）数组分割</p>
-<p>hsplit(arr,N)实现水平分割，N为分割数</p>
-<p>vsplit(arr,N)实现垂直分割，N为分割数</p>
-<h2 id="10-索引以及索引省略"><a href="#10-索引以及索引省略" class="headerlink" title="10.索引以及索引省略"></a>10.索引以及索引省略</h2><h3 id="10-1-索引"><a href="#10-1-索引" class="headerlink" title="10.1 索引"></a>10.1 索引</h3><p>arr[1][2]</p>
-<p>arr[1,2]</p>
-<h4 id="1-数组索引"><a href="#1-数组索引" class="headerlink" title="1.数组索引"></a>1.数组索引</h4><p>(1)一维</p>
-<p>arr1&#x3D;np.array([‘a’，‘b’，‘c’，‘d’，‘e’])</p>
-<p>idx&#x3D;np.array([1,2,3])</p>
-<p>arr1[idx]</p>
-<p>（2）二维</p>
-<p>arr1&#x3D;np.array([[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’],[‘a’，‘b’，‘c’，‘d’，‘e’]])</p>
-<p>x&#x3D;np.array([0,1,2])</p>
-<p>y&#x3D;np.array([0,1,2])</p>
-<p>arr1[x,y]</p>
-<p>(3)布尔下标</p>
-<p>arr1&#x3D;np.arange(9).reshape(3,3)</p>
-<p>b1&#x3D;np.array([[‘True’,’False’,’False’],[‘False’,’True’,’True’],[‘False’,’False’,’True’]])</p>
-<p>arr1[b1]</p>
-<p>结果：过滤，得到指定true位置的值，返回结果一维</p>
-<p>b2&#x3D;np.array([‘True’,’False’,’True’])#形状一致</p>
-<p>arr1[b2]</p>
-<p>结果：保留行，二维</p>
-<h3 id="10-2-索引省略"><a href="#10-2-索引省略" class="headerlink" title="10.2 索引省略"></a>10.2 索引省略</h3><p>当确定不了维度时，可以通过下标右边…（省略号）或者直接省略下边的方法来读取数组</p>
-<p>n3[1,…]等价于n3[1,]或者n3[1]</p>
-<p>从下标左侧开始省略，只能用“…”的形式，不能用n3[,2]的形式</p>
-<p>n3[…,2]</p>
-<p>当下标从中间维度省略</p>
-<p>n3[1,…,2]不能使用n3[1,,2]</p>
-<h2 id="11-数组运算"><a href="#11-数组运算" class="headerlink" title="11.数组运算"></a>11.数组运算</h2><h3 id="1-基本运算"><a href="#1-基本运算" class="headerlink" title="1.基本运算"></a>1.基本运算</h3><p>+，-，*，&#x2F;</p>
-<p>&#x2F;&#x2F;取整  arr1&#x2F;&#x2F;arr2</p>
-<h3 id="2-位运算"><a href="#2-位运算" class="headerlink" title="2.位运算"></a>2.位运算</h3><p>&amp;按位与</p>
-<p>|按位或</p>
-<p>~非运算</p>
-<p>&lt;&lt;左移</p>
-<p>右移&gt;&gt;</p>
-<h2 id="12-数组增删改查"><a href="#12-数组增删改查" class="headerlink" title="12.数组增删改查"></a>12.数组增删改查</h2><p>1.删除</p>
-<p>delete（）</p>
-<p>2.增加</p>
-<p>insert(arr,obj,values,axis&#x3D;None)</p>
-<p>指定列</p>
-<p>b1&#x3D;np.ones(9).reshape(3,3)</p>
-<p>np.insert(b1,3,[2,2,2],axis&#x3D;1)</p>
-<p>指定行</p>
-<p>b1&#x3D;np.ones(9).reshape(3,3)</p>
-<p>np.insert(b1,3,[2,2,2],axis&#x3D;0)</p>
-<p>3.将指定值附加到数组末尾</p>
-<p>append(aee,values,axis&#x3D;None),axis&#x3D;1在行反向上增加</p>
-<p>z1&#x3D;np.zeros(9).reshape(3,3)</p>
-<p>np.append(z1,b1,axis&#x3D;1)在行上增加</p>
-<h1 id="二、矩阵和线性代数补充"><a href="#二、矩阵和线性代数补充" class="headerlink" title="二、矩阵和线性代数补充"></a>二、矩阵和线性代数补充</h1><h2 id="1-行列式求值"><a href="#1-行列式求值" class="headerlink" title="1.行列式求值"></a>1.行列式求值</h2><p>det(a)函数</p>
-<p>v1&#x3D;np.linalg.det(a)</p>
-<p>‘%.2f%’%(v1)</p>
-<h2 id="2-特殊值行列式"><a href="#2-特殊值行列式" class="headerlink" title="2.特殊值行列式"></a>2.特殊值行列式</h2><h3 id="（1）-范德蒙行列式"><a href="#（1）-范德蒙行列式" class="headerlink" title="（1）.范德蒙行列式"></a>（1）.范德蒙行列式</h3><p>vander(x,N&#x3D;None,increasing&#x3D;False)x为一维集合，N为默认要产生的列数，N不指定时，N&#x3D;len(x),increasing为False，从右往左计算</p>
-<p>vm&#x3D;np.vander([1,2,3])</p>
-<p>vm</p>
-<p>array([[1,1,1],[4,2,1],[9,3,1]])</p>
-<h3 id="（2）-下三角行列式"><a href="#（2）-下三角行列式" class="headerlink" title="（2）.下三角行列式"></a>（2）.下三角行列式</h3><p>tril(m,k&#x3D;0)主对角线上方的元素都为0,k指定主对角线以及上方0元素的位置，默认k&#x3D;0,当k&#x3D;-1时，主对角线也为0，当k&#x3D;1时，从主对角线往右斜上方扩展一行处开始为0</p>
-<p>t1&#x3D;np.array([[1,2,3],[4,5,6],[7,8,9]])</p>
-<p>np.tril(t1)</p>
-<p>该函数还可以提供主对角线元素</p>
-<p>np.tril([1,2,3])</p>
-<p>返回值：</p>
-<p>array([1,0,0],</p>
-<p>​           [1,2,0],</p>
-<p>​           [1,2,3])</p>
-<h3 id="（3）-上三角行列式"><a href="#（3）-上三角行列式" class="headerlink" title="（3）.上三角行列式"></a>（3）.上三角行列式</h3><p>triu(arr,k&#x3D;0)</p>
-<p>使用方法同tril</p>
-<h3 id="（4）-获取主对角线的值"><a href="#（4）-获取主对角线的值" class="headerlink" title="（4）.获取主对角线的值"></a>（4）.获取主对角线的值</h3><p>diag(arr,k&#x3D;0)k往左下方移动使用负数，右上方使用正数</p>
-<p>arr&#x3D;np.arange(9).reshape(3,3)</p>
-<p>d&#x3D;np.diag(arr)</p>
-<h2 id="3-线性代数求解"><a href="#3-线性代数求解" class="headerlink" title="3.线性代数求解"></a>3.线性代数求解</h2><p>1.线性方程求解</p>
-<p>solve(a,b)   a为系数矩阵，b为常数项矩阵，返回求解x未知数矩阵对应的公式ax&#x3D;b</p>
-<p>x1-x2-x3&#x3D;2</p>
-<p>2x1-x2-3x3&#x3D;1</p>
-<p>3x1- 2x2-5x3&#x3D;0</p>
-<p>系数矩阵A&#x3D;[[1,-1,1],[2,-1,-3],[3,2,-5]],常数项矩阵b&#x3D;[2,1,0],求x&#x3D;[x1,x2,x3]</p>
-<p>代码：</p>
-<p>A&#x3D;np.matrix([[1,-1,1],[2,-1,-3],[3,2,-5]])</p>
-<p>b&#x3D;[2,1,0]</p>
-<p>x&#x3D;np.linalg.solve(A,b)</p>
-<p>要求系数矩阵行列式的值不为0</p>
-<h1 id="三、文件处理"><a href="#三、文件处理" class="headerlink" title="三、文件处理"></a>三、文件处理</h1><p>计算机文件可以存储文字、数字、图片、视频、声音等信息，也可以永久形式记录计算机的数据处理及算计结果。计算机文件以一定格式主要存放于硬盘介质上，供用户使用时调用。计算机文件主要分文本文件和二进制文件。</p>
-<p>文本文件主要指以ASCII码方式存储的文件，具体内容包括了英文、数字、特殊符号，也包括了Unicode码（主要是UTF-8、UTF-16L）方式下的中文、日文等双字节多字节语言内容。常见的文本文件格式（及扩展名）包括了txt、doc、docx、wps、pdf、 chm、rtf、xml、csv等。</p>
-<h2 id="1-文本文件"><a href="#1-文本文件" class="headerlink" title="1.文本文件"></a>1.文本文件</h2><h3 id="（1）、将数组保存到文本文件"><a href="#（1）、将数组保存到文本文件" class="headerlink" title="（1）、将数组保存到文本文件."></a>（1）、将数组保存到文本文件.</h3><p>函数savetxt(fname, X, fmt&#x3D;’%.18e’, delimiter&#x3D;’ ‘, newline&#x3D;’\n’, header&#x3D;’’,footer&#x3D;’’, comments&#x3D;’# ‘, encoding&#x3D;None)</p>
-<p>*参数：</p>
-<p>*（1）fname：指定文件名或文件句柄，如果文件名以<code>.gz</code>结尾，则文件会自动保存为压缩gzip格式。</p>
-<p>*（2）X：集合对象，为需要保存的数据。</p>
-<p>*（3）fmt：为指定存储格式，字符串型，可选。如’%.2f’要求保留的浮点数为两位小数，这种情况下忽略分隔符。’%.4e’为复数格式。</p>
-<p>*（4）delimite：可选，分隔列的字符串或字符。如’,’。</p>
-<p>*（5）newline：数据行之间的分隔符，字符串或字符分隔线，可选，默认值为’\n’。</p>
-<p>*（6）header：可选，在文件开头写入的字符串。</p>
-<p>*（7）footer：可选，在文件末尾写入的字符串。</p>
-<p>*（8）comments：可选，将被添加到文件头或尾的标记信息，默认值为’#’。</p>
-<p>*（9）encoding：可选，用于编码输出文件的编码，默认编码为’ latin1’。</p>
-<p>例1、将数组保存到文本文件</p>
-<p>import numpy as np</p>
-<p>data&#x3D;np.arange(12).reshape(3,4)</p>
-<p>np.savetext(r’&#x2F;A1.txt’,data,delimiter&#x3D;’,’)</p>
-<p>加 r 会把字符串转变为非转义的原始字符串。</p>
-<h3 id="（2）从文本文件加载数据"><a href="#（2）从文本文件加载数据" class="headerlink" title="（2）从文本文件加载数据"></a>（2）从文本文件加载数据</h3><p><em><strong>函数</strong></em>*loadtxt(fname, dtype&#x3D;&lt;class ‘float’&gt;, comments&#x3D;’#’, delimiter&#x3D;None,converters&#x3D;None,skiprows&#x3D;0, usecols&#x3D;None, unpack&#x3D;False, ndmin&#x3D;0,encoding&#x3D;’bytes’,max_rows&#x3D;None)</p>
-<p>*参数：</p>
-<p>*（1）fname：指定要读取的文件，文件名或生成器。如果文件扩展名为.gz或.bz2，则首先解压缩该文件。请注意，生成器支持返回Python 3版本的字节字符串。</p>
-<p>*（2）dtype（数据类型），可选，结果数组的数据类型;默认值浮点数。</p>
-<p>*（3）comments（注释），str或str的序列，可选。</p>
-<p>*（4）delimiter（分隔符）：str，可选，指定要读取文件里用于分隔值的字符串，默认值为空格。</p>
-<p>*（5）converters（转换器）：dict，可选，将列号映射到将列字符串解析为所需值的函数的字典。例如，如果第0列是日期字符串：converters &#x3D; {0：datestr2num}。默认值：无。</p>
-<p>*（6）skiprows（跳行）：跳过前几行读取，必须是整型，可选，默认值为0。</p>
-<p>*（7）usecols：指定需要读取的列（必须是整数），0为第一列，例如，usecols &#x3D;（1,2,4）将提取第2列、第3列和第5列。默认值None为读取所有列。</p>
-<p>*（8）unpack（解包）：bool，可选，如果为True，则返回的数组被转置，因此可以使用x，y，z &#x3D; loadtxt（…）解压缩参数。与结构化数据类型一起使用时，将为每个字段返回数组。默认值为False。</p>
-<p>*（9）ndmin（指定返回数组的维度）：整型，可选，返回的数组至少具有ndmin维度。否则将以一维数组形式返回。合法值：0（默认值），1或2。</p>
-<p>*（10）encoding：str，可选，用于解码输入文件的编码。不适用于输入流。特殊值’bytes’启用向后兼容性解决方法，尽可能接收字节数组作为结果，并将’latin1’编码字符串传递给转换器。重写此值以接收unicode数组并将字符串作为输入传递给转换器。如果设置为“无”，则使用系统默认值。默认值为’bytes’。</p>
-<p>*（11）max_rows读取指定范围的行内容：整型，可选，在跳过指定行后，读取max_rows行内容。默认是读取所有行。</p>
-<p><img src="/2021/05/25/Numpy%E8%A1%A5%E5%85%85/image-20211101050632607.png" alt="image-20211101050632607"></p>
-<h3 id="（3）使用正则表达式解析从文本文件构造数组"><a href="#（3）使用正则表达式解析从文本文件构造数组" class="headerlink" title="（3）使用正则表达式解析从文本文件构造数组"></a>（3）使用正则表达式解析从文本文件构造数组</h3><p>函数fromregex(file,regexp,dtype, encoding&#x3D;None)，</p>
-<p>*（1）file，要读取的文件名或文件对象。</p>
-<p>*（2）regexp，用于解析文件的正则表达式，正则表达式中的组对应于dtype中的字段。</p>
-<p>*（3）dtype，指定生成数组的数据类型，可以指定类型值，也可以时集合类型。</p>
-<p>*（4）encoding，字符串，可选。用于解码输入文本文件的编码。</p>
-<p>with open(‘test.dat’, ‘w’) as f:</p>
-<p>​    f.write(“2000 Tom\n3000 Go\n3333  John”)</p>
-<p>regexp &#x3D; r”(\d+)\s+(…)” #匹配数字(\d+)，空白\s+，任何东西(…)</p>
-<p>output &#x3D; np.fromregex(‘test.dat’, regexp,[(‘Number’, np.int64), (‘key’, ‘S3’)])</p>
-<p>output</p>
-<p><img src="/2021/05/25/Numpy%E8%A1%A5%E5%85%85/image-20211101051157264.png" alt="image-20211101051157264"></p>
-<h2 id="2-二进制文件"><a href="#2-二进制文件" class="headerlink" title="2.二进制文件"></a>2.二进制文件</h2><h3 id="（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件"><a href="#（1）将数组保存为Numpy（扩展名为-npy-格式的二进制文件" class="headerlink" title="（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件"></a>（1）将数组保存为Numpy（扩展名为.npy)格式的二进制文件</h3><p>*以二进制数据形式存储数据的文件，用专业工具（如Debug、WinHex、U_Edit）打开时往往显示的是十六进制（相比二进制十六进制更方便读写）。图形文件、可执行程序、后缀名为bin的驱动程序都属于二进制文件。</p>
-<p>*将数组保存为NumPy（扩展名为.npy）格式的二进制文件。</p>
-<p>函数save(file, arr,allow_pickle&#x3D;True, fix_imports&#x3D;True)</p>
-<p>*（1）file，指定需要保存的Numpy格式的二进制格式的文件名。</p>
-<p>*（2）arr，类似数组的需要存储的数据对象。</p>
-<p>*（3）allow_pickle，在默认值True情况下允许使用Python pickles保存对象数组；若为False则禁止使用pickle方式。</p>
-<p>*（4）fix_imports，默认值为True，则pickle将尝试将新的Python 3名称映射到Python 2中使用的旧模块名称，以便使用Python 2可读取pickle数据流。</p>
-<p>A1&#x3D;np.arange(9).reshape(3,3)</p>
-<p>np.save(‘testB’,A1)         </p>
-<h3 id="（2）从-npy，-npz或pickled文件加载数组或pickle对象"><a href="#（2）从-npy，-npz或pickled文件加载数组或pickle对象" class="headerlink" title="（2）从.npy，.npz或pickled文件加载数组或pickle对象"></a>（2）从.npy，.npz或pickled文件加载数组或pickle对象</h3><p>函数load(file,mmap_mode&#x3D;None,allow_pickle&#x3D;True,fix_imports&#x3D;True,encoding&#x3D;’ASCII’)</p>
-<p>* （1）file，指定需要读取的二进制文件名，字符串、pathlib.Path。</p>
-<p>* （2）mmap_mode，读写模式，可选参数值包括了None、’r+’、’w+’、’c’。  如果不是None，则使用给定模式对文件进行内存映射。它可以像任何ndarray一样访问和切片。 内存映射对于访问大型文件的小片段而不将整个文件读入内存特别有用。</p>
-<p>* （3）allow_pickle，布尔，允许加载存储在npy文件中的pickled对象数组。 禁止pickle的原因包括安全性，因为加载pickle数据可以执行任意代码。 如果不允许使用pickle，则加载对象数组将失败。默认值True。pickle模块用来实现python对象的序列化和反序列化。通常地pickle将python对象序列化为二进制流或文件。</p>
-<p>* （4）fix_imports，布尔，仅在Python 3上加载Python 2生成的pickle文件时才有用，其中包括包含对象数组的npy &#x2F; npz文件。</p>
-<p>* （5）encoding，读取Python 2字符串时要使用的编码。 仅在Python 3中加载Python 2生成的pickle文件时才有用，其中包括包含对象数组的npy &#x2F; npz文件。 不允许使用“latin1”，“ASCII”和“bytes”以外的值，因为它们可能会破坏数值数据。 默认值’ASCII’。</p>
-<p>B1&#x3D;np.load(‘testB.npy’)               #读取上列生成的二进制文件</p>
-<p>B1</p>
-<h3 id="3-多个数组以未压缩-npz格式保存到单个文件中"><a href="#3-多个数组以未压缩-npz格式保存到单个文件中" class="headerlink" title="(3)多个数组以未压缩.npz格式保存到单个文件中"></a>(3)多个数组以未压缩.npz格式保存到单个文件中</h3><p>函数savez（file,*args,**kwds)</p>
-<p>x1&#x3D;np.linspace(1,10,10)</p>
-<p>y1&#x3D;np.sin(x1)</p>
-<p>np.savez(‘Z1’,x1,y1)</p>
-<p>z1&#x3D;np.load(‘Z1.npz’)</p>
-<p>for get in Z1.items():</p>
-<p>​	print(get)</p>
-<p>​	print(type(get))</p>
-<h3 id="4-根据文本或二进制文件中的数据构造数组"><a href="#4-根据文本或二进制文件中的数据构造数组" class="headerlink" title="(4)根据文本或二进制文件中的数据构造数组"></a>(4)根据文本或二进制文件中的数据构造数组</h3><p>函数fromfile(file,dtype&#x3D;float,count&#x3D;-1,sep&#x3D;’’)</p>
-<p>file文件名字</p>
-<p>dtype要生成的数组类型</p>
-<p>count要读取的文件的项目数，-1表示所有项目</p>
-<p>sep为项目之间的分隔符</p>
-<p>z1&#x3D;np.fromfile(‘a.jpg’)</p>
-<p>z1</p>
-<h2 id="3-其他文件"><a href="#3-其他文件" class="headerlink" title="3.其他文件"></a>3.其他文件</h2><p>通用数据源文件（文件，http，ftp，…）</p>
-<p>DataSource(destpath&#x3D;’.’)对象，DataSource对象的方法支持可以是本地文件或远程文件&#x2F; URL的操作。 文件也可以是压缩的或未压缩的。 DataSource对象隐藏了下载文件的一些低级细节，允许简单地设置有效的文件路径（或URL）并获取文件对象。参数destpath，指定下载源文件的目录的路径；当destpath值为None，将创建一个临时目录，默认路径是当前目录。</p>
-<p>ds&#x3D;np.DataSource(path.abspath(path.curdir))</p>
-<p>if ds.exists(r’<a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;">https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;</a>):</p>
-<p>​		ds.open(r’<a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;">https://docs.scipy.org/doc/numpy/numpy-user-1.16.1.pdf&#39;</a>)</p>
-<p>else:</p>
-<pre><code>     print(&#39;没有文件下载&#39;)
-</code></pre>
-<p>​     </p>
+                <h3 id="1-什么是React？"><a href="#1-什么是React？" class="headerlink" title="1. 什么是React？"></a><strong>1. 什么是React？</strong></h3><ul>
+<li>React 是 Facebook 在 2011 年开发的前端 JavaScript 库。</li>
+<li>它遵循基于组件的方法，有助于构建可重用的UI组件。</li>
+<li>它用于开发复杂和交互式的 Web 和移动 UI。</li>
+<li>尽管它仅在 2015 年开源，但有一个很大的支持社区。</li>
+</ul>
+<h3 id="2-React有什么特点？"><a href="#2-React有什么特点？" class="headerlink" title="2.React有什么特点？"></a>2.React有什么特点？</h3><ol>
+<li>它使用虚拟DOM而不是真正的DOM</li>
+<li>它可以用服务端渲染</li>
+<li>它遵循单向数据流或数据绑定</li>
+<li>采用jsx语法</li>
+<li>采用diff算法进行更新DOM</li>
+<li>分函数组件和类组件</li>
+</ol>
+<h3 id="3-什么是JSX"><a href="#3-什么是JSX" class="headerlink" title="3.什么是JSX?"></a>3.什么是JSX?</h3><p>​	JSX是javascriptXml的简写。是react使用的一种文件，它利用javascript的表现力和HTML的模板语法。使得html文件非常容易理解，此文件能使应用非常可靠，并能够提高其性能，下面使jsx的列子：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">render</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span>(        </span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h1</span>&gt;</span> Hello World from Edureka!!<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-为什么浏览器无法读取jsx？"><a href="#4-为什么浏览器无法读取jsx？" class="headerlink" title="4.为什么浏览器无法读取jsx？"></a>4.为什么浏览器无法读取jsx？</h3><p>浏览器只能处理javascript对象，而不能读取常规javascript对象中的jsx，所以为了使浏览器能读取jsx，所以使用babel这样的转换器转成javascript代码，然后传给浏览器。</p>
+<h3 id="5-什么使Props"><a href="#5-什么使Props" class="headerlink" title="5.什么使Props?"></a>5.什么使Props?</h3><p>Props使react中属性的简写，他们是只读组件，必须保持纯即不可变，他们总是在整个应用中从父组件传递给子组件，子组件永远不能将prop送回父组件。这有助于单向数据流，通常用于呈现动态生成的数据。</p>
+<h3 id="6-react中的状态是什么，它是如何使用的？"><a href="#6-react中的状态是什么，它是如何使用的？" class="headerlink" title="6.react中的状态是什么，它是如何使用的？"></a>6.react中的状态是什么，它是如何使用的？</h3><p>状态是react组件的核心，是数据的来源，必须尽可能简单，基本上状态是确定组件呈现和行为的对象，与props不同，他们是可变的，并创建动态和交互式组件，可以通过this.state访问他们。</p>
+<h3 id="7-如何更新组件的状态？"><a href="#7-如何更新组件的状态？" class="headerlink" title="7.如何更新组件的状态？"></a>7.<strong>如何更新组件的状态？</strong></h3><p>可以用 <code>this.setState()</code>更新组件的状态。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">MyComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">super</span>();</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">state</span> = &#123;</span><br><span class="line">            <span class="attr">name</span>: <span class="string">&#x27;Maxx&#x27;</span>,</span><br><span class="line">            <span class="attr">id</span>: <span class="string">&#x27;101&#x27;</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;<span class="variable language_">this</span>.<span class="title function_">setState</span>(&#123;<span class="attr">name</span>:<span class="string">&#x27;Jaeha&#x27;</span>, <span class="attr">id</span>:<span class="string">&#x27;222&#x27;</span>&#125;)&#125;,<span class="number">2000</span>)</span><br><span class="line">            <span class="keyword">return</span> (              </span><br><span class="line">				<span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>Hello &#123;this.state.name&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">					<span class="tag">&lt;<span class="name">h2</span>&gt;</span>Your Id is &#123;this.state.id&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">            );</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="title class_">ReactDOM</span>.<span class="title function_">render</span>(</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">MyComponent</span>/&gt;</span></span>, <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;content&#x27;</span>)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-react组件生命周期阶段是什么？"><a href="#8-react组件生命周期阶段是什么？" class="headerlink" title="8.react组件生命周期阶段是什么？"></a>8.react组件生命周期阶段是什么？</h3><p>react组件的生命周期有三个不同的阶段：</p>
+<ol>
+<li>初始化渲染阶段：这是组件即将开始其生命之旅并进入DOM的阶段</li>
+<li>更新阶段：一旦组件被添加到DOM,它只有在prop或状态发生变化时才可能更新和重写渲染</li>
+<li>卸载阶段：这是组件生命周期的最后阶段，组件被销毁并从DOM中删除</li>
+</ol>
+<h3 id="9-详细解释-React-组件的生命周期方法"><a href="#9-详细解释-React-组件的生命周期方法" class="headerlink" title="9.详细解释 React 组件的生命周期方法"></a>9.<strong>详细解释 React 组件的生命周期方法</strong></h3><ol>
+<li>componentWillMount():在渲染之前执行，在客户端和服务器端都会执行</li>
+<li>componentDidMount():仅在第一次渲染后再客户端执行</li>
+<li>comonentWillReceiveProps():当从父类接收到props并且再调用另一个渲染器之前调用</li>
+<li>shouldComponentUpdate():根据特定条件返回true或false</li>
+<li>componentWillUpdate():再DOM中进行渲染之前调用</li>
+<li>componentDidUpdate():再渲染发生后立即调用</li>
+<li>componentWillUnmount():从dom卸载组件后调用</li>
+</ol>
+<h3 id="10-React中的事件是什么"><a href="#10-React中的事件是什么" class="headerlink" title="10.React中的事件是什么?"></a>10.<strong>React中的事件是什么</strong>?</h3><p>在 React 中，事件是对鼠标悬停、鼠标单击、按键等特定操作的触发反应。处理这些事件类似于处理 DOM 元素中的事件。但是有一些语法差异，如：</p>
+<p>用驼峰命名法对事件命名而不是仅使用小写字母。<br>事件作为函数而不是字符串传递。<br>事件参数重包含一组特定于事件的属性。每个事件类型都包含自己的属性和行为，只能通过其事件处理程序访问。</p>
+<h3 id="11-如何再React中创建一个事件？"><a href="#11-如何再React中创建一个事件？" class="headerlink" title="11.如何再React中创建一个事件？"></a>11.如何再React中创建一个事件？</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Display</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>(&#123;    </span><br><span class="line">    <span class="title function_">show</span>(<span class="params">evt</span>) &#123;</span><br><span class="line">        <span class="comment">// code   </span></span><br><span class="line">    &#125;,   </span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;      </span><br><span class="line">        <span class="comment">// Render the div with an onClick prop (value is a function)        </span></span><br><span class="line">        <span class="keyword">return</span> (            </span><br><span class="line">            <span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">onClick</span>=<span class="string">&#123;this.show&#125;</span>&gt;</span>Click Me!<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        );    </span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-你对-React-的-refs-有什么了解？"><a href="#12-你对-React-的-refs-有什么了解？" class="headerlink" title="12.你对 React 的 refs 有什么了解？"></a>12.<strong>你对 React 的 refs 有什么了解？</strong></h3><p>Refs 是 React 中引用的简写。它是一个有助于存储对特定的 React 元素或组件的引用的属性，它将由组件渲染配置函数返回。用于对 render() 返回的特定元素或组件的引用。当需要进行 DOM 测量或向组件添加方法时，它们会派上用场。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">ReferenceDemo</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span>&#123;</span><br><span class="line">     <span class="title function_">display</span>(<span class="params"></span>) &#123;</span><br><span class="line">         <span class="keyword">const</span> name = <span class="variable language_">this</span>.<span class="property">inputDemo</span>.<span class="property">value</span>;</span><br><span class="line">         <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;disp&#x27;</span>).<span class="property">innerHTML</span> = name;</span><br><span class="line">     &#125;</span><br><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span>(        </span><br><span class="line">          <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">ref</span>=<span class="string">&#123;input</span> =&gt;</span> this.inputDemo = input&#125; /&gt;</span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">button</span> <span class="attr">name</span>=<span class="string">&quot;Click&quot;</span> <span class="attr">onClick</span>=<span class="string">&#123;this.display&#125;</span>&gt;</span>Click<span class="tag">&lt;/<span class="name">button</span>&gt;</span>            </span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Hello <span class="tag">&lt;<span class="name">span</span> <span class="attr">id</span>=<span class="string">&quot;disp&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span> !!!<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-如何模块化-React-中的代码？"><a href="#13-如何模块化-React-中的代码？" class="headerlink" title="13.如何模块化 React 中的代码？"></a>13.<strong>如何模块化 React 中的代码？</strong></h3><p>可以使用 export 和 import 属性来模块化代码。它们有助于在不同的文件中单独编写组件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ChildComponent.jsx</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> <span class="title class_">ChildComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;</span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>(           </span><br><span class="line">              <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              	<span class="tag">&lt;<span class="name">h1</span>&gt;</span>This is a child component<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="comment">//ParentComponent.jsx</span></span><br><span class="line"><span class="keyword">import</span> <span class="title class_">ChildComponent</span> <span class="keyword">from</span> <span class="string">&#x27;./childcomponent.js&#x27;</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ParentComponent</span> <span class="keyword">extends</span> <span class="title class_ inherited__">React.Component</span> &#123;    </span><br><span class="line">    <span class="title function_">render</span>(<span class="params"></span>) &#123;        </span><br><span class="line">        <span class="keyword">return</span>(           </span><br><span class="line">             <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>               </span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">App</span> /&gt;</span>          </span></span><br><span class="line"><span class="language-xml">             <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>       </span><br><span class="line">        );  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-如何在-React-中创建表单"><a href="#14-如何在-React-中创建表单" class="headerlink" title="14.如何在 React 中创建表单"></a>14.<strong>如何在 React 中创建表单</strong></h3><p>React 表单类似于 HTML 表单。但是在 React 中，状态包含在组件的 state 属性中，并且只能通过 <code>setState()</code> 更新。因此元素不能直接更新它们的状态，它们的提交是由 JavaScript 函数处理的。此函数可以完全访问用户输入到表单的数据。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">handleSubmit</span>(<span class="params">event</span>) &#123;</span><br><span class="line">    <span class="title function_">alert</span>(<span class="string">&#x27;A name was submitted: &#x27;</span> + <span class="variable language_">this</span>.<span class="property">state</span>.<span class="property">value</span>);</span><br><span class="line">    event.<span class="title function_">preventDefault</span>();</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="title function_">render</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> (        </span><br><span class="line">        <span class="language-xml"><span class="tag">&lt;<span class="name">form</span> <span class="attr">onSubmit</span>=<span class="string">&#123;this.handleSubmit&#125;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                Name:</span></span><br><span class="line"><span class="language-xml">                <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">value</span>=<span class="string">&#123;this.state.value&#125;</span> <span class="attr">onChange</span>=<span class="string">&#123;this.handleSubmit&#125;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;/<span class="name">label</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;Submit&quot;</span> /&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line">    );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-什么是高阶组件（HOC）"><a href="#15-什么是高阶组件（HOC）" class="headerlink" title="15.什么是高阶组件（HOC）"></a>15.<strong>什么是高阶组件（HOC）</strong></h3><p>高阶组件是重用组件逻辑的高级方法，是一种源于 React 的组件模式。 HOC 是自定义组件，在它之内包含另一个组件。它们可以接受子组件提供的任何动态，但不会修改或复制其输入组件中的任何行为。你可以认为 HOC 是“纯（Pure）”组件。</p>
+<h3 id="16-你能用HOC做什么？"><a href="#16-你能用HOC做什么？" class="headerlink" title="16.你能用HOC做什么？"></a>16.<strong>你能用HOC做什么？</strong></h3><p>HOC可用于许多任务，例如：</p>
+<ul>
+<li>代码重用，逻辑和引导抽象</li>
+<li>渲染劫持</li>
+<li>状态抽象和控制</li>
+<li>Props 控制</li>
+</ul>
+<h3 id="17-React-中-key-的重要性是什么？"><a href="#17-React-中-key-的重要性是什么？" class="headerlink" title="17.React 中 key 的重要性是什么？"></a>17.<strong>React 中 key 的重要性是什么？</strong></h3><p>key 用于识别唯一的 Virtual DOM 元素及其驱动 UI 的相应数据。它们通过回收 DOM 中当前所有的元素来帮助 React 优化渲染。这些 key 必须是唯一的数字或字符串，React 只是重新排序元素而不是重新渲染它们。这可以提高应用程序的性能。</p>
+<h3 id="18-什么是Redux？"><a href="#18-什么是Redux？" class="headerlink" title="18.什么是Redux？"></a>18.<strong>什么是Redux？</strong></h3><p>Redux和vuex类似，是一个共享状态的一个仓库，也可以说是容器。它是 JavaScript 程序的可预测状态容器，用于整个应用的状态管理。使用 Redux 开发的应用易于测试，可以在不同环境中运行，并显示一致的行为。</p>
+<h3 id="19-列出-Redux-的组件。"><a href="#19-列出-Redux-的组件。" class="headerlink" title="19.列出 Redux 的组件。"></a>19.<strong>列出 Redux 的组件。</strong></h3><p>Redux 由以下组件组成：</p>
+<ol>
+<li><strong>Action</strong> – 这是一个用来描述发生了什么事情的对象。</li>
+<li><strong>Reducer</strong> – 这是一个确定状态将如何变化的地方。</li>
+<li><strong>Store</strong> – 整个程序的状态&#x2F;对象树保存在Store中。</li>
+<li><strong>View</strong> – 只显示 Store 提供的数据。</li>
+</ol>
+<h3 id="20-如何在-Redux-中定义-Action？"><a href="#20-如何在-Redux-中定义-Action？" class="headerlink" title="20. 如何在 Redux 中定义 Action？"></a>20. <strong>如何在 Redux 中定义 Action？</strong></h3><p>React 中的 Action 必须具有 type 属性，该属性指示正在执行的 ACTION 的类型。必须将它们定义为字符串常量，并且还可以向其添加更多的属性。在 Redux 中，action 被名为 Action Creators 的函数所创建。以下是 Action 和Action Creator 的示例：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">addTodo</span>(<span class="params">text</span>) &#123;</span><br><span class="line">       <span class="keyword">return</span> &#123;</span><br><span class="line">                <span class="attr">type</span>: <span class="variable constant_">ADD_TODO</span>,    </span><br><span class="line">                 text</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="21-解释-Reducer-的作用。"><a href="#21-解释-Reducer-的作用。" class="headerlink" title="21.解释 Reducer 的作用。"></a>21.<strong>解释 Reducer 的作用。</strong></h3><p>Reducers 是纯函数，它规定应用程序的状态怎样因响应 ACTION 而改变。Reducers 通过接受先前的状态和 action 来工作，然后它返回一个新的状态。它根据操作的类型确定需要执行哪种更新，然后返回新的值。如果不需要完成任务，它会返回原来的状态。</p>
+<h3 id="22-Store-在-Redux-中的意义是什么？"><a href="#22-Store-在-Redux-中的意义是什么？" class="headerlink" title="22.Store 在 Redux 中的意义是什么？"></a>22.<strong>Store 在 Redux 中的意义是什么？</strong></h3><p>Store 是一个 JavaScript 对象，它可以保存程序的状态，并提供一些方法来访问状态、调度操作和注册侦听器。应用程序的整个状态&#x2F;对象树保存在单一存储中。因此，Redux 非常简单且是可预测的。我们可以将中间件传递到 store 来处理数据，并记录改变存储状态的各种操作。所有操作都通过 reducer 返回一个新状态。</p>
+<h3 id="23-Redux-有哪些优点？"><a href="#23-Redux-有哪些优点？" class="headerlink" title="23. Redux 有哪些优点？"></a>23. <strong>Redux 有哪些优点？</strong></h3><p>Redux 的优点如下：</p>
+<p>结果的可预测性 - 由于总是存在一个真实来源，即 store ，因此不存在如何将当前状态与动作和应用的其他部分同步的问题。<br>可维护性 - 代码变得更容易维护，具有可预测的结果和严格的结构。<br>服务器端渲染 - 你只需将服务器上创建的 store 传到客户端即可。这对初始渲染非常有用，并且可以优化应用性能，从而提供更好的用户体验。<br>开发人员工具 - 从操作到状态更改，开发人员可以实时跟踪应用中发生的所有事情。<br>社区和生态系统 - Redux 背后有一个巨大的社区，这使得它更加迷人。一个由才华横溢的人组成的大型社区为库的改进做出了贡献，并开发了各种应用。<br>易于测试 - Redux 的代码主要是小巧、纯粹和独立的功能。这使代码可测试且独立。<br>组织 - Redux 准确地说明了代码的组织方式，这使得代码在团队使用时更加一致和简单。</p>
+<h3 id="24-什么是React-路由？"><a href="#24-什么是React-路由？" class="headerlink" title="24.什么是React 路由？"></a>24.<strong>什么是React 路由？</strong></h3><p>React 路由是一个构建在 React 之上的强大的路由库，它有助于向应用程序添加新的屏幕和流。这使 URL 与网页上显示的数据保持同步。它负责维护标准化的结构和行为，并用于开发单页 Web 应用。 React 路由有一个简单的API。</p>
 
                 
             </div>
@@ -719,7 +573,7 @@ f1.dtype
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/05/25/Numpy%E8%A1%A5%E5%85%85/">http://example.com/2021/05/25/Numpy%E8%A1%A5%E5%85%85/</a>
+                    <a href="http://example.com/2021/05/25/react%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/">http://example.com/2021/05/25/react%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -757,8 +611,8 @@ f1.dtype
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
-                                    <span class="chip bg-color">数据分析</span>
+                                <a href="/tags/react/">
+                                    <span class="chip bg-color">react</span>
                                 </a>
                             
                         </div>
@@ -936,13 +790,13 @@ f1.dtype
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2021/05/25/myBlog/">
+                <a href="/2021/05/25/Numpy%E8%A1%A5%E5%85%85/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="虚拟dom和diff算法">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Numpy补充">
                         
-                        <span class="card-title">虚拟dom和diff算法</span>
+                        <span class="card-title">Numpy补充</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -966,8 +820,8 @@ f1.dtype
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/vue/">
-                        <span class="chip bg-color">vue</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
@@ -981,13 +835,13 @@ f1.dtype
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/05/25/react%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9/">
+                <a href="/2021/05/25/%E7%AC%AC9%E7%AB%A0%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90%E6%A1%88%E4%BE%8B/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="react相关知识点">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第9章　数据统计分析案例">
                         
-                        <span class="card-title">react相关知识点</span>
+                        <span class="card-title">第9章　数据统计分析案例</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1011,8 +865,8 @@ f1.dtype
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/react/">
-                        <span class="chip bg-color">react</span>
+                    <a href="/tags/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">
+                        <span class="chip bg-color">数据分析</span>
                     </a>
                     
                 </div>
