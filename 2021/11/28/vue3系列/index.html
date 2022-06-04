@@ -4,10 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="vue项目部署, LindaBlog">
-    <meta name="description" content="首先vue项目执行npm run build进行打包，打包成功生成dist文件夹：之后把dist文件夹上传到服务器，上传至nginx目录下之后配置nginx下的conf里面的nginx.conf文件1vim nginx.conf进行修改
-
-">
+    <meta name="keywords" content="vue系列, LindaBlog">
+    <meta name="description" content="1.Vue3.0的设计目标是什么？做了哪些优化主要就是分为以下几点：更小，更快，更友好
+更小：主要就是减少了一些api，比如，生命周期做了优化，把beforcreate和created换成了setup
+更快：diff算法，虚拟dom，响应式">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +21,7 @@
 
     
 
-    <title>vue项目部署 | LindaBlog</title>
+    <title>vue系列 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">vue项目部署</h1>
+                    <h1 class="description center-align post-title">vue系列</h1>
                 </div>
             </div>
         </div>
@@ -432,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%83%A8%E7%BD%B2/">
-                                <span class="chip bg-color">部署</span>
+                            <a href="/tags/vue/">
+                                <span class="chip bg-color">vue</span>
                             </a>
                         
                     </div>
@@ -448,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2021-12-27
+                    2021-11-28
                 </div>
                 
 
@@ -469,12 +469,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h5 id="首先vue项目执行npm-run-build进行打包，打包成功生成dist文件夹："><a href="#首先vue项目执行npm-run-build进行打包，打包成功生成dist文件夹：" class="headerlink" title="首先vue项目执行npm run build进行打包，打包成功生成dist文件夹："></a>首先vue项目执行npm run build进行打包，打包成功生成dist文件夹：</h5><h5 id="之后把dist文件夹上传到服务器，上传至nginx目录下"><a href="#之后把dist文件夹上传到服务器，上传至nginx目录下" class="headerlink" title="之后把dist文件夹上传到服务器，上传至nginx目录下"></a>之后把dist文件夹上传到服务器，上传至nginx目录下</h5><h5 id="之后配置nginx下的conf里面的nginx-conf文件"><a href="#之后配置nginx下的conf里面的nginx-conf文件" class="headerlink" title="之后配置nginx下的conf里面的nginx.conf文件"></a>之后配置nginx下的conf里面的nginx.conf文件</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim nginx.conf进行修改</span><br></pre></td></tr></table></figure>
-
-<h5 id="主要配置nginx-conf如下"><a href="#主要配置nginx-conf如下" class="headerlink" title="主要配置nginx.conf如下"></a>主要配置nginx.conf如下</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">server <span class="punctuation">&#123;</span></span><br><span class="line">        listen       xxxx; <span class="comment">//这里写端口号</span></span><br><span class="line">        server_name  xxxx; <span class="comment">//这里看可以写服务器主机公网ip</span></span><br><span class="line"></span><br><span class="line">        #charset koi8-r;</span><br><span class="line"></span><br><span class="line">        #access_log  logs/host.access.log  main;</span><br><span class="line"></span><br><span class="line">        location / <span class="punctuation">&#123;</span></span><br><span class="line"></span><br><span class="line">            root   oao/dist; <span class="comment">//这里配置dist所在目录</span></span><br><span class="line">            index  index.html index.htm; <span class="comment">//找到入口文件index.html</span></span><br><span class="line">            try_files $uri $uri/ /index.html; <span class="comment">//这里使用try_files来解决404，500等问题</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line"></span><br><span class="line">        error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">        location = /<span class="number">50</span>x.html <span class="punctuation">&#123;</span></span><br><span class="line">            root   html;</span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="最后重启nginx，进入nginx下的sbin里，执行以下代码"><a href="#最后重启nginx，进入nginx下的sbin里，执行以下代码" class="headerlink" title="最后重启nginx，进入nginx下的sbin里，执行以下代码"></a>最后重启nginx，进入nginx下的sbin里，执行以下代码</h5><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">./nginx -t </span><br><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
-
+                <h4 id="1-Vue3-0的设计目标是什么？做了哪些优化"><a href="#1-Vue3-0的设计目标是什么？做了哪些优化" class="headerlink" title="1.Vue3.0的设计目标是什么？做了哪些优化"></a>1.Vue3.0的设计目标是什么？做了哪些优化</h4><p>主要就是分为以下几点：更小，更快，更友好</p>
+<p>更小：主要就是减少了一些api，比如，生命周期做了优化，把beforcreate和created换成了setup</p>
+<p>更快：diff算法，虚拟dom，响应式做了优化</p>
+<p>更友好：就是把选项式api换成了组合式api，可以让用户很直观的去定位问题所在。程序员好维护</p>
+<h4 id="2-Vue3-0性能提升主要是通过哪几方面体现的？"><a href="#2-Vue3-0性能提升主要是通过哪几方面体现的？" class="headerlink" title="2.Vue3.0性能提升主要是通过哪几方面体现的？"></a>2.Vue3.0性能提升主要是通过哪几方面体现的？</h4><p>主要就是响应式做了改变</p>
+<p>vue2采用的是es5中的object.defineproperty属性进行的数据的拦截，劫持整个对象，然后进行深度的监听，给每个属性添加getter，setter</p>
+<p>vue3重写的响应式，使用的es6中的proxy代理进行的响应式处理，可以直接监听整个对象，不需要再去递归每个对象的属性，多达13中拦截方式，使用的reflect进行的监听修改。</p>
+<ul>
+<li>可以监听动态属性的添加</li>
+<li>可以监听删除属性并做改变</li>
+<li>可以监听到数值的索引和数值的长度</li>
+</ul>
+<h4 id="3-Vue3-0里为什么要用-Proxy-API-替代-defineProperty-API-？"><a href="#3-Vue3-0里为什么要用-Proxy-API-替代-defineProperty-API-？" class="headerlink" title="3.Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？"></a>3.Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？</h4><p>首先defineproperty的话不可以对对象添加和删除做出响应，必须使用vue.set或者vue.delete来进行添加和删除，再者就是对对像不能直接深度监听，必须使用递归进行监听对象的变化</p>
+<p>然而proxy代理的话多达13中拦截方式，可以直接深度监听整个对象，针对对象可以直接删除和添加，不需要使用递归去监听对象，更快，更迅速。</p>
+<h4 id="4-Vue3-0-所采用的-Composition-Api-与-Vue2-x-使用的-Options-Api-有什么不同？"><a href="#4-Vue3-0-所采用的-Composition-Api-与-Vue2-x-使用的-Options-Api-有什么不同？" class="headerlink" title="4.Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？"></a>4.Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？</h4><p>首先选项式api就是把所知的方法，数据，生命周期，计算属性，监听器等等一系列功能都分开了，进行了选项式操作，而且不能针对对象的属性做删除和添加操作</p>
+<p>接下来说说组合式api组合式的话就是把以上所说的一系列功能都进行了封装再了setup中针对程序员可以很直观的定位问题所在，之后可以直接删除添加对象的属性，做一个响应，新增了setup语法糖，可以再template中写多个根标签，响应式由object.defineProperty变成了proxy代理，生命周期，以及路由，vuex都做了改变，新增了ref，reactive，toref等等响应式钩子函数，新增了三种组件等等。</p>
+<h4 id="5-用Vue3-0-写过组件吗？如果想实现一个-Modal你会怎么设计？"><a href="#5-用Vue3-0-写过组件吗？如果想实现一个-Modal你会怎么设计？" class="headerlink" title="5.用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？"></a>5.用Vue3.0 写过组件吗？如果想实现一个 Modal你会怎么设计？</h4><h5 id="一、组件设计"><a href="#一、组件设计" class="headerlink" title="一、组件设计"></a>一、组件设计</h5><p>组件就是把图形、非图形的各种逻辑均抽象为一个统一的概念（组件）来实现开发的模式</p>
+<p>现在有一个场景，点击新增与编辑都弹框出来进行填写，功能上大同小异，可能只是标题内容或者是显示的主体内容稍微不同</p>
+<p>这时候就没必要写两个组件，只需要根据传入的参数不同，组件显示不同内容即可</p>
+<p>这样，下次开发相同界面程序时就可以写更少的代码，意义着更高的开发效率，更少的 <code>Bug</code>和更少的程序体积</p>
+<h5 id="二、需求分析"><a href="#二、需求分析" class="headerlink" title="二、需求分析"></a>二、需求分析</h5><p>实现一个<code>Modal</code>组件，首先确定需要完成的内容：</p>
+<ul>
+<li>遮罩层</li>
+<li>标题内容</li>
+<li>主体内容</li>
+<li>确定和取消按钮</li>
+</ul>
+<p>主体内容需要灵活，所以可以是字符串，也可以是一段 <code>html</code> 代码</p>
+<p>特点是它们在当前<code>vue</code>实例之外独立存在，通常挂载于<code>body</code>之上</p>
+<p>除了通过引入<code>import</code>的形式，我们还可通过<code>API</code>的形式进行组件的调用</p>
+<p>还可以包括配置全局样式、国际化、与<code>typeScript</code>结合</p>
+<h5 id="三、实现流程"><a href="#三、实现流程" class="headerlink" title="三、实现流程"></a>三、实现流程</h5><p>首先看看大致流程：</p>
+<ul>
+<li>目录结构</li>
+<li>组件内容</li>
+<li>实现 API 形式</li>
+<li>事件处理</li>
+<li>其他完善</li>
+</ul>
 
                 
             </div>
@@ -501,7 +534,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2021/12/27/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">http://example.com/2021/12/27/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/</a>
+                    <a href="http://example.com/2021/11/28/vue3%E7%B3%BB%E5%88%97/">http://example.com/2021/11/28/vue3%E7%B3%BB%E5%88%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -539,8 +572,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%83%A8%E7%BD%B2/">
-                                    <span class="chip bg-color">部署</span>
+                                <a href="/tags/vue/">
+                                    <span class="chip bg-color">vue</span>
                                 </a>
                             
                         </div>
@@ -714,10 +747,9 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;Current
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
                 <a href="/2021/12/27/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
@@ -735,9 +767,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -746,7 +778,6 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
@@ -765,7 +796,7 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/11/28/vue3%E7%B3%BB%E5%88%97/">
+                <a href="/2021/11/28/vue%E7%B3%BB%E5%88%97/">
                     <div class="card-image">
                         
                         
