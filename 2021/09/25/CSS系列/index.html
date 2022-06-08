@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则, LindaBlog">
-    <meta name="description" content="1234567891011121314151617181920# 1，1，2，3，5，8，13...def fib(n):# 递归    if n== 1:        return 1    if n==2:        return">
+    <meta name="keywords" content="CSS系列, LindaBlog">
+    <meta name="description" content="1.说说你对盒子模型的理解?首先盒子模型是通过，border边框，外边距margin，内边距padding，内容content组成
+盒子模型分为标准盒子和IE盒子
+标准盒子的话就是width是通过width+margin+padding+b">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>正则 | LindaBlog</title>
+    <title>CSS系列 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则</h1>
+                    <h1 class="description center-align post-title">CSS系列</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                <span class="chip bg-color">正则</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -446,7 +448,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-25
+                    2021-09-25
                 </div>
                 
 
@@ -467,191 +469,68 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1，1，2，3，5，8，13...</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):<span class="comment"># 递归</span></span><br><span class="line">    <span class="keyword">if</span> n== <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">2</span>)+fib(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib2</span>(<span class="params">n</span>):<span class="comment"># 生成器</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        </span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">aa = fib2(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aa:</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
+                <h4 id="1-说说你对盒子模型的理解"><a href="#1-说说你对盒子模型的理解" class="headerlink" title="1.说说你对盒子模型的理解?"></a>1.说说你对盒子模型的理解?</h4><p>首先盒子模型是通过，border边框，外边距margin，内边距padding，内容content组成</p>
+<p>盒子模型分为标准盒子和IE盒子</p>
+<p>标准盒子的话就是width是通过width+margin+padding+border组成height和width类型</p>
+<p>IE盒子的话宽通过width+margin组成</p>
+<h4 id="2-css选择器有哪些？优先级？哪些属性可以继承？"><a href="#2-css选择器有哪些？优先级？哪些属性可以继承？" class="headerlink" title="2.css选择器有哪些？优先级？哪些属性可以继承？"></a>2.css选择器有哪些？优先级？哪些属性可以继承？</h4><p>优先级：ID选择器&gt;class选择器&gt;标签选择器&gt;后代选择器&gt;子类选择器&gt;通配符选择器&gt;伪类选择器</p>
+<p>可继承：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">font</span>:组合字体</span><br><span class="line">font-family:规定元素的字体系列</span><br><span class="line">font-weight:设置字体的粗细</span><br><span class="line">font-size:设置字体的尺寸</span><br><span class="line">font-style:定义字体的风格</span><br><span class="line">font-variant:偏大或偏小的字体</span><br></pre></td></tr></table></figure>
 
-<p>跟递归比优势在哪里</p>
-<h1 id="课题：正则表达式"><a href="#课题：正则表达式" class="headerlink" title="课题：正则表达式"></a>课题：正则表达式</h1><p>[TOC]</p>
-<p>独有的工具：用来匹配或者提取字符串</p>
-<p>不属于Python基础。属于编程基础。</p>
-<p>封装到库里边的，语法都是一样的。做好笔记，多敲。</p>
-<p>Python—爬虫，WEB。没有其他的可以代替正则表达式</p>
-<p><a href="mailto:&#x31;&#50;&#x33;&#x34;&#x35;&#54;&#x40;&#x31;&#x36;&#x33;&#46;&#99;&#111;&#x6d;">&#x31;&#50;&#x33;&#x34;&#x35;&#54;&#x40;&#x31;&#x36;&#x33;&#46;&#99;&#111;&#x6d;</a>、url</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">aaa=<span class="string">&#x27;123456@163.com&#x27;</span></span><br><span class="line">my = re.findall(<span class="string">r&#x27;^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.com$&#x27;</span>,aaa)</span><br><span class="line"><span class="comment"># 去掉@或者cn  不能匹配到</span></span><br><span class="line"><span class="comment"># 通过自己写的规则，匹配想要的字符串</span></span><br><span class="line"><span class="comment"># python取消转义：\?    取消正则表达式语法的转义</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识点一：re模块"><a href="#知识点一：re模块" class="headerlink" title="知识点一：re模块"></a>知识点一：re模块</h2><h3 id="1、findall方法："><a href="#1、findall方法：" class="headerlink" title="1、findall方法："></a>1、findall方法：</h3><p>在字符串中找到正则表达式所匹配的所有子串，并返回一个列表<br>，如果没有找到匹配的，则返回空列表</p>
-<h3 id="2、match方法"><a href="#2、match方法" class="headerlink" title="2、match方法"></a>2、match方法</h3><p>re.match 尝试从字符串的起始位置匹配一个模式，匹配成功 返回的是一个匹配<br>对象（这个对象包含了我们匹配的信息），如果不是起始位置匹配成功的话，<br>match()返回的是空，</p>
-<p>注意：match只能匹配到一个</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;python123123java&quot;</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).group())<span class="comment"># 查看匹配的字符</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;123&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).span())<span class="comment"># 匹配字符的下标取值区间</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3、search方法"><a href="#3、search方法" class="headerlink" title="3、search方法"></a>3、search方法</h3><p>re.search 扫描整个字符串,匹配成功 返回的是一个匹配对象（这个对象包含了我们匹配的信息）</p>
-<p>注意：search也只能匹配到一个，找到符合规则的就返回，不会一直往后找</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;123&#x27;</span>,a))<span class="comment"># yes</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;cc&#x27;</span>,a))<span class="comment"># None</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).group())</span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).span())</span><br></pre></td></tr></table></figure>
-
-<p>re.match与re.search的区别：<br>re.match只匹配字符串的开始位置找，如果字符串开始不符合正则表达式，则匹配失败，<br>re.search：匹配整个字符串，如果一直找不到则，返回是空的，没有结果</p>
-<h3 id="4、元字符"><a href="#4、元字符" class="headerlink" title="4、元字符"></a>4、元字符</h3><p><strong>单字符匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">字符</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">.</td>
-<td align="left">匹配任意1个字符(除了\n)</td>
-</tr>
-<tr>
-<td align="left">[]</td>
-<td align="left">匹配 [] 中列举的字符</td>
-</tr>
-<tr>
-<td align="left">\d</td>
-<td align="left">匹配数字，即0-9</td>
-</tr>
-<tr>
-<td align="left">\D</td>
-<td align="left">匹配非数字，即不是数字</td>
-</tr>
-<tr>
-<td align="left">\s</td>
-<td align="left">匹配空白，即 空格，tab键</td>
-</tr>
-<tr>
-<td align="left">\S</td>
-<td align="left">匹配非空白</td>
-</tr>
-<tr>
-<td align="left">\w</td>
-<td align="left">匹配单词符，即a-z、A-Z、0-9、_</td>
-</tr>
-<tr>
-<td align="left">\W</td>
-<td align="left">匹配非单词字符</td>
-</tr>
-</tbody></table>
-<p><strong>代表数量的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>*</td>
-<td>匹配前一个字符出现0次或者无限次，即可有可无</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前一个字符出现1次或者无限次，即至少有1次</td>
-</tr>
-<tr>
-<td>？</td>
-<td>匹配前一个字符出现0次或者1次，即要么有1次，要么没有</td>
-</tr>
-<tr>
-<td>{m}</td>
-<td>匹配前一个字符出现m次</td>
-</tr>
-<tr>
-<td>{m,}</td>
-<td>匹配前一个字符至少出现m次</td>
-</tr>
-<tr>
-<td>{m,n}</td>
-<td>匹配前一个字符出现从m到n次</td>
-</tr>
-</tbody></table>
-<p><strong>代表边界的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>^</td>
-<td>匹配字符串开头</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串结尾</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配一个单词的边界</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配非单词边界</td>
-</tr>
-</tbody></table>
-<p><strong>分组匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>|</td>
-<td>匹配左右任意一个表达式</td>
-</tr>
-<tr>
-<td>(ab)</td>
-<td>将括号中的字符作为一个分组</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&#x27;张三天在玩4399小游戏，张三 hello 玩的.很开心&#x27;</span></span><br><span class="line">ress = re.findall(<span class="string">r&#x27;张三.&#x27;</span>,b)<span class="comment"># .任意一个字符</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;[54]&#x27;</span>,b)</span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\d&#x27;</span>,b)<span class="comment"># 匹配数字，单个字符，单个元素</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\D&#x27;</span>,b)<span class="comment">#</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4*&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现0次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4+&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现1次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现m次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;^张三&#x27;</span>,b)<span class="comment"># 匹配字符串开头</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;心$&#x27;</span>,b)<span class="comment"># 匹配字符串结尾</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\bhello\b&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line"><span class="built_in">print</span>(ress1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5、贪婪和非贪婪"><a href="#5、贪婪和非贪婪" class="headerlink" title="5、贪婪和非贪婪"></a>5、贪婪和非贪婪</h3><p>正则默认都是用贪婪模式去匹配数据的，就是尽可能多的匹配符合要求的数据，</p>
-<p>在非贪婪模式下，始终找最短匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&lt;img src = &quot;xiaomeimei.jpg&quot; alt=&quot;这是图片&quot;&gt;&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;&lt;html&gt;000&lt;/html&gt;&lt;td&gt;ddd&lt;/td&gt;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*&gt;&#x27;</span>,b))<span class="comment"># 贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*?&gt;&#x27;</span>,b))<span class="comment"># 加上？变成非贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+?)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">aa = <span class="string">&#x27;&lt;img src=&quot;https://rpic.douyucdn.cn/live-cover/roomCover/2019/02/14/7205b97c8db9ddf9109153f294f14b21_big.jpg?x-oss-process=image/format,webp&quot; class=&quot;DyImg-content is-normal &quot;&gt;&#x27;</span></span><br><span class="line">a = re.search(<span class="string">r&quot;https://.*?\.jpg&quot;</span>, aa)</span><br><span class="line">b = a.group()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b)</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">    </span><br><span class="line">--------------------------------------</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;&lt;img src=&quot;https://img.tupianzj.com/uploads/allimg/202005/9999/184cb9395c.jpg&quot; id=&quot;bigpicimg&quot; alt=&quot;&quot;&gt;&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = re.findall(<span class="string">r&#x27;src=&quot;(https:.*?\.jpg)&quot;&#x27;</span>, a)</span><br><span class="line"><span class="comment"># qiye = re.findall(r&#x27;&lt;img src=&quot;(.*?\.jpg)&quot;&#x27;, a)</span></span><br><span class="line"><span class="string">r&#x27;&lt;img src=&quot;([^&quot;]+\.jpg)&quot;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b[<span class="number">0</span>])</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">--------------------------------------------</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1----9     \d</span></span><br><span class="line"><span class="comment"># 10----99    [1-9]\d</span></span><br><span class="line"><span class="comment"># 100----199   1\d&#123;2&#125;</span></span><br><span class="line"><span class="comment"># 200----249   2[0-4]\d</span></span><br><span class="line"><span class="comment"># 250---255    25[0-5]</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>):</span><br><span class="line">    a = <span class="built_in">str</span>(i)</span><br><span class="line"></span><br><span class="line">    a = re.match(<span class="string">r&quot;^(25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]\d|\d)$&quot;</span>, a)</span><br><span class="line">    <span class="built_in">print</span>(a.group())</span><br><span class="line">------------------------------------------</span><br><span class="line">手机号</span><br><span class="line">bb = <span class="string">&#x27;18390970027&#x27;</span></span><br><span class="line">bbb = re.match(<span class="string">r&#x27;1[35678]\d&#123;9&#125;&#x27;</span>,bb)</span><br><span class="line"><span class="built_in">print</span>(bbb.group())</span><br></pre></td></tr></table></figure>
-
-<h2 id="拓展（可不讲）"><a href="#拓展（可不讲）" class="headerlink" title="拓展（可不讲）"></a>拓展（可不讲）</h2><table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>re.I</td>
-<td>使匹配对大小写不敏感</td>
-</tr>
-<tr>
-<td>re.L</td>
-<td>做本地化识别（locale-aware）匹配</td>
-</tr>
-<tr>
-<td>re.M</td>
-<td>多行匹配，影响 ^ 和 $</td>
-</tr>
-<tr>
-<td>re.S</td>
-<td>使 . 匹配包括换行在内的所有字符</td>
-</tr>
-<tr>
-<td>re.U</td>
-<td>根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.</td>
-</tr>
-<tr>
-<td>re.X</td>
-<td>该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</td>
-</tr>
-</tbody></table>
-<p>正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
-<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------    </span><br><span class="line">re.S</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;asdfsafhellopass:</span></span><br><span class="line"><span class="string">    234455</span></span><br><span class="line"><span class="string">    worldafdsf</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">b = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a)</span><br><span class="line">c = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a, re.S)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b is &#x27;</span>, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c is &#x27;</span>, c)</span><br><span class="line"></span><br><span class="line">--------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment"># sub是substitute表示替换</span></span><br><span class="line"></span><br><span class="line">phone = <span class="string">&quot;2004-959-559 # 这是一个国外电话号码&quot;</span></span><br><span class="line"><span class="comment"># 删除字符串中的 Python注释</span></span><br><span class="line">num = re.sub(<span class="string">r&#x27;#.*$&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004-959-559</span></span><br><span class="line"><span class="comment"># 删除非数字(-)的字符串</span></span><br><span class="line">num2 = re.sub(<span class="string">r&#x27;\D&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004959559</span></span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># 将匹配的数字乘以 2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">double</span>(<span class="params">matched</span>):</span><br><span class="line">    value = <span class="built_in">int</span>(matched.group(<span class="string">&#x27;value&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(value * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;A23G4HFD567&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.sub(<span class="string">&#x27;(?P&lt;value&gt;\d+)&#x27;</span>, double, s))</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># re.finditer  和 findall 类似，在字符串中找到正则表达式所匹配的所有子串，并把它们作为一个迭代器返回。</span></span><br><span class="line">it = re.finditer(<span class="string">r&quot;\d+&quot;</span>, <span class="string">&quot;12a32bc43jf3&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> match <span class="keyword">in</span> it:</span><br><span class="line">    <span class="built_in">print</span>(match.group())</span><br><span class="line">    </span><br><span class="line">re.split 切割</span><br><span class="line"></span><br><span class="line">line = <span class="string">&#x27;aaa bbb ccc;ddd   eee,fff&#x27;</span></span><br><span class="line">a = re.split(<span class="string">r&#x27;;&#x27;</span>,line)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
+<h4 id="3-说说em-x2F-px-x2F-rem-x2F-vh-x2F-vw区别"><a href="#3-说说em-x2F-px-x2F-rem-x2F-vh-x2F-vw区别" class="headerlink" title="3.说说em&#x2F;px&#x2F;rem&#x2F;vh&#x2F;vw区别?"></a>3.说说em&#x2F;px&#x2F;rem&#x2F;vh&#x2F;vw区别?</h4><p>首先px是代表绝对单位，表示精度的像素</p>
+<p>em和rem都代表的是字体的大小</p>
+<p>vh和vw一般用于移动端，表示窗口的高度和窗口的宽度</p>
+<h4 id="4-css中，有哪些方式可以隐藏页面元素？区别"><a href="#4-css中，有哪些方式可以隐藏页面元素？区别" class="headerlink" title="4.css中，有哪些方式可以隐藏页面元素？区别?"></a>4.css中，有哪些方式可以隐藏页面元素？区别?</h4><p>首先有这么几种：display:none,visbillt:hidden,opacity:0，position:absolute</p>
+<p>dispaly:none元素在页面上彻底消失，会触发重排和重绘</p>
+<p>visbllt:hidden不会触发重排，会触发重绘</p>
+<p>opacity:0不会触发重排，不一定触发重绘</p>
+<p>position:abslote把元素移出可视区域</p>
+<h4 id="5-谈谈你对BFC的理解"><a href="#5-谈谈你对BFC的理解" class="headerlink" title="5.谈谈你对BFC的理解"></a>5.谈谈你对BFC的理解</h4><p>首先BFC的话就是他是页面上一块渲染区域，有自己独立的容器空间，它与外界进行隔离，他是一个隔离的容器，容器里面的子元素不会影响到外面的元素</p>
+<h4 id="6-元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"><a href="#6-元素水平垂直居中的方法有哪些？如果元素不定宽高呢？" class="headerlink" title="6.元素水平垂直居中的方法有哪些？如果元素不定宽高呢？"></a>6.元素水平垂直居中的方法有哪些？如果元素不定宽高呢？</h4><p>首先使用fiex布局，使用margin：auto，使用定位，top：50%，left：50%，tansform：tanslate（-50%，-50%）</p>
+<p>使用table布局，使用grid布局然后子元素使用ju’stify-content：center，align-items:center</p>
+<h4 id="7-如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？"><a href="#7-如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？" class="headerlink" title="7.如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？"></a>7.如何实现两栏布局，右侧自适应？三栏布局中间自适应呢？</h4><p>俩栏布局的话使用浮动，左边栏使用float：left，右边栏使用margin-left撑出内容，给父元素添加BFC，overflow：hidden</p>
+<p>还可以是有flex布局，父元素dispaly：flex，子元素去felx：1</p>
+<p>三栏布局俩边使用float，中间使用margin</p>
+<ul>
+<li>两边使用 float，中间使用 margin</li>
+<li>两边使用 absolute，中间使用 margin</li>
+<li>两边使用 float 和负 margin</li>
+<li>display: table 实现</li>
+<li>flex实现</li>
+<li>grid网格布局</li>
+</ul>
+<h4 id="8-说说flexbox（弹性盒布局模型）-以及适用场景？"><a href="#8-说说flexbox（弹性盒布局模型）-以及适用场景？" class="headerlink" title="8.说说flexbox（弹性盒布局模型）,以及适用场景？"></a>8.说说flexbox（弹性盒布局模型）,以及适用场景？</h4><p>flexbox就是弹性布局，可以简单快速的创建各种布局，自适应布局页面各种布局</p>
+<p>主要属性有：</p>
+<ul>
+<li>flex-direction</li>
+<li>flex-wrap</li>
+<li>flex-flow</li>
+<li>justify-content</li>
+<li>align-items</li>
+<li>align-content</li>
+</ul>
+<h4 id="9-介绍一下grid网格布局"><a href="#9-介绍一下grid网格布局" class="headerlink" title="9.介绍一下grid网格布局"></a>9.介绍一下grid网格布局</h4><p>grid网格布局就是主要就是有列宽，和行高，通过clomus和rows，以及grad-gap来设置中间间距等等</p>
+<h4 id="10-CSS3新增了哪些新特性？"><a href="#10-CSS3新增了哪些新特性？" class="headerlink" title="10.CSS3新增了哪些新特性？"></a>10.CSS3新增了哪些新特性？</h4><p>主要新增了阴影，圆角，过度，动画，转换，渐变等等</p>
+<h4 id="11-怎么理解回流跟重绘？什么场景下会触发？"><a href="#11-怎么理解回流跟重绘？什么场景下会触发？" class="headerlink" title="11.怎么理解回流跟重绘？什么场景下会触发？"></a>11.怎么理解回流跟重绘？什么场景下会触发？</h4><p>首先得说一下浏览器的渲染机制，首先浏览器会解析html为dom元素，解析css为cssdom树，然后回结合dom树和cssdom树形成渲染树，之后根据返回的渲染树展示到页面，回流的回获取页面的节点信息，重绘就是获取节点的像素，传给一个叫页面</p>
+<p>回流主要就是触发在添加删除元素，内容，大小尺寸，窗口发生改变回触发回流</p>
+<p>重绘的话改变颜色，阴影，文本，等等回触发重绘</p>
+<p>回流一定回触发重绘，重绘不会触发回流</p>
+<p>解决办法避免使用table布局，避免使用css表达式，避免js操作css等等</p>
+<h4 id="12-什么是响应式设计？响应式设计的基本原理是什么？如何做？"><a href="#12-什么是响应式设计？响应式设计的基本原理是什么？如何做？" class="headerlink" title="12.什么是响应式设计？响应式设计的基本原理是什么？如何做？"></a>12.什么是响应式设计？响应式设计的基本原理是什么？如何做？</h4><p>响应式设计就是网络页面设计布局，可以达到一个自适应的形式</p>
+<p>一般有几种方式使用媒体查询，也就media进行实现，通过媒体查询来改变不同大小屏幕分辨率显示的问题</p>
+<p>还有使用vh，vw来改变窗口的大小</p>
+<p>以及使用rem计量单位，他和px直接会有一个转换方式，1px等于16rem</p>
+<p>以及使用百分比的形式实现自适应</p>
+<h4 id="13-如果要做优化，CSS提高性能的方法有哪些？"><a href="#13-如果要做优化，CSS提高性能的方法有哪些？" class="headerlink" title="13.如果要做优化，CSS提高性能的方法有哪些？"></a>13.如果要做优化，CSS提高性能的方法有哪些？</h4><p>css一般都知道使用了写样式的，它一般有几种方式可以提高性能</p>
+<p>内联首屏加载css也就是浏览器会有一个机制可以提高浏览器页面渲染的速度，可以提前渲染</p>
+<p>异步加载css，一般设置meta设置一个属性</p>
+<p>合理使用选择器，就是避免使用伪类，通配符选择器</p>
+<p>资源压缩等等，使用打包工具webpack来进行css的压缩等等</p>
+<h4 id="14-CSS如何画一个三角形？原理是什么？"><a href="#14-CSS如何画一个三角形？原理是什么？" class="headerlink" title="14.CSS如何画一个三角形？原理是什么？"></a>14.CSS如何画一个三角形？原理是什么？</h4><p>宽高0</p>
+<p>然后给一个border 宽度100</p>
+<p>然后给四个border的color一个tanpatedt向要哪一个角就给那一个角一个颜色</p>
+<h4 id="15-说说对Css预编语言的理解？有哪些区别"><a href="#15-说说对Css预编语言的理解？有哪些区别" class="headerlink" title="15.说说对Css预编语言的理解？有哪些区别?"></a>15.说说对Css预编语言的理解？有哪些区别?</h4><p>有sass，less等等</p>
+<p>主要就可以实现嵌套，变量，作用域，代码混合，代码模块化</p>
 
                 
             </div>
@@ -678,7 +557,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/">http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/</a>
+                    <a href="http://example.com/2021/09/25/CSS%E7%B3%BB%E5%88%97/">http://example.com/2021/09/25/CSS%E7%B3%BB%E5%88%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,8 +595,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                    <span class="chip bg-color">正则</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
                         </div>
@@ -895,13 +774,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/05/25/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+                <a href="/2021/11/26/v-if%E5%92%8Cv-for%E7%9A%84%E4%BC%98%E5%85%88%E7%BA%A7%E6%98%AF%E4%BB%80%E4%B9%88/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="知识点总结">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="v-if和v-for的优先级是什么">
                         
-                        <span class="card-title">知识点总结</span>
+                        <span class="card-title">v-if和v-for的优先级是什么</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -912,7 +791,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-11-26
                         </span>
                         <span class="publish-author">
                             
@@ -925,8 +804,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/vue/">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
@@ -940,13 +819,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%E4%BA%8C/">
+                <a href="/2021/07/27/python%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="知识点总结二">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python笔记">
                         
-                        <span class="card-title">知识点总结二</span>
+                        <span class="card-title">python笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -957,7 +836,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
                             </span>
                         <span class="publish-author">
                             
@@ -970,8 +849,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
