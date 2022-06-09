@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则, LindaBlog">
-    <meta name="description" content="1234567891011121314151617181920# 1，1，2，3，5，8，13...def fib(n):# 递归    if n== 1:        return 1    if n==2:        return">
+    <meta name="keywords" content="React系列, LindaBlog">
+    <meta name="description" content="1.说说对 React 的理解？有哪些特性？首先react他是一个构建用户界面的一个js框架，它主要是高效灵活的一个库，常用于多人协作开发，较为复杂的项目，语法非常的灵活，内部采用的diff算法去操作虚拟dom，也是组件化开发，数据驱动视图">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>正则 | LindaBlog</title>
+    <title>React系列 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则</h1>
+                    <h1 class="description center-align post-title">React系列</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                <span class="chip bg-color">正则</span>
+                            <a href="/tags/React/">
+                                <span class="chip bg-color">React</span>
                             </a>
                         
                     </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-25
+                    2021-07-25
                 </div>
                 
 
@@ -467,191 +467,107 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1，1，2，3，5，8，13...</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):<span class="comment"># 递归</span></span><br><span class="line">    <span class="keyword">if</span> n== <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">2</span>)+fib(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib2</span>(<span class="params">n</span>):<span class="comment"># 生成器</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        </span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">aa = fib2(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aa:</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-<p>跟递归比优势在哪里</p>
-<h1 id="课题：正则表达式"><a href="#课题：正则表达式" class="headerlink" title="课题：正则表达式"></a>课题：正则表达式</h1><p>[TOC]</p>
-<p>独有的工具：用来匹配或者提取字符串</p>
-<p>不属于Python基础。属于编程基础。</p>
-<p>封装到库里边的，语法都是一样的。做好笔记，多敲。</p>
-<p>Python—爬虫，WEB。没有其他的可以代替正则表达式</p>
-<p><a href="mailto:&#x31;&#x32;&#51;&#x34;&#53;&#x36;&#64;&#x31;&#x36;&#51;&#46;&#x63;&#111;&#x6d;">&#x31;&#x32;&#51;&#x34;&#53;&#x36;&#64;&#x31;&#x36;&#51;&#46;&#x63;&#111;&#x6d;</a>、url</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">aaa=<span class="string">&#x27;123456@163.com&#x27;</span></span><br><span class="line">my = re.findall(<span class="string">r&#x27;^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.com$&#x27;</span>,aaa)</span><br><span class="line"><span class="comment"># 去掉@或者cn  不能匹配到</span></span><br><span class="line"><span class="comment"># 通过自己写的规则，匹配想要的字符串</span></span><br><span class="line"><span class="comment"># python取消转义：\?    取消正则表达式语法的转义</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识点一：re模块"><a href="#知识点一：re模块" class="headerlink" title="知识点一：re模块"></a>知识点一：re模块</h2><h3 id="1、findall方法："><a href="#1、findall方法：" class="headerlink" title="1、findall方法："></a>1、findall方法：</h3><p>在字符串中找到正则表达式所匹配的所有子串，并返回一个列表<br>，如果没有找到匹配的，则返回空列表</p>
-<h3 id="2、match方法"><a href="#2、match方法" class="headerlink" title="2、match方法"></a>2、match方法</h3><p>re.match 尝试从字符串的起始位置匹配一个模式，匹配成功 返回的是一个匹配<br>对象（这个对象包含了我们匹配的信息），如果不是起始位置匹配成功的话，<br>match()返回的是空，</p>
-<p>注意：match只能匹配到一个</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;python123123java&quot;</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).group())<span class="comment"># 查看匹配的字符</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;123&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).span())<span class="comment"># 匹配字符的下标取值区间</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3、search方法"><a href="#3、search方法" class="headerlink" title="3、search方法"></a>3、search方法</h3><p>re.search 扫描整个字符串,匹配成功 返回的是一个匹配对象（这个对象包含了我们匹配的信息）</p>
-<p>注意：search也只能匹配到一个，找到符合规则的就返回，不会一直往后找</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;123&#x27;</span>,a))<span class="comment"># yes</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;cc&#x27;</span>,a))<span class="comment"># None</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).group())</span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).span())</span><br></pre></td></tr></table></figure>
-
-<p>re.match与re.search的区别：<br>re.match只匹配字符串的开始位置找，如果字符串开始不符合正则表达式，则匹配失败，<br>re.search：匹配整个字符串，如果一直找不到则，返回是空的，没有结果</p>
-<h3 id="4、元字符"><a href="#4、元字符" class="headerlink" title="4、元字符"></a>4、元字符</h3><p><strong>单字符匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">字符</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">.</td>
-<td align="left">匹配任意1个字符(除了\n)</td>
-</tr>
-<tr>
-<td align="left">[]</td>
-<td align="left">匹配 [] 中列举的字符</td>
-</tr>
-<tr>
-<td align="left">\d</td>
-<td align="left">匹配数字，即0-9</td>
-</tr>
-<tr>
-<td align="left">\D</td>
-<td align="left">匹配非数字，即不是数字</td>
-</tr>
-<tr>
-<td align="left">\s</td>
-<td align="left">匹配空白，即 空格，tab键</td>
-</tr>
-<tr>
-<td align="left">\S</td>
-<td align="left">匹配非空白</td>
-</tr>
-<tr>
-<td align="left">\w</td>
-<td align="left">匹配单词符，即a-z、A-Z、0-9、_</td>
-</tr>
-<tr>
-<td align="left">\W</td>
-<td align="left">匹配非单词字符</td>
-</tr>
-</tbody></table>
-<p><strong>代表数量的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>*</td>
-<td>匹配前一个字符出现0次或者无限次，即可有可无</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前一个字符出现1次或者无限次，即至少有1次</td>
-</tr>
-<tr>
-<td>？</td>
-<td>匹配前一个字符出现0次或者1次，即要么有1次，要么没有</td>
-</tr>
-<tr>
-<td>{m}</td>
-<td>匹配前一个字符出现m次</td>
-</tr>
-<tr>
-<td>{m,}</td>
-<td>匹配前一个字符至少出现m次</td>
-</tr>
-<tr>
-<td>{m,n}</td>
-<td>匹配前一个字符出现从m到n次</td>
-</tr>
-</tbody></table>
-<p><strong>代表边界的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>^</td>
-<td>匹配字符串开头</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串结尾</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配一个单词的边界</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配非单词边界</td>
-</tr>
-</tbody></table>
-<p><strong>分组匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>|</td>
-<td>匹配左右任意一个表达式</td>
-</tr>
-<tr>
-<td>(ab)</td>
-<td>将括号中的字符作为一个分组</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&#x27;张三天在玩4399小游戏，张三 hello 玩的.很开心&#x27;</span></span><br><span class="line">ress = re.findall(<span class="string">r&#x27;张三.&#x27;</span>,b)<span class="comment"># .任意一个字符</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;[54]&#x27;</span>,b)</span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\d&#x27;</span>,b)<span class="comment"># 匹配数字，单个字符，单个元素</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\D&#x27;</span>,b)<span class="comment">#</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4*&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现0次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4+&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现1次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现m次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;^张三&#x27;</span>,b)<span class="comment"># 匹配字符串开头</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;心$&#x27;</span>,b)<span class="comment"># 匹配字符串结尾</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\bhello\b&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line"><span class="built_in">print</span>(ress1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5、贪婪和非贪婪"><a href="#5、贪婪和非贪婪" class="headerlink" title="5、贪婪和非贪婪"></a>5、贪婪和非贪婪</h3><p>正则默认都是用贪婪模式去匹配数据的，就是尽可能多的匹配符合要求的数据，</p>
-<p>在非贪婪模式下，始终找最短匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&lt;img src = &quot;xiaomeimei.jpg&quot; alt=&quot;这是图片&quot;&gt;&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;&lt;html&gt;000&lt;/html&gt;&lt;td&gt;ddd&lt;/td&gt;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*&gt;&#x27;</span>,b))<span class="comment"># 贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*?&gt;&#x27;</span>,b))<span class="comment"># 加上？变成非贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+?)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">aa = <span class="string">&#x27;&lt;img src=&quot;https://rpic.douyucdn.cn/live-cover/roomCover/2019/02/14/7205b97c8db9ddf9109153f294f14b21_big.jpg?x-oss-process=image/format,webp&quot; class=&quot;DyImg-content is-normal &quot;&gt;&#x27;</span></span><br><span class="line">a = re.search(<span class="string">r&quot;https://.*?\.jpg&quot;</span>, aa)</span><br><span class="line">b = a.group()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b)</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">    </span><br><span class="line">--------------------------------------</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;&lt;img src=&quot;https://img.tupianzj.com/uploads/allimg/202005/9999/184cb9395c.jpg&quot; id=&quot;bigpicimg&quot; alt=&quot;&quot;&gt;&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = re.findall(<span class="string">r&#x27;src=&quot;(https:.*?\.jpg)&quot;&#x27;</span>, a)</span><br><span class="line"><span class="comment"># qiye = re.findall(r&#x27;&lt;img src=&quot;(.*?\.jpg)&quot;&#x27;, a)</span></span><br><span class="line"><span class="string">r&#x27;&lt;img src=&quot;([^&quot;]+\.jpg)&quot;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b[<span class="number">0</span>])</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">--------------------------------------------</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1----9     \d</span></span><br><span class="line"><span class="comment"># 10----99    [1-9]\d</span></span><br><span class="line"><span class="comment"># 100----199   1\d&#123;2&#125;</span></span><br><span class="line"><span class="comment"># 200----249   2[0-4]\d</span></span><br><span class="line"><span class="comment"># 250---255    25[0-5]</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>):</span><br><span class="line">    a = <span class="built_in">str</span>(i)</span><br><span class="line"></span><br><span class="line">    a = re.match(<span class="string">r&quot;^(25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]\d|\d)$&quot;</span>, a)</span><br><span class="line">    <span class="built_in">print</span>(a.group())</span><br><span class="line">------------------------------------------</span><br><span class="line">手机号</span><br><span class="line">bb = <span class="string">&#x27;18390970027&#x27;</span></span><br><span class="line">bbb = re.match(<span class="string">r&#x27;1[35678]\d&#123;9&#125;&#x27;</span>,bb)</span><br><span class="line"><span class="built_in">print</span>(bbb.group())</span><br></pre></td></tr></table></figure>
-
-<h2 id="拓展（可不讲）"><a href="#拓展（可不讲）" class="headerlink" title="拓展（可不讲）"></a>拓展（可不讲）</h2><table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>re.I</td>
-<td>使匹配对大小写不敏感</td>
-</tr>
-<tr>
-<td>re.L</td>
-<td>做本地化识别（locale-aware）匹配</td>
-</tr>
-<tr>
-<td>re.M</td>
-<td>多行匹配，影响 ^ 和 $</td>
-</tr>
-<tr>
-<td>re.S</td>
-<td>使 . 匹配包括换行在内的所有字符</td>
-</tr>
-<tr>
-<td>re.U</td>
-<td>根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.</td>
-</tr>
-<tr>
-<td>re.X</td>
-<td>该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</td>
-</tr>
-</tbody></table>
-<p>正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
-<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------    </span><br><span class="line">re.S</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;asdfsafhellopass:</span></span><br><span class="line"><span class="string">    234455</span></span><br><span class="line"><span class="string">    worldafdsf</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">b = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a)</span><br><span class="line">c = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a, re.S)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b is &#x27;</span>, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c is &#x27;</span>, c)</span><br><span class="line"></span><br><span class="line">--------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment"># sub是substitute表示替换</span></span><br><span class="line"></span><br><span class="line">phone = <span class="string">&quot;2004-959-559 # 这是一个国外电话号码&quot;</span></span><br><span class="line"><span class="comment"># 删除字符串中的 Python注释</span></span><br><span class="line">num = re.sub(<span class="string">r&#x27;#.*$&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004-959-559</span></span><br><span class="line"><span class="comment"># 删除非数字(-)的字符串</span></span><br><span class="line">num2 = re.sub(<span class="string">r&#x27;\D&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004959559</span></span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># 将匹配的数字乘以 2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">double</span>(<span class="params">matched</span>):</span><br><span class="line">    value = <span class="built_in">int</span>(matched.group(<span class="string">&#x27;value&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(value * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;A23G4HFD567&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.sub(<span class="string">&#x27;(?P&lt;value&gt;\d+)&#x27;</span>, double, s))</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># re.finditer  和 findall 类似，在字符串中找到正则表达式所匹配的所有子串，并把它们作为一个迭代器返回。</span></span><br><span class="line">it = re.finditer(<span class="string">r&quot;\d+&quot;</span>, <span class="string">&quot;12a32bc43jf3&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> match <span class="keyword">in</span> it:</span><br><span class="line">    <span class="built_in">print</span>(match.group())</span><br><span class="line">    </span><br><span class="line">re.split 切割</span><br><span class="line"></span><br><span class="line">line = <span class="string">&#x27;aaa bbb ccc;ddd   eee,fff&#x27;</span></span><br><span class="line">a = re.split(<span class="string">r&#x27;;&#x27;</span>,line)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
-
+                <h4 id="1-说说对-React-的理解？有哪些特性？"><a href="#1-说说对-React-的理解？有哪些特性？" class="headerlink" title="1.说说对 React 的理解？有哪些特性？"></a>1.说说对 React 的理解？有哪些特性？</h4><p>首先react他是一个构建用户界面的一个js框架，它主要是高效灵活的一个库，常用于多人协作开发，较为复杂的项目，语法非常的灵活，内部采用的diff算法去操作虚拟dom，也是组件化开发，数据驱动视图，单向数据流，采用的是jsx的语法，之后会由bable转换成js，可在服务端进行渲染，等等这是一些特性</p>
+<h4 id="2-说说-Real-DOM-和-Virtual-DOM-的区别？优缺点？"><a href="#2-说说-Real-DOM-和-Virtual-DOM-的区别？优缺点？" class="headerlink" title="2.说说 Real DOM 和 Virtual DOM 的区别？优缺点？"></a>2.说说 Real DOM 和 Virtual DOM 的区别？优缺点？</h4><p>首先真实dom没有虚拟dom那么迅速，真实dom需要频繁的操作dom，非常的麻烦，而且会触发回流和重绘，</p>
+<p>真实dom操作起来麻烦，渲染也很慢，所以后续出了虚拟dom</p>
+<p>首先虚拟dom的话就是一个个的js对象，它是由一个snabbdom的一个库里面h函数进行创建处理，h函数创建处理的虚拟dom是一个对象，然而这个对象里面包含五个属性，分别由sel也就是选择器，data数据，chilren子节点，elm虚拟节点，key唯一标识，之后创建处理会通过diff算法中最重要的一个patch函数进行上树，patch函数传入俩个参数第一个是旧的虚拟节点，第二个是新的虚拟节点，对比着俩个虚拟节点的差异，进行最小量的更新。</p>
+<h4 id="3-说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？"><a href="#3-说说-React-生命周期有哪些不同阶段？每个阶段对应的方法是？" class="headerlink" title="3.说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？"></a>3.说说 React 生命周期有哪些不同阶段？每个阶段对应的方法是？</h4><p>主要分为三个节点，创建阶段，更新阶段，卸载阶段</p>
+<p>创建阶段的方法：</p>
+<ul>
+<li>conststor</li>
+<li>render</li>
+<li>compontDidMount</li>
+</ul>
+<p>更新阶段的方法：</p>
+<ul>
+<li>render</li>
+<li>shuoldcompintupdate</li>
+<li>compontDitUpdate</li>
+</ul>
+<p>卸载阶段的方法：</p>
+<ul>
+<li>compontWindunMount</li>
+</ul>
+<h4 id="4-state-和-props-有什么区别？"><a href="#4-state-和-props-有什么区别？" class="headerlink" title="4.state 和 props 有什么区别？"></a>4.state 和 props 有什么区别？</h4><p>首先state就是constructor中的状态，是由this.state进行创建状态，状态数据都保存在state中，要想修改的话使用setState进行修改，主要就是保存状态</p>
+<p>而props是可以用来传递，字符串，数字，对象，数组，回调函数等</p>
+<p>他们俩个都是js对象，都使用了存储的，都能触发渲染更新</p>
+<h4 id="5-super-和-super-props-有什么区别？"><a href="#5-super-和-super-props-有什么区别？" class="headerlink" title="5.super() 和 super(props) 有什么区别？"></a>5.super() 和 super(props) 有什么区别？</h4><p>super的话是在类组件中constrcutor中使用，使用类组件必须调用super因为super是继承自父类，必须调用采用使用父类传过来的数据</p>
+<h4 id="6-说说-React中的setState执行机制"><a href="#6-说说-React中的setState执行机制" class="headerlink" title="6.说说 React中的setState执行机制"></a>6.说说 React中的setState执行机制</h4><p>首先setState是用来更新state中的状态的，它第一个参数是传入要修改的对象，第二个参数是要修改的值，修改的过程中会把数据放在一个一个更新队列中等待更新，他一般由俩种更新方式一种是异步的一种是同步的</p>
+<p>异步的发生在生命周期合成事件中，同步发生在定时器中以及原生dom事件中</p>
+<h4 id="7-React-中-keys-的作用是什么？"><a href="#7-React-中-keys-的作用是什么？" class="headerlink" title="7.React 中 keys 的作用是什么？"></a>7.React 中 keys 的作用是什么？</h4><p>首先keys是来绝对元素的唯一标识，keys是在diff算法中进行使用的，有了key才能体现出diff算法的最大的效率，比如页面上有ul里面有liABCD那么接下来添加一个EF那么diff算法会在每个虚拟dom节点上添加上key，接着不管怎么去移动li里元素的位置，最终都能准确的去更新dom，最小量的更新dom，keys在diff算法中是最为重要的。</p>
+<h4 id="8-传入-setState-函数的第二个参数的作用是什么"><a href="#8-传入-setState-函数的第二个参数的作用是什么" class="headerlink" title="8.传入 setState 函数的第二个参数的作用是什么"></a>8.传入 setState 函数的第二个参数的作用是什么</h4><p>第二个参数就是为修改的值，第一个是要修改的那个状态的名字，第二个参数是要修改成什么值</p>
+<h4 id="9-React-中-refs-的作用是什么"><a href="#9-React-中-refs-的作用是什么" class="headerlink" title="9.React 中 refs 的作用是什么"></a>9.React 中 refs 的作用是什么</h4><p>可以通过设置refs来获取dom元素</p>
+<h4 id="10-在生命周期中的哪一步你应该发起-AJAX-请求"><a href="#10-在生命周期中的哪一步你应该发起-AJAX-请求" class="headerlink" title="10.在生命周期中的哪一步你应该发起 AJAX 请求"></a>10.在生命周期中的哪一步你应该发起 AJAX 请求</h4><p>在挂载阶段的一个componentDitMount里面调用AJAX请求</p>
+<h4 id="11-shouldComponentUpdate-的作用"><a href="#11-shouldComponentUpdate-的作用" class="headerlink" title="11.shouldComponentUpdate 的作用"></a>11.shouldComponentUpdate 的作用</h4><p>允许我们可以手动的去更新组件，避免了一些不必要的更新</p>
+<h4 id="12-React事件绑定的方式有哪些？区别"><a href="#12-React事件绑定的方式有哪些？区别" class="headerlink" title="12.React事件绑定的方式有哪些？区别"></a>12.React事件绑定的方式有哪些？区别</h4><p>绑定事件首先比如onclick需要小驼峰命名，绑定的事件是由{}进行包裹，通过render和constctor里面是由bind进行绑定，传入this执行当前组件以及render里面可以使用箭头函数绑定</p>
+<h4 id="13-React构建组件的方式有哪些？区别？"><a href="#13-React构建组件的方式有哪些？区别？" class="headerlink" title="13.React构建组件的方式有哪些？区别？"></a>13.React构建组件的方式有哪些？区别？</h4><p>可以使用函数式进行创建</p>
+<p>以及react.createClass进行创建</p>
+<p>react.Component进行创建</p>
+<h4 id="14-React中组件之间如何通信？"><a href="#14-React中组件之间如何通信？" class="headerlink" title="14.React中组件之间如何通信？"></a>14.React中组件之间如何通信？</h4><p>首先通信的方式有:</p>
+<ul>
+<li>父组件向子组件传递</li>
+<li>子组件向父组件传递</li>
+<li>兄弟组件直接的通信</li>
+<li>父组件向后代组件传递</li>
+</ul>
+<h5 id="父组件向子组件传递"><a href="#父组件向子组件传递" class="headerlink" title="父组件向子组件传递"></a>父组件向子组件传递</h5><p>父组件向子组件传递通过标签内传递参数,子组件通过props就能获取参数</p>
+<h5 id="子组件向父组件传递"><a href="#子组件向父组件传递" class="headerlink" title="子组件向父组件传递"></a>子组件向父组件传递</h5><p>父组件会传递给子组件一个函数,然后通过这个函数的回调拿到组件就传过来的值</p>
+<h5 id="兄弟组件直接的通信"><a href="#兄弟组件直接的通信" class="headerlink" title="兄弟组件直接的通信"></a>兄弟组件直接的通信</h5><p>通过中间件来进行传递</p>
+<h5 id="父组件向后代组件传递"><a href="#父组件向后代组件传递" class="headerlink" title="父组件向后代组件传递"></a>父组件向后代组件传递</h5><p>通过connect在根组件里使用proiver进行每一层的一个传递 </p>
+<h4 id="15-说说对React中类组件和函数组件的理解？有什么区别？"><a href="#15-说说对React中类组件和函数组件的理解？有什么区别？" class="headerlink" title="15.说说对React中类组件和函数组件的理解？有什么区别？"></a>15.说说对React中类组件和函数组件的理解？有什么区别？</h4><p>首先类组件,顾名思义是通过es6的类进行编写,必须继承react.component,必须调用render进行渲染</p>
+<p>函数组件,顾名思义是通过函数进行编写创建</p>
+<h5 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h5><p>编写方式不同</p>
+<p>状态管理不同,类组件通过this.state进行创建状态,函数组件通过hook,useState进行管理状态</p>
+<p>生命周期不同,类组件是通过生命周期钩子进行创建,函数组件通过useEffect进行创建,通过hook</p>
+<p>调用方式不同,函数直接调用函数就行,类组件通过实例化进行调用</p>
+<p>主要区别就是各有各的优点,主要函数式组件较为方便,简单,已理解,类组件的话需要频繁操作this</p>
+<h4 id="16-说说对受控组件和非受控组件的理解？应用场景？"><a href="#16-说说对受控组件和非受控组件的理解？应用场景？" class="headerlink" title="16.说说对受控组件和非受控组件的理解？应用场景？"></a>16.说说对受控组件和非受控组件的理解？应用场景？</h4><p>首先受控组件就是受我们控制的组件,比如在input上this.state绑定一个状态,这时value值就受这个this.state的状态所控制</p>
+<p>非受控组件就是不受我们控制的组件,比如使用ref去获取dom元素的值</p>
+<p>一般受控组件来实现表单,表单的受react来管控</p>
+<p>非受控组件一般来获取输入框的值等等</p>
+<h4 id="17-说说对高阶组件的理解？应用场景"><a href="#17-说说对高阶组件的理解？应用场景" class="headerlink" title="17.说说对高阶组件的理解？应用场景?"></a>17.说说对高阶组件的理解？应用场景?</h4><p>首先高阶组件本身其实是一个函数,而不是组件,主要就是封装通用的逻辑,传入一个组件,返回一个组件,主要用来封装实现高复用</p>
+<p>应用场景的话主要就是功能在多个模块中使用才使用高阶组件,比如,日志,异常处理,统计上报等等.</p>
+<h4 id="18-说说对React-Hooks的理解？解决了什么问题？"><a href="#18-说说对React-Hooks的理解？解决了什么问题？" class="headerlink" title="18.说说对React Hooks的理解？解决了什么问题？"></a>18.说说对React Hooks的理解？解决了什么问题？</h4><p>首先hooks是react16.8新增的特性,它可以在你不编写类组件的同时,使用state以及生命周期,以及其他的一些react特性</p>
+<p>一般常用的来个hooks一个是usestate,一个useEffect</p>
+<p>首先useState就相当于类组件中的状态,通过useState可以创建状态,第一个参数是创建处理的值,第二个参数是修改这个值的函数,通过第一个参数可以获取值,第二个参数可以修改值</p>
+<p>useEffect就相当于类组件中的生命周期,当第一次渲染的时候,就会执行,就相当于执行componentDitMount和componentDitUpdate,第二个参数是一个数组,传入的值当更改时进行修改.</p>
+<p>其他还有一些hooks,比如useRef,useContent,useCallBack,useRedecer.</p>
+<h4 id="19-说说react中引入css的方式有哪几种？区别？"><a href="#19-说说react中引入css的方式有哪几种？区别？" class="headerlink" title="19.说说react中引入css的方式有哪几种？区别？"></a>19.说说react中引入css的方式有哪几种？区别？</h4><p>一般有四种方式</p>
+<p>第一种直接在当前组件中使用,使用style引入一个对象,对象里面写样式</p>
+<p>第二种就是引入外部的.css文件</p>
+<p>第三种使用模块的css,需要配置webpack的moudle为true</p>
+<p>第四种相当于引入外部的js,css in js的那中形式</p>
+<p>区别</p>
+<p>组件那中很方便,但是写多了就会造成代码混乱</p>
+<p>第二种的话符合我们平常的编写样式,但是是全局的,会造成样式污染</p>
+<p>第三种,可以决绝局部作用域的问题</p>
+<p>第四种可以满足大部分场景的使用,可以嵌套,定义,修改等等</p>
+<h4 id="20-说说你对Redux的理解？其工作原理？"><a href="#20-说说你对Redux的理解？其工作原理？" class="headerlink" title="20.说说你对Redux的理解？其工作原理？"></a>20.说说你对Redux的理解？其工作原理？</h4><p>首先redux它是一个状态管理容器,类型vue种的vuex</p>
+<p>主要使用它就是通过场景createStore,创建完之后引入reducer,之后导出store,reducer的话有俩个参数一个state也就是基本的状态,还有action,需要通过dispatch去触发action,触发action种的type,通过getSate可以获取值,通过subscble进行订阅来进行发生状态的更新.</p>
+<h4 id="21-说说你对React-Router的理解？常用的Router组件有哪些？"><a href="#21-说说你对React-Router的理解？常用的Router组件有哪些？" class="headerlink" title="21.说说你对React Router的理解？常用的Router组件有哪些？"></a>21.说说你对React Router的理解？常用的Router组件有哪些？</h4><p>首先react-router包含以下几个包</p>
+<ul>
+<li>react-router:实现了路由的核心功能</li>
+<li>react-router-dom:基于react-router,加入了一些浏览器的一些功能</li>
+<li>react-router-native：基于 react-router，加入了 react-native 运行环境下的一些功能</li>
+<li>react-router-config: 用于配置静态路由的工具库</li>
+</ul>
+<p>主要就是使用react-router-dom中的api分别有:</p>
+<ul>
+<li>BrowerRouter,HashRouter</li>
+<li>Route</li>
+<li>Link,NavLink</li>
+<li>swith</li>
+<li>re’direct</li>
+</ul>
+<p>BrowerRouter是history模式,HashRouter是hash模式</p>
+<p>一般BrowerRouter用来顶层的包裹对象</p>
+<p>Route用来路径的匹配一般参数有pah跳转的路径,compont匹配的组件,render用来渲染组件,exact用来精确匹配</p>
+<p>Link,NavLink用来路由跳转,一般参数to是跳转的路径,</p>
+<p>switch用来包裹组件</p>
+<p>redirect用来跳转到的页面重定向到一个页面</p>
+<p>useHistory可以用来使用history用来push跳转</p>
+<p>useParms用来获取参数</p>
+<p>useLocation<code>会返回当前</code>URL<code>的 </code>location&#96;对象</p>
 
                 
             </div>
@@ -678,7 +594,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/">http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/</a>
+                    <a href="http://example.com/2021/07/25/React%E7%B3%BB%E5%88%97/">http://example.com/2021/07/25/React%E7%B3%BB%E5%88%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,8 +632,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                    <span class="chip bg-color">正则</span>
+                                <a href="/tags/React/">
+                                    <span class="chip bg-color">React</span>
                                 </a>
                             
                         </div>
@@ -895,13 +811,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/05/25/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+                <a href="/2021/07/27/python%E7%AC%94%E8%AE%B0/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="知识点总结">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="python笔记">
                         
-                        <span class="card-title">知识点总结</span>
+                        <span class="card-title">python笔记</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -912,7 +828,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-07-27
                         </span>
                         <span class="publish-author">
                             
@@ -925,8 +841,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/python/">
+                        <span class="chip bg-color">python</span>
                     </a>
                     
                 </div>
@@ -940,13 +856,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%E4%BA%8C/">
+                <a href="/2021/06/25/ES6%E7%B3%BB%E5%88%97/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="知识点总结二">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="ES6系列">
                         
-                        <span class="card-title">知识点总结二</span>
+                        <span class="card-title">ES6系列</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -957,7 +873,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-25
                             </span>
                         <span class="publish-author">
                             
@@ -970,8 +886,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/JavaScript/">
+                        <span class="chip bg-color">JavaScript</span>
                     </a>
                     
                 </div>
