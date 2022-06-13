@@ -4,8 +4,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git命令, LindaBlog">
-    <meta name="description" content="命令大全基础配置1.配置用户名和密码12345git config --global user.name &amp;quot;名字&amp;quot;git config --global user.email &amp;quot;邮箱&amp;quot;//查看配置gi">
+    <meta name="keywords" content="HTTP系列, LindaBlog">
+    <meta name="description" content="1.什么是HTTP? HTTP 和 HTTPS 的区别?首先HTTP是超文本传输协议，是用来建立网络间通信的
+HTTPS的话就是HTTP的升级版，主要就是对请求有了加密，新增了SSL&amp;#x2F;TCL加密方式
+区别Https是Http协议的">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +21,7 @@
 
     
 
-    <title>git命令 | LindaBlog</title>
+    <title>HTTP系列 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git命令</h1>
+                    <h1 class="description center-align post-title">HTTP系列</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +432,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git/">
-                                <span class="chip bg-color">git</span>
+                            <a href="/tags/HTTP/">
+                                <span class="chip bg-color">HTTP</span>
                             </a>
                         
                     </div>
@@ -467,105 +469,213 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h4 id="命令大全"><a href="#命令大全" class="headerlink" title="命令大全"></a>命令大全</h4><h5 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h5><h6 id="1-配置用户名和密码"><a href="#1-配置用户名和密码" class="headerlink" title="1.配置用户名和密码"></a>1.配置用户名和密码</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;名字&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.email &quot;邮箱&quot;</span><br><span class="line">//查看配置</span><br><span class="line">git config --list</span><br></pre></td></tr></table></figure>
-
-<h6 id="2-生成SSH密钥"><a href="#2-生成SSH密钥" class="headerlink" title="2.生成SSH密钥"></a>2.生成SSH密钥</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//查看 ssh 密钥 在git bash窗口</span><br><span class="line">cd ~/.ssh</span><br><span class="line">//如果有文件夹  再输入 ls 如果有id_rsa  id_rsa.pub  两个文件 则已经生成ssh密钥</span><br><span class="line">//生成ssh密钥</span><br><span class="line">ssh-keygen -t rsa -C &quot;邮箱&quot;</span><br><span class="line">//一直回车即可</span><br><span class="line">最后生成秘钥以后   会显示秘钥的地址（留意一下可以看到）</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h5 id="配置ssh秘钥"><a href="#配置ssh秘钥" class="headerlink" title="配置ssh秘钥"></a>配置ssh秘钥</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">秘钥在这个文件下</span><br><span class="line">id_rsa.pub</span><br><span class="line"></span><br><span class="line">$ cat id_rsa.pub   回车   就会显示秘钥内容</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-<h5 id="1-提交命令"><a href="#1-提交命令" class="headerlink" title="1.提交命令"></a>1.提交命令</h5><h6 id="1-检查修改"><a href="#1-检查修改" class="headerlink" title="1.检查修改"></a>1.检查修改</h6><blockquote>
-<p> 检查修改的文件</p>
-<p> git status</p>
-</blockquote>
-<h6 id="2-查看修改的详细信息"><a href="#2-查看修改的详细信息" class="headerlink" title="2.查看修改的详细信息"></a>2.查看修改的详细信息</h6><blockquote>
-<p>输入目录则查看单个文件修改  只输入git diff  查看全部修改</p>
-<p>git diff  <File> </File></p>
-</blockquote>
-<h6 id="3-添加到暂本库"><a href="#3-添加到暂本库" class="headerlink" title="3.添加到暂本库"></a>3.添加到暂本库</h6><blockquote>
-<p> 添加某个文件到暂存库 多个文件用 空格 隔开 </p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add  &lt;Fie&gt;</span><br></pre></td></tr></table></figure>
-
-<p> 添加全部文件</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
-
-</blockquote>
-<h6 id="4-提交到本地仓库"><a href="#4-提交到本地仓库" class="headerlink" title="4.提交到本地仓库"></a>4.提交到本地仓库</h6><blockquote>
-<p>git commit  提交后  会进入输入页面：首先输入 i 然后进入编辑状态，其次  编辑完备注 然后按ESC  退出编辑状态 最后ctrl + zz</p>
-<p>生成新的提交记录</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git  commit -m &quot;提交内容&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>追加提交 会把修改的文件合并到最近的一次提交</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;git commit –amend </span><br></pre></td></tr></table></figure>
-
-
-</blockquote>
-<h6 id="5-提交到远程仓库-x2F-拉取远程仓库代码"><a href="#5-提交到远程仓库-x2F-拉取远程仓库代码" class="headerlink" title="5 提交到远程仓库&#x2F;拉取远程仓库代码"></a>5 提交到远程仓库&#x2F;拉取远程仓库代码</h6><blockquote>
-<p> 分支名为想要提交到服务器的分支名</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push origin 分支名</span><br></pre></td></tr></table></figure>
-
-<p> 提交之前应该先拉取</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull origin 分支名</span><br></pre></td></tr></table></figure>
-
-</blockquote>
-<h6 id="5-放弃修改"><a href="#5-放弃修改" class="headerlink" title="5.放弃修改"></a>5.放弃修改</h6><blockquote>
-<p> 放弃对某个文件的修改</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;file&gt;</span><br></pre></td></tr></table></figure>
-
-<p> 放弃所有文件 修改</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout  .</span><br></pre></td></tr></table></figure>
-
-<p> 如果是新添加的文件   git checkout 不管用</p>
-<p> 使用下面的命令</p>
-<p> 查看  未进版本库的文件  及新建的文件</p>
-<p> git clean -fd -n                                        </p>
-<p> 删除 文件 如果不加file 则会删除 所有未入版本库的文件 加了file 则会删除对应的文件</p>
-<p> git clean  -f <file>           </file></p>
-<p> 已经add 的情况下  已经进入暂存区</p>
-<p> 从暂存区恢复到工作区 不加file 把暂存区的所有文件恢复到工作区</p>
-<p> git reset HEAD  <file></file></p>
-</blockquote>
-<h5 id="2-暂时保存代码"><a href="#2-暂时保存代码" class="headerlink" title="2.暂时保存代码"></a>2.暂时保存代码</h5><p>在工作区写了一部分代码  需要 回退版本 或者切换分支 但是不想提交的情况下</p>
-<blockquote>
-<p>保存工作区的状态</p>
-<p>git stash  </p>
-<p>查看已经保存的状态列表</p>
-<p>git stash list  </p>
-<p>恢复文件  如果只是 git stash pop 则会恢复最近保存的文件</p>
-<p>git stash pop stash@{num} </p>
-<p>清空记录</p>
-<p>git stash clear </p>
-</blockquote>
-<h5 id="3-分支操作"><a href="#3-分支操作" class="headerlink" title="3.分支操作"></a>3.分支操作</h5><h6 id="1-查看分支"><a href="#1-查看分支" class="headerlink" title="1.查看分支"></a>1.查看分支</h6><blockquote>
-<p>查看本地分支</p>
-<p>git branch </p>
-<p>查看远程分支</p>
-<p>git branch -r</p>
-<p>查看远程分支和本地分支</p>
-<p>git branch -a</p>
-</blockquote>
-<h6 id="2-切换分支"><a href="#2-切换分支" class="headerlink" title="2.切换分支"></a>2.切换分支</h6><blockquote>
-<p>切换分支</p>
-<p>git checkout 分支名<br>                     （分支名） ↓         （仓库的分支）↓<br>$ git checkout -b     lixiaoyu_test_dev    origin&#x2F;lixiaoyu_test_dev</p>
-<p>创建并切换</p>
-<p>git checkout -b 要创建的分支名</p>
-</blockquote>
-<h6 id="3-更新远程仓库"><a href="#3-更新远程仓库" class="headerlink" title="3.更新远程仓库"></a>3.更新远程仓库</h6><blockquote>
-<p>更新远程库</p>
-<p>git fetch </p>
-</blockquote>
-<h5 id="4-回退版本-查看日志"><a href="#4-回退版本-查看日志" class="headerlink" title="4.回退版本 查看日志"></a>4.回退版本 查看日志</h5><h6 id="1-查看日志"><a href="#1-查看日志" class="headerlink" title="1.查看日志"></a>1.查看日志</h6><blockquote>
-<p>查看 日志 按q退出</p>
-<p>git log </p>
-<p>查看最近的操作commmitid</p>
-<p>git reflog</p>
-</blockquote>
-<h6 id="2-回退版本"><a href="#2-回退版本" class="headerlink" title="2.回退版本"></a>2.回退版本</h6><blockquote>
-<p>commitid 只需要前几位即可  回到某个commitid的版本</p>
-<p>git reset –hard cimmitId </p>
-</blockquote>
+                <h4 id="1-什么是HTTP-HTTP-和-HTTPS-的区别"><a href="#1-什么是HTTP-HTTP-和-HTTPS-的区别" class="headerlink" title="1.什么是HTTP? HTTP 和 HTTPS 的区别?"></a>1.什么是HTTP? HTTP 和 HTTPS 的区别?</h4><p>首先HTTP是超文本传输协议，是用来建立网络间通信的</p>
+<p>HTTPS的话就是HTTP的升级版，主要就是对请求有了加密，新增了SSL&#x2F;TCL加密方式</p>
+<h5 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h5><p>Https是Http协议的安全版本，http是明文的，https是密文的，所以http相对是不安全的</p>
+<p>HTTP和HTTPS链接方式不一样，默认端口也不一样，HTTP是80，HTTPS是443</p>
+<p>HTTPS需要考虑安全加密的问题，所以性能不如HTTP</p>
+<p>Https加密需要费用的，功能越强大费用越高</p>
+<h4 id="2-为什么说HTTPS比HTTP安全-HTTPS是如何保证安全的？"><a href="#2-为什么说HTTPS比HTTP安全-HTTPS是如何保证安全的？" class="headerlink" title="2.为什么说HTTPS比HTTP安全? HTTPS是如何保证安全的？"></a>2.为什么说HTTPS比HTTP安全? HTTPS是如何保证安全的？</h4><p>SSL的实现这些功能主要依赖于三种手段</p>
+<ul>
+<li>对称加密：采用协商的密钥对数据加密</li>
+<li>非对称加密：实现身份认证和密钥协商</li>
+<li>摘要算法：验证信息的完整性</li>
+<li>数字签名：身份验证</li>
+</ul>
+<h4 id="3-如何理解UDP-和-TCP-区别"><a href="#3-如何理解UDP-和-TCP-区别" class="headerlink" title="3.如何理解UDP 和 TCP? 区别?"></a>3.如何理解UDP 和 TCP? 区别?</h4><ul>
+<li>TCP 是面向连接的协议，建立连接3次握手、断开连接四次挥手，UDP是面向无连接，数据传输前后不连接连接，发送端只负责将数据发送到网络，接收端从消息队列读取</li>
+<li>TCP 提供可靠的服务，传输过程采用流量控制、编号与确认、计时器等手段确保数据无差错，不丢失。UDP 则尽可能传递数据，但不保证传递交付给对方</li>
+<li>TCP 面向字节流，将应用层报文看成一串无结构的字节流，分解为多个TCP报文段传输后，在目的站重新装配。UDP协议面向报文，不拆分应用层报文，只保留报文边界，一次发送一个报文，接收方去除报文首部后，原封不动将报文交给上层应用</li>
+<li>TCP 只能点对点全双工通信。UDP 支持一对一、一对多、多对一和多对多的交互通信</li>
+</ul>
+<h4 id="4-如何理解OSI七层模型"><a href="#4-如何理解OSI七层模型" class="headerlink" title="4.如何理解OSI七层模型?"></a>4.如何理解OSI七层模型?</h4><h5 id="一、是什么"><a href="#一、是什么" class="headerlink" title="一、是什么"></a>一、是什么</h5><p>OSI （Open System Interconnect）模型全称为开放式通信系统互连参考模型，是国际标准化组织 ( ISO ) 提出的一个试图使各种计算机在世界范围内互连为网络的标准框架</p>
+<p><code>OSI</code>将计算机网络体系结构划分为七层，每一层实现各自的功能和协议，并完成与相邻层的接口通信。即每一层扮演固定的角色，互不打扰</p>
+<h5 id="二、划分"><a href="#二、划分" class="headerlink" title="二、划分"></a>二、划分</h5><p><code>OSI</code>主要划分了七层，如下图所示：</p>
+<p><img src="https://static.vue-js.com/eb1b2170-b61e-11eb-ab90-d9ae814b240d.png" alt="img"></p>
+<h5 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h5><p>应用层位于 OSI 参考模型的第七层，其作用是通过应用程序间的交互来完成特定的网络应用</p>
+<p>该层协议定义了应用进程之间的交互规则，通过不同的应用层协议为不同的网络应用提供服务。例如域名系统 <code>DNS</code>，支持万维网应用的 <code>HTTP</code> 协议，电子邮件系统采用的 <code>SMTP</code>协议等</p>
+<p>在应用层交互的数据单元我们称之为报文</p>
+<h5 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h5><p>表示层的作用是使通信的应用程序能够解释交换数据的含义，其位于 <code>OSI</code>参考模型的第六层，向上为应用层提供服务，向下接收来自会话层的服务</p>
+<p>该层提供的服务主要包括数据压缩，数据加密以及数据描述，使应用程序不必担心在各台计算机中表示和存储的内部格式差异</p>
+<h5 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h5><p>会话层就是负责建立、管理和终止表示层实体之间的通信会话</p>
+<p>该层提供了数据交换的定界和同步功能，包括了建立检查点和恢复方案的方法</p>
+<h5 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h5><p>传输层的主要任务是为两台主机进程之间的通信提供服务，处理数据包错误、数据包次序，以及其他一些关键传输问题</p>
+<p>传输层向高层屏蔽了下层数据通信的细节。因此，它是计算机通信体系结构中关键的一层</p>
+<p>其中，主要的传输层协议是<code>TCP</code>和<code>UDP</code></p>
+<h5 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h5><p>两台计算机之间传送数据时其通信链路往往不止一条，所传输的信息甚至可能经过很多通信子网</p>
+<p>网络层的主要任务就是选择合适的网间路由和交换节点，确保数据按时成功传送</p>
+<p>在发送数据时，网络层把传输层产生的报文或用户数据报封装成分组和包，向下传输到数据链路层</p>
+<p>在网络层使用的协议是无连接的网际协议（Internet Protocol）和许多路由协议，因此我们通常把该层简单地称为 IP 层</p>
+<h5 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h5><p>数据链路层通常也叫做链路层，在物理层和网络层之间。两台主机之间的数据传输，总是在一段一段的链路上传送的，这就需要使用专门的链路层协议</p>
+<p>在两个相邻节点之间传送数据时，数据链路层将网络层交下来的 <code>IP</code>数据报组装成帧，在两个相邻节点间的链路上传送帧</p>
+<p>每一帧的数据可以分成：报头<code>head</code>和数据<code>data</code>两部分:</p>
+<ul>
+<li>head 标明数据发送者、接受者、数据类型，如 MAC地址</li>
+<li>data 存储了计算机之间交互的数据</li>
+</ul>
+<p>通过控制信息我们可以知道一个帧的起止比特位置，此外，也能使接收端检测出所收到的帧有无差错，如果发现差错，数据链路层能够简单的丢弃掉这个帧，以避免继续占用网络资源</p>
+<h5 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h5><p>作为<code>OSI</code> 参考模型中最低的一层，物理层的作用是实现计算机节点之间比特流的透明传送</p>
+<p>该层的主要任务是确定与传输媒体的接口的一些特性（机械特性、电气特性、功能特性，过程特性）</p>
+<p>该层主要是和硬件有关，与软件关系不大</p>
+<h4 id="5-如何理解TCP-x2F-IP协议"><a href="#5-如何理解TCP-x2F-IP协议" class="headerlink" title="5.如何理解TCP&#x2F;IP协议?"></a>5.如何理解TCP&#x2F;IP协议?</h4><p>OSI 参考模型与 TCP&#x2F;IP 参考模型区别如下：</p>
+<p>相同点：</p>
+<ul>
+<li>OSI 参考模型与 TCP&#x2F;IP 参考模型都采用了层次结构</li>
+<li>都能够提供面向连接和无连接两种通信服务机制</li>
+</ul>
+<p>不同点：</p>
+<ul>
+<li>OSI 采用的七层模型； TCP&#x2F;IP 是四层或五层结构</li>
+<li>TCP&#x2F;IP 参考模型没有对网络接口层进行细分，只是一些概念性的描述； OSI 参考模型对服务和协议做了明确的区分</li>
+<li>OSI 参考模型虽然网络划分为七层，但实现起来较困难。TCP&#x2F;IP 参考模型作为一种简化的分层结构是可以的</li>
+<li>TCP&#x2F;IP协议去掉表示层和会话层的原因在于会话层、表示层、应用层都是在应用程序内部实现的，最终产出的是一个应用数据包，而应用程序之间是几乎无法实现代码的抽象共享的，这也就造成 <code>OSI</code> 设想中的应用程序维度的分层是无法实现的</li>
+</ul>
+<h4 id="6-DNS协议-是什么？说说DNS-完整的查询过程"><a href="#6-DNS协议-是什么？说说DNS-完整的查询过程" class="headerlink" title="6.DNS协议 是什么？说说DNS 完整的查询过程?"></a>6.DNS协议 是什么？说说DNS 完整的查询过程?</h4><p>DNS（Domain Names System），域名系统，是互联网一项服务，是进行域名和与之相对应的 IP 地址进行转换的服务器</p>
+<p>简单来讲，<code>DNS</code>相当于一个翻译官，负责将域名翻译成<code>ip</code>地址</p>
+<ul>
+<li>IP 地址：一长串能够唯一地标记网络上的计算机的数字</li>
+<li>域名：是由一串用点分隔的名字组成的 Internet 上某一台计算机或计算机组的名称，用于在数据传输时对计算机的定位标识</li>
+</ul>
+<p>解析域名的过程如下：</p>
+<ul>
+<li>首先搜索浏览器的 DNS 缓存，缓存中维护一张域名与 IP 地址的对应表</li>
+<li>若没有命中，则继续搜索操作系统的 DNS 缓存</li>
+<li>若仍然没有命中，则操作系统将域名发送至本地域名服务器，本地域名服务器采用递归查询自己的 DNS 缓存，查找成功则返回结果</li>
+<li>若本地域名服务器的 DNS 缓存没有命中，则本地域名服务器向上级域名服务器进行迭代查询<ul>
+<li>首先本地域名服务器向根域名服务器发起请求，根域名服务器返回顶级域名服务器的地址给本地服务器</li>
+<li>本地域名服务器拿到这个顶级域名服务器的地址后，就向其发起请求，获取权限域名服务器的地址</li>
+<li>本地域名服务器根据权限域名服务器的地址向其发起请求，最终得到该域名对应的 IP 地址</li>
+</ul>
+</li>
+<li>本地域名服务器将得到的 IP 地址返回给操作系统，同时自己将 IP 地址缓存起来</li>
+<li>操作系统将 IP 地址返回给浏览器，同时自己也将 IP 地址缓存起</li>
+<li>至此，浏览器就得到了域名对应的 IP 地址，并将 IP 地址缓存起</li>
+</ul>
+<h4 id="7-如何理解CDN？说说实现原理？"><a href="#7-如何理解CDN？说说实现原理？" class="headerlink" title="7.如何理解CDN？说说实现原理？"></a>7.如何理解CDN？说说实现原理？</h4><p><code>CDN</code> 目的是为了改善互联网的服务质量，通俗一点说其实就是提高访问速度</p>
+<p><code>CDN</code> 构建了全国、全球级别的专网，让用户就近访问专网里的边缘节点，降低了传输延迟，实现了网站加速</p>
+<p>通过<code>CDN</code>的负载均衡系统，智能调度边缘节点提供服务，相当于<code>CDN</code>服务的大脑，而缓存系统相当于<code>CDN</code>的心脏，缓存命中直接返回给用户，否则回源</p>
+<h4 id="8-说一下-GET-和-POST-的区别？"><a href="#8-说一下-GET-和-POST-的区别？" class="headerlink" title="8.说一下 GET 和 POST 的区别？"></a>8.说一下 GET 和 POST 的区别？</h4><p>GET和POST都是发生请求的方法</p>
+<p>get一般去服务器获取数据，post一般去添加修改去操作数据</p>
+<p>传输格式不同get是url暴露在浏览器中，post是把参数放在requestbody中进行传输</p>
+<p>get请求时参数是受限制的，post没有限制</p>
+<p>get相对不安全，post安全</p>
+<p>get只支持url编码，post支持多种编码格式</p>
+<h4 id="9-说说-HTTP-常见的请求头有哪些-作用？"><a href="#9-说说-HTTP-常见的请求头有哪些-作用？" class="headerlink" title="9.说说 HTTP 常见的请求头有哪些? 作用？"></a>9.说说 HTTP 常见的请求头有哪些? 作用？</h4><table>
+<thead>
+<tr>
+<th>字段名</th>
+<th>说明</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Accept</td>
+<td>能够接受的回应内容类型（Content-Types）</td>
+<td>Accept: text&#x2F;plain</td>
+</tr>
+<tr>
+<td>Accept-Charset</td>
+<td>能够接受的字符集</td>
+<td>Accept-Charset: utf-8</td>
+</tr>
+<tr>
+<td>Accept-Encoding</td>
+<td>能够接受的编码方式列表</td>
+<td>Accept-Encoding: gzip, deflate</td>
+</tr>
+<tr>
+<td>Accept-Language</td>
+<td>能够接受的回应内容的自然语言列表</td>
+<td>Accept-Language: en-US</td>
+</tr>
+<tr>
+<td>Authorization</td>
+<td>用于超文本传输协议的认证的认证信息</td>
+<td>Authorization: Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ&#x3D;&#x3D;</td>
+</tr>
+<tr>
+<td>Cache-Control</td>
+<td>用来指定在这次的请求&#x2F;响应链中的所有缓存机制 都必须 遵守的指令</td>
+<td>Cache-Control: no-cache</td>
+</tr>
+<tr>
+<td>Connection</td>
+<td>该浏览器想要优先使用的连接类型</td>
+<td>Connection: keep-alive Connection: Upgrade</td>
+</tr>
+<tr>
+<td>Cookie</td>
+<td>服务器通过 Set- Cookie （下文详述）发送的一个 超文本传输协议Cookie</td>
+<td>Cookie: $Version&#x3D;1; Skin&#x3D;new;</td>
+</tr>
+<tr>
+<td>Content-Length</td>
+<td>以 八位字节数组 （8位的字节）表示的请求体的长度</td>
+<td>Content-Length: 348</td>
+</tr>
+<tr>
+<td>Content-Type</td>
+<td>请求体的 多媒体类型</td>
+<td>Content-Type: application&#x2F;x-www-form-urlencoded</td>
+</tr>
+<tr>
+<td>Date</td>
+<td>发送该消息的日期和时间</td>
+<td>Date: Tue, 15 Nov 1994 08:12:31 GMT</td>
+</tr>
+<tr>
+<td>Expect</td>
+<td>表明客户端要求服务器做出特定的行为</td>
+<td>Expect: 100-continue</td>
+</tr>
+<tr>
+<td>Host</td>
+<td>服务器的域名(用于虚拟主机 )，以及服务器所监听的传输控制协议端口号</td>
+<td>Host: en.wikipedia.org:80 Host: en.wikipedia.org</td>
+</tr>
+<tr>
+<td>If-Match</td>
+<td>仅当客户端提供的实体与服务器上对应的实体相匹配时，才进行对应的操作。主要作用时，用作像 PUT 这样的方法中，仅当从用户上次更新某个资源以来，该资源未被修改的情况下，才更新该资源</td>
+<td>If-Match: “737060cd8c284d8af7ad3082f209582d”</td>
+</tr>
+<tr>
+<td>If-Modified-Since</td>
+<td>允许在对应的内容未被修改的情况下返回304未修改</td>
+<td>If-Modified-Since: Sat, 29 Oct 1994 19:43:31 GMT</td>
+</tr>
+<tr>
+<td>If-None-Match</td>
+<td>允许在对应的内容未被修改的情况下返回304未修改</td>
+<td>If-None-Match: “737060cd8c284d8af7ad3082f209582d”</td>
+</tr>
+<tr>
+<td>If-Range</td>
+<td>如果该实体未被修改过，则向我发送我所缺少的那一个或多个部分；否则，发送整个新的实体</td>
+<td>If-Range: “737060cd8c284d8af7ad3082f209582d”</td>
+</tr>
+<tr>
+<td>Range</td>
+<td>仅请求某个实体的一部分</td>
+<td>Range: bytes&#x3D;500-999</td>
+</tr>
+<tr>
+<td>User-Agent</td>
+<td>浏览器的浏览器身份标识字符串</td>
+<td>User-Agent: Mozilla&#x2F;5.0 (X11; Linux x86_64; rv:12.0) Gecko&#x2F;20100101 Firefox&#x2F;21.0</td>
+</tr>
+<tr>
+<td>Origin</td>
+<td>发起一个针对 跨来源资源共享 的请求</td>
+<td>Origin: <a target="_blank" rel="noopener" href="http://www.example-social-/">http://www.example-social-</a></td>
+</tr>
+</tbody></table>
+<h4 id="10-说说地址栏输入-URL-敲下回车后发生了什么"><a href="#10-说说地址栏输入-URL-敲下回车后发生了什么" class="headerlink" title="10.说说地址栏输入 URL 敲下回车后发生了什么?"></a>10.说说地址栏输入 URL 敲下回车后发生了什么?</h4><p>首先输入url地址</p>
+<p>之后url解析</p>
+<p>dns解析域名然后获取ip地址</p>
+<p>之后建立连接tcp三次握手</p>
+<p>建立连接去发生请求</p>
+<p>请求回来数据</p>
+<p>页面渲染</p>
 
                 
             </div>
@@ -592,7 +702,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/08/27/git%E5%91%BD%E4%BB%A4/">http://example.com/2020/08/27/git%E5%91%BD%E4%BB%A4/</a>
+                    <a href="http://example.com/2020/08/27/HTTP%E7%B3%BB%E5%88%97/">http://example.com/2020/08/27/HTTP%E7%B3%BB%E5%88%97/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -630,8 +740,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git/">
-                                    <span class="chip bg-color">git</span>
+                                <a href="/tags/HTTP/">
+                                    <span class="chip bg-color">HTTP</span>
                                 </a>
                             
                         </div>
@@ -809,13 +919,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
             <div class="card">
-                <a href="/2020/08/27/HTTP%E7%B3%BB%E5%88%97/">
+                <a href="/2020/09/27/ES5%E7%BB%A7%E6%89%BF/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="HTTP系列">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="ES5继承">
                         
-                        <span class="card-title">HTTP系列</span>
+                        <span class="card-title">ES5继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -826,7 +936,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-08-27
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
                         </span>
                         <span class="publish-author">
                             
@@ -839,8 +949,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/HTTP/">
-                        <span class="chip bg-color">HTTP</span>
+                    <a href="/tags/ES5%E7%BB%A7%E6%89%BF/">
+                        <span class="chip bg-color">ES5继承</span>
                     </a>
                     
                 </div>
@@ -854,13 +964,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/07/25/webpackBlog/">
+                <a href="/2020/08/27/git%E5%91%BD%E4%BB%A4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="webpackBlog">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="git命令">
                         
-                        <span class="card-title">webpackBlog</span>
+                        <span class="card-title">git命令</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -871,7 +981,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-08-27
                             </span>
                         <span class="publish-author">
                             
@@ -884,8 +994,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/webpack/">
-                        <span class="chip bg-color">webpack</span>
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
                     </a>
                     
                 </div>
