@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="正则, LindaBlog">
-    <meta name="description" content="1234567891011121314151617181920# 1，1，2，3，5，8，13...def fib(n):# 递归    if n== 1:        return 1    if n==2:        return">
+    <meta name="keywords" content="vue根据值实现进度条动画加载, LindaBlog">
+    <meta name="description" content="vue根据值实现进度条动画加载1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&amp;lt;template&amp;gt;  &amp;l">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +19,7 @@
 
     
 
-    <title>正则 | LindaBlog</title>
+    <title>vue根据值实现进度条动画加载 | LindaBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -309,12 +309,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">正则</h1>
+                    <h1 class="description center-align post-title">vue根据值实现进度条动画加载</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                <span class="chip bg-color">正则</span>
+                            <a href="/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/">
+                                <span class="chip bg-color">进度条</span>
                             </a>
                         
                     </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
-                    2020-05-25
+                    2022-08-27
                 </div>
                 
 
@@ -467,190 +467,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1，1，2，3，5，8，13...</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib</span>(<span class="params">n</span>):<span class="comment"># 递归</span></span><br><span class="line">    <span class="keyword">if</span> n== <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fib(n - <span class="number">2</span>)+fib(n - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fib2</span>(<span class="params">n</span>):<span class="comment"># 生成器</span></span><br><span class="line">    a = <span class="number">0</span></span><br><span class="line">    b = <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        a, b = b, a + b</span><br><span class="line">        <span class="keyword">yield</span> a</span><br><span class="line">        </span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">aa = fib2(<span class="number">5</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> aa:</span><br><span class="line">    time.sleep(<span class="number">0.01</span>)</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br></pre></td></tr></table></figure>
-
-<p>跟递归比优势在哪里</p>
-<h1 id="课题：正则表达式"><a href="#课题：正则表达式" class="headerlink" title="课题：正则表达式"></a>课题：正则表达式</h1><p>[TOC]</p>
-<p>独有的工具：用来匹配或者提取字符串</p>
-<p>不属于Python基础。属于编程基础。</p>
-<p>封装到库里边的，语法都是一样的。做好笔记，多敲。</p>
-<p>Python—爬虫，WEB。没有其他的可以代替正则表达式</p>
-<p><a href="mailto:&#49;&#50;&#51;&#52;&#53;&#54;&#64;&#x31;&#x36;&#51;&#46;&#99;&#111;&#109;">&#49;&#50;&#51;&#52;&#53;&#54;&#64;&#x31;&#x36;&#51;&#46;&#99;&#111;&#109;</a>、url</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line">aaa=<span class="string">&#x27;123456@163.com&#x27;</span></span><br><span class="line">my = re.findall(<span class="string">r&#x27;^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.com$&#x27;</span>,aaa)</span><br><span class="line"><span class="comment"># 去掉@或者cn  不能匹配到</span></span><br><span class="line"><span class="comment"># 通过自己写的规则，匹配想要的字符串</span></span><br><span class="line"><span class="comment"># python取消转义：\?    取消正则表达式语法的转义</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="知识点一：re模块"><a href="#知识点一：re模块" class="headerlink" title="知识点一：re模块"></a>知识点一：re模块</h2><h3 id="1、findall方法："><a href="#1、findall方法：" class="headerlink" title="1、findall方法："></a>1、findall方法：</h3><p>在字符串中找到正则表达式所匹配的所有子串，并返回一个列表<br>，如果没有找到匹配的，则返回空列表</p>
-<h3 id="2、match方法"><a href="#2、match方法" class="headerlink" title="2、match方法"></a>2、match方法</h3><p>re.match 尝试从字符串的起始位置匹配一个模式，匹配成功 返回的是一个匹配<br>对象（这个对象包含了我们匹配的信息），如果不是起始位置匹配成功的话，<br>match()返回的是空，</p>
-<p>注意：match只能匹配到一个</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&quot;python123123java&quot;</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).group())<span class="comment"># 查看匹配的字符</span></span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;123&#x27;</span>,a))</span><br><span class="line"><span class="built_in">print</span>(re.match(<span class="string">&#x27;python&#x27;</span>,a).span())<span class="comment"># 匹配字符的下标取值区间</span></span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="3、search方法"><a href="#3、search方法" class="headerlink" title="3、search方法"></a>3、search方法</h3><p>re.search 扫描整个字符串,匹配成功 返回的是一个匹配对象（这个对象包含了我们匹配的信息）</p>
-<p>注意：search也只能匹配到一个，找到符合规则的就返回，不会一直往后找</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;123&#x27;</span>,a))<span class="comment"># yes</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;cc&#x27;</span>,a))<span class="comment"># None</span></span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).group())</span><br><span class="line"><span class="built_in">print</span>(re.search(<span class="string">&#x27;python&#x27;</span>,a).span())</span><br></pre></td></tr></table></figure>
-
-<p>re.match与re.search的区别：<br>re.match只匹配字符串的开始位置找，如果字符串开始不符合正则表达式，则匹配失败，<br>re.search：匹配整个字符串，如果一直找不到则，返回是空的，没有结果</p>
-<h3 id="4、元字符"><a href="#4、元字符" class="headerlink" title="4、元字符"></a>4、元字符</h3><p><strong>单字符匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th align="left">字符</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">.</td>
-<td align="left">匹配任意1个字符(除了\n)</td>
-</tr>
-<tr>
-<td align="left">[]</td>
-<td align="left">匹配 [] 中列举的字符</td>
-</tr>
-<tr>
-<td align="left">\d</td>
-<td align="left">匹配数字，即0-9</td>
-</tr>
-<tr>
-<td align="left">\D</td>
-<td align="left">匹配非数字，即不是数字</td>
-</tr>
-<tr>
-<td align="left">\s</td>
-<td align="left">匹配空白，即 空格，tab键</td>
-</tr>
-<tr>
-<td align="left">\S</td>
-<td align="left">匹配非空白</td>
-</tr>
-<tr>
-<td align="left">\w</td>
-<td align="left">匹配单词符，即a-z、A-Z、0-9、_</td>
-</tr>
-<tr>
-<td align="left">\W</td>
-<td align="left">匹配非单词字符</td>
-</tr>
-</tbody></table>
-<p><strong>代表数量的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>*</td>
-<td>匹配前一个字符出现0次或者无限次，即可有可无</td>
-</tr>
-<tr>
-<td>+</td>
-<td>匹配前一个字符出现1次或者无限次，即至少有1次</td>
-</tr>
-<tr>
-<td>？</td>
-<td>匹配前一个字符出现0次或者1次，即要么有1次，要么没有</td>
-</tr>
-<tr>
-<td>{m}</td>
-<td>匹配前一个字符出现m次</td>
-</tr>
-<tr>
-<td>{m,}</td>
-<td>匹配前一个字符至少出现m次</td>
-</tr>
-<tr>
-<td>{m,n}</td>
-<td>匹配前一个字符出现从m到n次</td>
-</tr>
-</tbody></table>
-<p><strong>代表边界的元字符</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>^</td>
-<td>匹配字符串开头</td>
-</tr>
-<tr>
-<td>$</td>
-<td>匹配字符串结尾</td>
-</tr>
-<tr>
-<td>\b</td>
-<td>匹配一个单词的边界</td>
-</tr>
-<tr>
-<td>\B</td>
-<td>匹配非单词边界</td>
-</tr>
-</tbody></table>
-<p><strong>分组匹配</strong></p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>|</td>
-<td>匹配左右任意一个表达式</td>
-</tr>
-<tr>
-<td>(ab)</td>
-<td>将括号中的字符作为一个分组</td>
-</tr>
-</tbody></table>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">b = <span class="string">&#x27;张三天在玩4399小游戏，张三 hello 玩的.很开心&#x27;</span></span><br><span class="line">ress = re.findall(<span class="string">r&#x27;张三.&#x27;</span>,b)<span class="comment"># .任意一个字符</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;[54]&#x27;</span>,b)</span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\d&#x27;</span>,b)<span class="comment"># 匹配数字，单个字符，单个元素</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\D&#x27;</span>,b)<span class="comment">#</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4*&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现0次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;4+&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现1次或者无限次，即可有可无</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现m次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;三&#123;1,2&#125;&#x27;</span>,b)<span class="comment"># 匹配前一个字符出现从m到n次</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;^张三&#x27;</span>,b)<span class="comment"># 匹配字符串开头</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;心$&#x27;</span>,b)<span class="comment"># 匹配字符串结尾</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;\bhello\b&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line">ress1 = re.findall(<span class="string">r&#x27;he\Bll&#x27;</span>,b)<span class="comment"># 匹配一个单词的边界</span></span><br><span class="line"><span class="built_in">print</span>(ress1)</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="5、贪婪和非贪婪"><a href="#5、贪婪和非贪婪" class="headerlink" title="5、贪婪和非贪婪"></a>5、贪婪和非贪婪</h3><p>正则默认都是用贪婪模式去匹配数据的，就是尽可能多的匹配符合要求的数据，</p>
-<p>在非贪婪模式下，始终找最短匹配</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">&#x27;&lt;img src = &quot;xiaomeimei.jpg&quot; alt=&quot;这是图片&quot;&gt;&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;&lt;html&gt;000&lt;/html&gt;&lt;td&gt;ddd&lt;/td&gt;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*&gt;&#x27;</span>,b))<span class="comment"># 贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;&lt;.*?&gt;&#x27;</span>,b))<span class="comment"># 加上？变成非贪婪</span></span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(re.findall(<span class="string">r&#x27;-(\d+?)(.+-)&#x27;</span>,<span class="string">&#x27;-123456789-&#x27;</span>))</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">aa = <span class="string">&#x27;&lt;img src=&quot;https://rpic.douyucdn.cn/live-cover/roomCover/2019/02/14/7205b97c8db9ddf9109153f294f14b21_big.jpg?x-oss-process=image/format,webp&quot; class=&quot;DyImg-content is-normal &quot;&gt;&#x27;</span></span><br><span class="line">a = re.search(<span class="string">r&quot;https://.*?\.jpg&quot;</span>, aa)</span><br><span class="line">b = a.group()</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b)</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">    </span><br><span class="line">--------------------------------------</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;&lt;img src=&quot;https://img.tupianzj.com/uploads/allimg/202005/9999/184cb9395c.jpg&quot; id=&quot;bigpicimg&quot; alt=&quot;&quot;&gt;&#x27;&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">b = re.findall(<span class="string">r&#x27;src=&quot;(https:.*?\.jpg)&quot;&#x27;</span>, a)</span><br><span class="line"><span class="comment"># qiye = re.findall(r&#x27;&lt;img src=&quot;(.*?\.jpg)&quot;&#x27;, a)</span></span><br><span class="line"><span class="string">r&#x27;&lt;img src=&quot;([^&quot;]+\.jpg)&quot;&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(b)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">rc = requests.get(b[<span class="number">0</span>])</span><br><span class="line">qiye = rc.content</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;test.jpg&#x27;</span>, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(qiye)</span><br><span class="line">--------------------------------------------</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 1----9     \d</span></span><br><span class="line"><span class="comment"># 10----99    [1-9]\d</span></span><br><span class="line"><span class="comment"># 100----199   1\d&#123;2&#125;</span></span><br><span class="line"><span class="comment"># 200----249   2[0-4]\d</span></span><br><span class="line"><span class="comment"># 250---255    25[0-5]</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">256</span>):</span><br><span class="line">    a = <span class="built_in">str</span>(i)</span><br><span class="line"></span><br><span class="line">    a = re.match(<span class="string">r&quot;^(25[0-5]|2[0-4]\d|1\d&#123;2&#125;|[1-9]\d|\d)$&quot;</span>, a)</span><br><span class="line">    <span class="built_in">print</span>(a.group())</span><br><span class="line">------------------------------------------</span><br><span class="line">手机号</span><br><span class="line">bb = <span class="string">&#x27;18390970027&#x27;</span></span><br><span class="line">bbb = re.match(<span class="string">r&#x27;1[35678]\d&#123;9&#125;&#x27;</span>,bb)</span><br><span class="line"><span class="built_in">print</span>(bbb.group())</span><br></pre></td></tr></table></figure>
-
-<h2 id="拓展（可不讲）"><a href="#拓展（可不讲）" class="headerlink" title="拓展（可不讲）"></a>拓展（可不讲）</h2><table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>re.I</td>
-<td>使匹配对大小写不敏感</td>
-</tr>
-<tr>
-<td>re.L</td>
-<td>做本地化识别（locale-aware）匹配</td>
-</tr>
-<tr>
-<td>re.M</td>
-<td>多行匹配，影响 ^ 和 $</td>
-</tr>
-<tr>
-<td>re.S</td>
-<td>使 . 匹配包括换行在内的所有字符</td>
-</tr>
-<tr>
-<td>re.U</td>
-<td>根据Unicode字符集解析字符。这个标志影响 \w, \W, \b, \B.</td>
-</tr>
-<tr>
-<td>re.X</td>
-<td>该标志通过给予你更灵活的格式以便你将正则表达式写得更易于理解。</td>
-</tr>
-</tbody></table>
-<p>正则表达式中，“.”的作用是匹配除“\n”以外的任何字符，也就是说，它是在一行中进行匹配。这里的“行”是以“\n”进行区分的。a字符串有每行的末尾有一个“\n”，不过它不可见。</p>
-<p>如果不使用re.S参数，则只在每一行内进行匹配，如果一行没有，就换下一行重新开始，不会跨行。而使用re.S参数以后，正则表达式会将这个字符串作为一个整体，将“\n”当做一个普通的字符加入到这个字符串中，在整体中进行匹配。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">------------------------------------------------------------------    </span><br><span class="line">re.S</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">a = <span class="string">&#x27;&#x27;&#x27;asdfsafhellopass:</span></span><br><span class="line"><span class="string">    234455</span></span><br><span class="line"><span class="string">    worldafdsf</span></span><br><span class="line"><span class="string">    &#x27;&#x27;&#x27;</span></span><br><span class="line">b = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a)</span><br><span class="line">c = re.findall(<span class="string">&#x27;hello(.*?)world&#x27;</span>, a, re.S)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b is &#x27;</span>, b)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;c is &#x27;</span>, c)</span><br><span class="line"></span><br><span class="line">--------------------------------------------------------</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="comment"># sub是substitute表示替换</span></span><br><span class="line"></span><br><span class="line">phone = <span class="string">&quot;2004-959-559 # 这是一个国外电话号码&quot;</span></span><br><span class="line"><span class="comment"># 删除字符串中的 Python注释</span></span><br><span class="line">num = re.sub(<span class="string">r&#x27;#.*$&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004-959-559</span></span><br><span class="line"><span class="comment"># 删除非数字(-)的字符串</span></span><br><span class="line">num2 = re.sub(<span class="string">r&#x27;\D&#x27;</span>, <span class="string">&quot;&quot;</span>, phone)  <span class="comment"># 2004959559</span></span><br><span class="line"></span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># 将匹配的数字乘以 2</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">double</span>(<span class="params">matched</span>):</span><br><span class="line">    value = <span class="built_in">int</span>(matched.group(<span class="string">&#x27;value&#x27;</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(value * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">s = <span class="string">&#x27;A23G4HFD567&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(re.sub(<span class="string">&#x27;(?P&lt;value&gt;\d+)&#x27;</span>, double, s))</span><br><span class="line">-------------------------------------------------------</span><br><span class="line"><span class="comment"># re.finditer  和 findall 类似，在字符串中找到正则表达式所匹配的所有子串，并把它们作为一个迭代器返回。</span></span><br><span class="line">it = re.finditer(<span class="string">r&quot;\d+&quot;</span>, <span class="string">&quot;12a32bc43jf3&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> match <span class="keyword">in</span> it:</span><br><span class="line">    <span class="built_in">print</span>(match.group())</span><br><span class="line">    </span><br><span class="line">re.split 切割</span><br><span class="line"></span><br><span class="line">line = <span class="string">&#x27;aaa bbb ccc;ddd   eee,fff&#x27;</span></span><br><span class="line">a = re.split(<span class="string">r&#x27;;&#x27;</span>,line)</span><br><span class="line"><span class="built_in">print</span>(a)</span><br></pre></td></tr></table></figure>
+                <h3 id="vue根据值实现进度条动画加载"><a href="#vue根据值实现进度条动画加载" class="headerlink" title="vue根据值实现进度条动画加载"></a>vue根据值实现进度条动画加载</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &#123;&#123; uploadPrecent &#125;&#125;%</span><br><span class="line">    &lt;div class=&quot;display-upload-wrapper&quot;&gt;</span><br><span class="line">      &lt;div class=&quot;innier-upload-wrapper&quot; :style=&quot;innerUploadStyle&quot;&gt;</span><br><span class="line">        自定义的upload样式</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &quot;Myupload&quot;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      uploadPrecent: 30,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    innerUploadStyle() &#123;</span><br><span class="line">      return `background-size: $&#123;this.uploadPrecent&#125;% 100%;`;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang=&quot;less&quot; scoped&gt;</span><br><span class="line">.display-upload-wrapper &#123;</span><br><span class="line">  border: 1px solid red;</span><br><span class="line">  width: 384px;</span><br><span class="line">  height: 54px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  width: 244px;</span><br><span class="line">  border-radius: 4px;</span><br><span class="line">  background: #f4f8ff;</span><br><span class="line">  .innier-upload-wrapper &#123;</span><br><span class="line">    height: 100%;</span><br><span class="line">    background: linear-gradient(270deg, #c0d8ff 100%, #e7f2ff 100%);</span><br><span class="line">    background-repeat: no-repeat;</span><br><span class="line">    background-size: 10% 100%;</span><br><span class="line">    transition: background-size 0.3s linear;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
                 
@@ -678,7 +495,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/">http://example.com/2020/05/25/%E6%AD%A3%E5%88%99/</a>
+                    <a href="http://example.com/2022/08/27/process/">http://example.com/2022/08/27/process/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -716,8 +533,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%AD%A3%E5%88%99/">
-                                    <span class="chip bg-color">正则</span>
+                                <a href="/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/">
+                                    <span class="chip bg-color">进度条</span>
                                 </a>
                             
                         </div>
@@ -891,17 +708,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;Previous</div>
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
             <div class="card">
-                <a href="/2020/05/25/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93/">
+                <a href="/2022/08/27/process/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="知识点总结">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="vue根据值实现进度条动画加载">
                         
-                        <span class="card-title">知识点总结</span>
+                        <span class="card-title">vue根据值实现进度条动画加载</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -911,9 +729,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-25
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -922,11 +740,12 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/%E8%BF%9B%E5%BA%A6%E6%9D%A1/">
+                        <span class="chip bg-color">进度条</span>
                     </a>
                     
                 </div>
@@ -940,13 +759,13 @@
                 Next&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/03/10/%E7%9F%A5%E8%AF%86%E7%82%B9%E6%80%BB%E7%BB%93%E4%BA%8C/">
+                <a href="/2021/12/27/vue%E9%A1%B9%E7%9B%AE%E9%83%A8%E7%BD%B2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="知识点总结二">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="vue项目部署">
                         
-                        <span class="card-title">知识点总结二</span>
+                        <span class="card-title">vue项目部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -957,7 +776,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-03-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-12-27
                             </span>
                         <span class="publish-author">
                             
@@ -970,8 +789,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF%E7%9F%A5%E8%AF%86%E7%82%B9/">
-                        <span class="chip bg-color">前端知识点</span>
+                    <a href="/tags/%E9%83%A8%E7%BD%B2/">
+                        <span class="chip bg-color">部署</span>
                     </a>
                     
                 </div>
